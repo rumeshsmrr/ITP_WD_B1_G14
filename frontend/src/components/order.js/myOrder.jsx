@@ -22,7 +22,6 @@ const myOrder = () => {
                 <i className="fa-solid fa-caret-right"></i>
               </div> */}
             </div>
-            <h1>header</h1>
             <div className="order-content">{cards}</div>
           </div>
         </div>
