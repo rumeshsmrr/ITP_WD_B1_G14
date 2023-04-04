@@ -1,0 +1,45 @@
+const MyOrderdata = {
+  orderItem: [
+    {
+      id: "Or007",
+      cover: "./images/SlideCard/pc400.png",
+      productName: "Custom Build PC (i7, gaming)",
+      quantity: 1,
+      address: "no 07, temple road, gampaha",
+      price: 120000,
+      data: "2023/03/14",
+      status: "Pending",
+    },
+    {
+      id: "Or006",
+      cover: "./images/SlideCard/pc400.png",
+      productName: "Custom Build PC (i7, gaming)",
+      address: "no 07, temple road, gampaha",
+      price: 120000,
+      quantity: 1,
+      data: "2023/03/14",
+      status: "delivered",
+    },
+    {
+      id: "Or005",
+      cover: "./images/SlideCard/pc400.png",
+      productName: "Custom Build PC (i7, gaming)",
+      address: "no 07, temple road, gampaha",
+      price: 120000,
+      quantity: 1,
+      data: "2023/03/14",
+      status: "delivered",
+    },
+    {
+      id: "Or004",
+      cover: "./images/SlideCard/pc400.png",
+      productName: "Custom Build PC (i7, gaming)",
+      address: "no 07, temple road, gampaha",
+      price: 120000,
+      quantity: 1,
+      data: "2023/03/14",
+      status: "delivered",
+    },
+  ],
+};
+export default MyOrderdata;

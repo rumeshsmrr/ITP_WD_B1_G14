@@ -1,0 +1,30 @@
+.smallImg {
+  width: 100px;
+}
+
+.order-box {
+  width: 90%;
+  background: #fff;
+}
+
+.productName {
+  margin-left: 30px;
+}
+
+.myOrder .contentWidth {
+  width: 100%;
+}
+
+.order .productName {
+  font-weight: 800;
+  color: #2c2c7b;
+}
+.order .order-subtitles {
+  color: rgb(54, 54, 54);
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.main-info {
+  background-color: #d6f3ff;
+}
