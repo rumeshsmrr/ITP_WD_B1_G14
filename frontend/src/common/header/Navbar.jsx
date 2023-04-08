@@ -36,7 +36,7 @@ const Navbar = () => {
                 <Link to="/contact">Second Hand Items</Link>
               </li>
               <li>
-                <Link to="/signIn">Sign In</Link>
+                <Link to="/customerSignIn">Sign In</Link>
               </li>
               <li>
                 <Link to="/LogIn">Log In</Link>

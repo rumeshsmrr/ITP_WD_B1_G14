@@ -8,6 +8,7 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
+import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
 
 function App() {
   //Step 1 :
@@ -78,6 +79,9 @@ function App() {
           </Route>
           <Route path="/myorder" exact>
             <MyOrder />
+          </Route>
+          <Route path="/customerSignIn" exact>
+            <CustomerSignIn />
           </Route>
         </Switch>
         <Footer />

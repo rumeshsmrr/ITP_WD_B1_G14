@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Cart = ({ CartItem, addToCart, decreaseQty, removeCart }) => {
   // Stpe: 7   calucate total of items
@@ -73,9 +74,11 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeCart }) => {
               <h4>Total Price :</h4>
               <h3>${totalPrice}.00</h3>
             </div>
-            <div className="pay btn">
-              <div>Processed Payment</div>
-            </div>
+            <Link to="/customerSignIn">
+              <div className="pay btn">
+                <div>Processed Payment</div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

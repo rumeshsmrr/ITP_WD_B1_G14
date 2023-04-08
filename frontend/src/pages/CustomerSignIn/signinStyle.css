@@ -1,0 +1,15 @@
+.small_container {
+  width: 600px;
+  border: solid #0f3460;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 5px;
+}
+
+.cInput {
+  margin: 20px;
+  width: 80%;
+  border: #0f3460 solid;
+  border-radius: 5px;
+  padding: 10px;
+}
