@@ -61,6 +61,7 @@ button {
   border: none;
   outline: none;
   background-color: none;
+  cursor: pointer;
 }
 .row {
   width: 50%;
