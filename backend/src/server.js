@@ -6,17 +6,20 @@ const mongoose = require("mongoose");
 
 //routes
 const customerRoutes = require("./routes/customer");
+const employeeRoute = require("./routes/userRoute");
 
 //environment variable
 env.config();
 
 app.use(express.json());
 
+//Routes
 app.use("/api/", customerRoutes);
+app.use("/api/user", employeeRoute);
 
 //connection to db
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.DATABASE)
   .then(() => {
     console.log("Connected to the DataBase");
     //listen for request
@@ -25,5 +28,5 @@ mongoose
     });
   })
   .catch((error) => {
-    console.log(error);
+    console.log(error); 
   });
