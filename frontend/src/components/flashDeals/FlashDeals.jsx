@@ -16,7 +16,7 @@ const FlashDeals = ({ productItems, addToCart }) => {
               <h2>New Arrivals </h2>
             </div>
             <div className="heading-right row ">
-              {/* <span>View all</span> */}
+              <span>View all</span>
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>
