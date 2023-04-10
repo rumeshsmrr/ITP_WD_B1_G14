@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 
 //routes
 const customerRoutes = require("./routes/customer");
-const employeeRoute = require("./routes/userRoute");
+const authRoutes = require("./routes/authRoute");
+// const employeeRoute = require("./routes/userRoute");
 
 //environment variable
 env.config();
@@ -14,8 +15,9 @@ env.config();
 app.use(express.json());
 
 //Routes
-app.use("/api/", customerRoutes);
-app.use("/api/user", employeeRoute);
+app.use("/api/customers", customerRoutes);
+app.use("/api/auth", authRoutes);
+// app.use("/api/user", employeeRoute);
 
 //connection to db
 mongoose
@@ -28,5 +30,9 @@ mongoose
     });
   })
   .catch((error) => {
-    console.log(error); 
+    console.log(error);
   });
+
+app.get("/api/test", () => {
+  console.log("Test is successful ");
+});
