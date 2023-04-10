@@ -1,6 +1,9 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Search from "../header/Search";
+import Navbar from "../header/Navbar";
+import Footer from "../footer/Footer";
 
 const Cart = ({ CartItem, addToCart, decreaseQty, removeCart }) => {
   // Stpe: 7   calucate total of items
@@ -12,6 +15,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeCart }) => {
   // prodcut qty total
   return (
     <>
+      <Search CartItem={CartItem} />
+      <Navbar />
       <section className="cart-items">
         <div className="container d_flex">
           <div className="cart-details">
@@ -82,6 +87,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeCart }) => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
