@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 // import Data from "./components/Data";
@@ -9,6 +9,7 @@ import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
 import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   //Step 1 :
@@ -58,34 +59,70 @@ function App() {
   };
 
   return (
+    // <>
+    //   <Router>
+    //     {/* <Header CartItem={CartItem} /> */}
+    //     <Switch>
+    //       <Route path="/" exact>
+    //         <Pages
+    //           // productItems={productItems}
+    //           addToCart={addToCart}
+    //           shopItems={shopItems}
+    //         />
+    //       </Route>
+    //       <Route path="/cart" exact>
+    //         <Cart
+    //           CartItem={CartItem}
+    //           addToCart={addToCart}
+    //           decreaseQty={decreaseQty}
+    //           removeCart={removeCart}
+    //         />
+    //       </Route>
+    //       <Route path="/myorder" exact>
+    //         <MyOrder />
+    //       </Route>
+    //       <Route path="/customerSignIn" exact>
+    //         <CustomerSignIn />
+    //       </Route>
+    //     </Switch>
+    //     <Footer />
+    //   </Router>
+    // </>
     <>
-      <Router>
-        <Header CartItem={CartItem} />
-        <Switch>
-          <Route path="/" exact>
-            <Pages
-              // productItems={productItems}
-              addToCart={addToCart}
-              shopItems={shopItems}
-            />
-          </Route>
-          <Route path="/cart" exact>
-            <Cart
-              CartItem={CartItem}
-              addToCart={addToCart}
-              decreaseQty={decreaseQty}
-              removeCart={removeCart}
-            />
-          </Route>
-          <Route path="/myorder" exact>
-            <MyOrder />
-          </Route>
-          <Route path="/customerSignIn" exact>
-            <CustomerSignIn />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/myorder"
+            exact
+            element={<MyOrder CartItem={CartItem} />}
+          ></Route>
+          <Route
+            path="/"
+            exact
+            element={
+              <Pages
+                shopItems={shopItems}
+                CartItem={CartItem}
+                addToCart={addToCart}
+              />
+            }
+          ></Route>
+          <Route
+            path="/cart"
+            exact
+            element={
+              <Cart
+                shopItems={shopItems}
+                CartItem={CartItem}
+                decreaseQty={decreaseQty}
+                removeCart={removeCart}
+                addToCart={addToCart}
+                setCartItem={setCartItem}
+              />
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

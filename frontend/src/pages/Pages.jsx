@@ -6,15 +6,27 @@ import Home from "../components/MainPage/Home";
 import Shop from "../components/shops/Shop";
 // import Annocument from "../components/annocument/Annocument";
 import Wrapper from "../components/wrapper/Wrapper";
+import Header from "../common/header/Header";
+import Footer from "../common/footer/Footer";
+import Search from "../common/header/Search";
+import Navbar from "../common/header/Navbar";
 
-const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
+const Pages = ({
+  productItems,
+  addToCart,
+  CartItem,
+  shopItems,
+  setCartItem,
+}) => {
   return (
     <>
+      {/* <Header CartItem={CartItem} /> */}
+      <Search CartItem={CartItem} setCartItem={setCartItem} />
+      <Navbar />
       <Home CartItem={CartItem} />
-      {/* <FlashDeals productItems={productItems} addToCart={addToCart} /> */}
-      {/* <Discount /> */}
       <Shop shopItems={shopItems} addToCart={addToCart} />
       <Wrapper />
+      <Footer />
     </>
   );
 };

@@ -2,14 +2,18 @@ import React from "react";
 import MyOrderCard from "./myOrderCard";
 import MyOrderdata from "./MyOrderdata";
 import "./myOrder.css";
+import Search from "../../common/header/Search";
+import Navbar from "../../common/header/Navbar";
 
-const myOrder = () => {
+const myOrder = ({ CartItem }) => {
   const cards = MyOrderdata.orderItem.map((item) => {
     return <MyOrderCard key={item.id} {...item} />;
   });
 
   return (
     <>
+      <Search CartItem={CartItem} />
+      <Navbar />
       <section className="myOrder background">
         <div className="container d_flex">
           <div className="contentWidth">
