@@ -11,6 +11,10 @@ import MyOrder from "./components/order.js/myOrder";
 import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+// poornaka
+import Home from "./pages/poornaka/Home"
+
+
 function App() {
   //Step 1 :
   // const { productItems } = Data;
@@ -121,6 +125,11 @@ function App() {
               />
             }
           ></Route>
+
+          {/* poornaka */}
+          <Route path="/adminAndEmployee" exact element={<Home />} />
+
+          
         </Routes>
       </BrowserRouter>
     </>
