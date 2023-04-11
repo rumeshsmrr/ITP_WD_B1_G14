@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 //routes
 const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/authRoute");
+const productHRoute = require("./routes/productHroute");
+const cartRoute = require("./routes/cartRoute");
 // const employeeRoute = require("./routes/userRoute");
 
 //environment variable
@@ -17,6 +19,8 @@ app.use(express.json());
 //Routes
 app.use("/api/customers", customerRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/producth", productHRoute);
+app.use("/api/cart", cartRoute);
 // app.use("/api/user", employeeRoute);
 
 //connection to db
