@@ -21,7 +21,7 @@ const Pages = ({
   return (
     <>
       {/* <Header CartItem={CartItem} /> */}
-      <Search CartItem={CartItem} setCartItem={setCartItem} />
+      <Search CartItem={CartItem} />
       <Navbar />
       <Home CartItem={CartItem} />
       <Shop shopItems={shopItems} addToCart={addToCart} />
