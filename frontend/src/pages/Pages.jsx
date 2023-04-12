@@ -24,7 +24,7 @@ const Pages = ({
       <Search CartItem={CartItem} />
       <Navbar />
       <Home CartItem={CartItem} />
-      <Shop shopItems={shopItems} addToCart={addToCart} />
+      <Shop shopItems={shopItems} addToCart={addToCart} CartItem={CartItem} />
       <Wrapper />
       <Footer />
     </>

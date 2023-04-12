@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 // import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
-import Footer from "./common/footer/Footer";
+
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
-import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SingleProduct from "./components/singleProduct/SingleProduct";
 
 function App() {
   //Step 1 :
@@ -59,35 +59,6 @@ function App() {
   };
 
   return (
-    // <>
-    //   <Router>
-    //     {/* <Header CartItem={CartItem} /> */}
-    //     <Switch>
-    //       <Route path="/" exact>
-    //         <Pages
-    //           // productItems={productItems}
-    //           addToCart={addToCart}
-    //           shopItems={shopItems}
-    //         />
-    //       </Route>
-    //       <Route path="/cart" exact>
-    //         <Cart
-    //           CartItem={CartItem}
-    //           addToCart={addToCart}
-    //           decreaseQty={decreaseQty}
-    //           removeCart={removeCart}
-    //         />
-    //       </Route>
-    //       <Route path="/myorder" exact>
-    //         <MyOrder />
-    //       </Route>
-    //       <Route path="/customerSignIn" exact>
-    //         <CustomerSignIn />
-    //       </Route>
-    //     </Switch>
-    //     <Footer />
-    //   </Router>
-    // </>
     <>
       <BrowserRouter>
         <Routes>
@@ -119,6 +90,13 @@ function App() {
                 addToCart={addToCart}
                 setCartItem={setCartItem}
               />
+            }
+          ></Route>
+          <Route
+            path="/singleProduct"
+            exact
+            element={
+              <SingleProduct CartItem={CartItem} addToCart={addToCart} />
             }
           ></Route>
         </Routes>
