@@ -82,4 +82,14 @@ router.get("/:customerId", async (req, res) => {
   }
 });
 
+//clear all cart items of a customer
+router.delete("/clear/:customerId", async (req, res) => {
+  try {
+    await Cart.deleteMany({ customerId: req.params.customerId });
+    res.status(200).json({ message: "Your cart is cleared" });
+  } catch (err) {
+    res.status(500).json({ message: err });
+  }
+});
+
 module.exports = router;
