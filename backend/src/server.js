@@ -1,6 +1,7 @@
 const express = require("express");
 const env = require("dotenv");
 const app = express();
+var cors = require("cors");
 // const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -10,6 +11,8 @@ const authRoutes = require("./routes/authRoute");
 const productHRoute = require("./routes/productHroute");
 const cartRoute = require("./routes/cartRoute");
 // const employeeRoute = require("./routes/userRoute");
+
+app.use(cors());
 
 //environment variable
 env.config();

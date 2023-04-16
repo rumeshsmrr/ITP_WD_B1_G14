@@ -11,6 +11,9 @@ import Footer from "../common/footer/Footer";
 import Search from "../common/header/Search";
 import Navbar from "../common/header/Navbar";
 
+import { useSelector } from "react-redux";
+import NavbarLoged from "../common/header/NavbarLoged";
+
 const Pages = ({
   productItems,
   addToCart,
@@ -18,13 +21,15 @@ const Pages = ({
   shopItems,
   setCartItem,
 }) => {
+  const customer = useSelector((state) => state.customer.currentCustomer);
   return (
     <>
       {/* <Header CartItem={CartItem} /> */}
-      <Search CartItem={CartItem} />
-      <Navbar />
-      <Home CartItem={CartItem} />
-      <Shop shopItems={shopItems} addToCart={addToCart} />
+      <Search />
+      {customer ? <NavbarLoged /> : <Navbar />}
+
+      <Home />
+      <Shop />
       <Wrapper />
       <Footer />
     </>

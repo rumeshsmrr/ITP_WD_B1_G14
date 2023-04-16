@@ -99,3 +99,14 @@
   text-align: center;
   cursor: pointer;
 }
+
+.clearCart {
+  /* background-color: red; */
+  /* margin-left: 20px; */
+  /* width: 70%; */
+  margin-top: 40px;
+  margin-left: 75%;
+  color: #67bae4;
+  text-align: center;
+  cursor: pointer;
+}

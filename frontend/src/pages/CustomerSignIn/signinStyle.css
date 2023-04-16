@@ -1,15 +1,168 @@
-.small_container {
-  width: 600px;
-  border: solid #0f3460;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 5px;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.cInput {
-  margin: 20px;
-  width: 80%;
-  border: #0f3460 solid;
+.small-letters {
+  font-size: 14px;
+}
+
+.login {
+  background-image: url("https://res.cloudinary.com/daee4aeur/image/upload/v1681358866/linus-mimietz-01hQvBUC7rI-unsplash_kefgxd.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  position: relative;
+  padding: 2px 10px;
   border-radius: 5px;
-  padding: 10px;
+  border: none;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 7px #acabab;
+}
+
+.box {
+  margin-top: 10px;
+}
+
+.btn img {
+  position: relative;
+  top: 2px;
+  left: -2px;
+  height: 15px;
+}
+
+.login-page {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  top: 20%;
+  left: 20%;
+  background-color: aquamarine;
+  border-radius: 5px;
+  /* padding: 20px; */
+  align-items: center;
+  background-color: aquamarine;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 20%;
+}
+
+.login-p1 {
+  width: 60%;
+  padding-right: 10px;
+  padding: 20px;
+}
+
+.login-p1 h1 {
+  font-size: 80px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+.login-p1-para {
+  font-size: 12px;
+  color: #5b5b5b;
+}
+
+.login-p1 .btn-box {
+  display: flex;
+}
+
+.f-btn {
+  background-color: blue;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.s-btn {
+  position: relative;
+  background-color: #00acee;
+  color: white;
+  font-size: 12px;
+  display: flex;
+}
+
+.s-btn p {
+  padding-left: 10px;
+}
+
+.login-p2 {
+  background-color: aliceblue;
+  height: 462px;
+  width: 40%;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.login-p2 h3 {
+  font-size: 28px;
+}
+
+.inputbox {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid;
+  background-color: aliceblue;
+  margin: 10px 5px 0px 0px;
+  width: 80%;
+}
+
+.remember {
+  margin-top: 20px;
+}
+
+.form-box2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.small-letters a {
+  color: gray;
+  text-decoration: none;
+}
+
+.small-letters a {
+  position: relative;
+  top: 10px;
+  color: gray;
+  text-decoration: none;
+}
+
+.submit-btn {
+  position: relative;
+  background-color: #00ffab;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 65px;
+  width: 100%;
+  cursor: pointer;
+}
+.submit-btn :disabled {
+  visibility: hidden;
+}
+
+.submit-btn:hover {
+  background-color: #14c38e;
+  color: white;
+}
+
+.box .remember {
+  align-content: center;
+}
+
+#remember {
+  position: relative;
+  top: 2px;
 }
