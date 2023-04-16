@@ -7,56 +7,61 @@ import Cart from "./common/Cart/Cart";
 
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SingleProduct from "./components/singleProduct/SingleProduct";
+import CusLogin from "./pages/CustomerSignIn/CusLogin";
+import { Provider, useSelector } from "react-redux";
+import store from "./redux/store";
 
 function App() {
   //Step 1 :
   // const { productItems } = Data;
-  const { shopItems } = Sdata;
+  // const { shopItems } = Sdata;
 
-  //Step 2 :
-  const [CartItem, setCartItem] = useState([]);
+  // //Step 2 :
+  // const [CartItem, setCartItem] = useState([]);
 
-  //Step 4 :
-  const addToCart = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id);
+  // //Step 4 :
+  // const addToCart = (product) => {
+  //   const productExit = CartItem.find((item) => item.id === product.id);
 
-    if (productExit) {
-      setCartItem(
-        CartItem.map((item) =>
-          item.id === product.id
-            ? { ...productExit, qty: productExit.qty + 1 }
-            : item
-        )
-      );
-    } else {
-      setCartItem([...CartItem, { ...product, qty: 1 }]);
-    }
-  };
+  //   if (productExit) {
+  //     setCartItem(
+  //       CartItem.map((item) =>
+  //         item.id === product.id
+  //           ? { ...productExit, qty: productExit.qty + 1 }
+  //           : item
+  //       )
+  //     );
+  //   } else {
+  //     setCartItem([...CartItem, { ...product, qty: 1 }]);
+  //   }
+  // };
 
-  // Stpe: 6
-  const decreaseQty = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id);
+  // // Stpe: 6
+  // const decreaseQty = (product) => {
+  //   const productExit = CartItem.find((item) => item.id === product.id);
 
-    if (productExit.qty === 1) {
-      setCartItem(CartItem.filter((item) => item.id !== product.id));
-    } else {
-      setCartItem(
-        CartItem.map((item) =>
-          item.id === product.id
-            ? { ...productExit, qty: productExit.qty - 1 }
-            : item
-        )
-      );
-    }
-  };
+  //   if (productExit.qty === 1) {
+  //     setCartItem(CartItem.filter((item) => item.id !== product.id));
+  //   } else {
+  //     setCartItem(
+  //       CartItem.map((item) =>
+  //         item.id === product.id
+  //           ? { ...productExit, qty: productExit.qty - 1 }
+  //           : item
+  //       )
+  //     );
+  //   }
+  // };
 
-  //remove cart item
-  const removeCart = (product) => {
-    setCartItem(CartItem.filter((item) => item.id !== product.id));
-  };
+  // //remove cart item
+  // const removeCart = (product) => {
+  //   setCartItem(CartItem.filter((item) => item.id !== product.id));
+  // };
+
+  const customer = useSelector((state) => state.customer.currentCustomer);
 
   return (
     <>
@@ -65,16 +70,20 @@ function App() {
           <Route
             path="/myorder"
             exact
-            element={<MyOrder CartItem={CartItem} />}
+            element={
+              <MyOrder
+              // CartItem={CartItem}
+              />
+            }
           ></Route>
           <Route
             path="/"
             exact
             element={
               <Pages
-                shopItems={shopItems}
-                CartItem={CartItem}
-                addToCart={addToCart}
+              // shopItems={shopItems}
+              // CartItem={CartItem}
+              // addToCart={addToCart}
               />
             }
           ></Route>
@@ -83,22 +92,36 @@ function App() {
             exact
             element={
               <Cart
-                shopItems={shopItems}
-                CartItem={CartItem}
-                decreaseQty={decreaseQty}
-                removeCart={removeCart}
-                addToCart={addToCart}
-                setCartItem={setCartItem}
+              // shopItems={shopItems}
+              // CartItem={CartItem}
+              // decreaseQty={decreaseQty}
+              // removeCart={removeCart}
+              // addToCart={addToCart}
+              // setCartItem={setCartItem}
               />
             }
           ></Route>
           <Route
-            path="/singleProduct"
+            path="/singleProduct/:id"
+            exact
+            element={<SingleProduct />}
+          ></Route>
+          <Route
+            path="/customerSignIn"
+            exact
+            element={<CustomerSignIn />}
+          ></Route>
+          {/* <Provider> */}
+
+          <Route
+            path="/cusLogin"
             exact
             element={
-              <SingleProduct CartItem={CartItem} addToCart={addToCart} />
+              // <Provider store={store}>
+              customer ? <Navigate replace to="/" /> : <CusLogin />
             }
           ></Route>
+          {/* </Provider> */}
         </Routes>
       </BrowserRouter>
     </>

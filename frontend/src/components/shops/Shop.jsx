@@ -4,7 +4,7 @@ import ShopCart from "./ShopCart";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-const Shop = ({ addToCart, shopItems, cartItem }) => {
+const Shop = () => {
   return (
     <>
       <section className="shop background">
@@ -21,7 +21,7 @@ const Shop = ({ addToCart, shopItems, cartItem }) => {
             </div>
 
             <div className="product-content  grid1">
-              <ShopCart addToCart={addToCart} shopItems={shopItems} />
+              <ShopCart />
             </div>
           </div>
         </div>

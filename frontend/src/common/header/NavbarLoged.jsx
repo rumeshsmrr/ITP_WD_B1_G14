@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarLoged = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
@@ -25,7 +25,6 @@ const Navbar = () => {
               onClick={() => setMobileMenu(false)}
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
-
               <li>
                 <Link to="/">home</Link>
               </li>
@@ -38,11 +37,11 @@ const Navbar = () => {
               <li>
                 <Link to="/contact">Second Hand Items</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/customerSignIn">Sign In</Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/cusLogIn">Log In</Link>
+                <Link to="/cusLogIn">Log Out</Link>
               </li>
             </ul>
 
@@ -63,4 +62,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarLoged;
