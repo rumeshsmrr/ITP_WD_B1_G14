@@ -40,7 +40,7 @@ const Footer = () => {
             <ul>
               <li>Help Center </li>
               <li>How to Buy </li>
-              <li>Admin and employee login</li>
+              <li><a href="/adminAndEmployee"> Admin and employee login </a></li>
             </ul>
           </div>
           <div className="box">

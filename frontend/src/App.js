@@ -122,6 +122,7 @@ function App() {
             }
           ></Route>
           {/* </Provider> */}
+          <Route path="/adminAndEmployee" exact element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
