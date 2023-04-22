@@ -170,8 +170,15 @@ const allUsers = async (req, res) => {
   });
 };
 
-
-
+//delete an user
+const deleteUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.json({ msg: "Profile Deleted!" });
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
 
 
@@ -179,6 +186,7 @@ module.exports = {
   addUser,
   getUserInfo,
   allUsers,
+  deleteUser,
   updateUser,
   updateUserAdmin,
   updatePassword,
