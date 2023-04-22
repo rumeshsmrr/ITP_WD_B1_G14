@@ -100,10 +100,52 @@ const updateUserAdmin = async (req, res) => {
   }
 };
 
+//update password
+const updatePassword = async (req, res) => {
+  const id = req.params.id;
+  const currentPsw = req.body.currentPsw;
+  const newPassword = req.body.newPassword;
+
+  //get current password from db
+
+  try {
+    //get user password from the id
+    const user = await User.findOne({ _id: id });
+    console.log("user", user.password);
+    //check if the current password is correct
+    const isMatch = await bcrypt.compare(currentPsw, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Current password is incorrect" });
+    }
+
+    //convert id to object id
+    const O_id = mongoose.Types.ObjectId(id);
+
+    //hash the password
+    const passwordHash = await bcrypt.hash(newPassword, 12);
+
+    try {
+      const data = new User({
+        _id: O_id,
+        password: passwordHash,
+      });
+
+      //update the user
+      await User.findOneAndUpdate({ _id: O_id }, data);
+      res.json({ msg: "Password updated successfully!" });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
 
 module.exports = {
   addUser,
   updateUser,
   updateUserAdmin,
+  updatePassword,
 };
