@@ -13,6 +13,7 @@ import SingleProduct from "./components/singleProduct/SingleProduct";
 import CusLogin from "./pages/CustomerSignIn/CusLogin";
 import { Provider, useSelector } from "react-redux";
 import store from "./redux/store";
+import CartError from "./common/Cart/CartError";
 
 function App() {
   //Step 1 :
@@ -91,14 +92,16 @@ function App() {
             path="/cart"
             exact
             element={
-              <Cart
-              // shopItems={shopItems}
-              // CartItem={CartItem}
-              // decreaseQty={decreaseQty}
-              // removeCart={removeCart}
-              // addToCart={addToCart}
-              // setCartItem={setCartItem}
-              />
+              // <Cart
+              // // shopItems={shopItems}
+              // // CartItem={CartItem}
+              // // decreaseQty={decreaseQty}
+              // // removeCart={removeCart}
+              // // addToCart={addToCart}
+              // // setCartItem={setCartItem}
+              // />
+
+              customer ? <Cart /> : <CartError />
             }
           ></Route>
           <Route

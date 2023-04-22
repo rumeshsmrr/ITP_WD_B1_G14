@@ -5,14 +5,20 @@ const router = require("express").Router();
 
 //CREATE
 
-router.post("/", verifyToken, async (req, res) => {
-  const newOrder = new Order(req.body);
-
+router.post("/", async (req, res) => {
   try {
-    const savedOrder = await newOrder.save();
-    res.status(200).json(savedOrder);
-  } catch (err) {
-    res.status(500).json(err);
+    const order = new Order(req.body);
+    await order.save();
+    res.status(201).json({
+      message: "Order created successfully",
+      order,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Order creation failed",
+      error,
+    });
   }
 });
 
@@ -43,9 +49,11 @@ router.delete("/:id", async (req, res) => {
 });
 
 //GET USER ORDERS
-router.get("/find/:userId", verifyTokenAndAuth, async (req, res) => {
+router.get("/find/:customerId", async (req, res) => {
   try {
-    const orders = await Order.find({ userId: req.params.userId });
+    const orders = await Order.find({
+      customer: req.params.customerId,
+    }).populate("customer products.product");
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
@@ -54,9 +62,9 @@ router.get("/find/:userId", verifyTokenAndAuth, async (req, res) => {
 
 // //GET ALL
 
-router.get("/", verifyTokenAndAdmin, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const orders = await Order.find();
+    const orders = await Order.find().populate("customer products.product");
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
@@ -65,7 +73,7 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
 
 // GET MONTHLY INCOME
 
-router.get("/income", verifyTokenAndAdmin, async (req, res) => {
+router.get("/income", async (req, res) => {
   const date = new Date();
   const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
   const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
