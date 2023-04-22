@@ -75,8 +75,35 @@ const updateUser = async (req, res) => {
     return res.status(500).json({ msg: err.message });
   }
 };
+
+//update an user admin side
+const updateUserAdmin = async (req, res) => {
+  const id = req.params.id;
+  const role = req.body.role;
+  const salary = req.body.salary;
+
+  //convert id to object id
+  const O_id = mongoose.Types.ObjectId(id);
+
+  try {
+    const existUser = new User({
+      _id: O_id,
+      role,
+      salary,
+    });
+
+    //update the user
+    await User.findOneAndUpdate({ _id: O_id }, existUser);
+    res.json({ msg: "Profile updated successfully!" });
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
+
+
+
 module.exports = {
   addUser,
   updateUser,
-
+  updateUserAdmin,
 };
