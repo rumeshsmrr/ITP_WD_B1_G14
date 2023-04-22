@@ -142,7 +142,36 @@ const updatePassword = async (req, res) => {
   }
 };
 
+//Login an user
+const login = async (req, res) => {
+  const userName = req.body.username;
+  const password = req.body.password;
 
+  try {
+    if (!userName || !password) {
+      return res.status(400).json({ msg: "All fields are required" });
+    }
+
+    //check if the username already exists
+    const user = await User.findOne({ userName: userName });
+
+    if (!user) {
+      return res.status(400).json({ msg: "User does not exist in the system" });
+    }
+
+    //check if the password is correct
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Invalid credentials" });
+    }
+
+    res.json({ data: user, msg: "Login success!" });
+  } catch (err) {
+    console.log("err", err);
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
 //get user info
 const getUserInfo = async (req, res) => {
@@ -181,9 +210,23 @@ const deleteUser = async (req, res) => {
 };
 
 
+//create access token
+const createAccessToken = (payload) => {
+  return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: "15m",
+  });
+};
+
+//create a refresh token
+const createRefreshToken = (payload) => {
+  return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: "1d",
+  });
+};
 
 module.exports = {
   addUser,
+  login,
   getUserInfo,
   allUsers,
   deleteUser,
