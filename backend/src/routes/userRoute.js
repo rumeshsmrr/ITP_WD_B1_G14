@@ -4,6 +4,7 @@ const userCtrl = require("../controller/userCtrl");
 
 router.post("/register", userCtrl.addUser);
 
+router.get("/info/:id", userCtrl.getUserInfo);
 router.put("/updateProfile/:id", userCtrl.updateUser);
 router.put("/updateUser/:id", userCtrl.updateUserAdmin);
 
