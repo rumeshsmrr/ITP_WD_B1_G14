@@ -10,6 +10,8 @@ import axios from "axios";
 import { publicRequest } from "../../requestMethods";
 import { useSelector } from "react-redux";
 import NavbarLoged from "../../common/header/NavbarLoged";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SingleProduct() {
   // const [product] = useState([
@@ -42,6 +44,30 @@ function SingleProduct() {
   //       console.log(error);
   //     });
   // }, [id]);
+
+  const cartAddSuccess = () =>
+    toast.success("🛒 Product Added to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const cartAddError = () =>
+    toast.error("🚨 Error adding product to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
   useEffect(() => {
     const getProduct = async () => {
@@ -79,9 +105,11 @@ function SingleProduct() {
         price: product.price,
       });
       // alert("Product added to cart");
+      cartAddSuccess();
     } catch (err) {
       console.error(err);
-      alert("Error adding product to cart");
+      // alert("Error adding product to cart");
+      cartAddError();
     }
   };
 
@@ -148,6 +176,7 @@ function SingleProduct() {
           </div>
         </div>
       </div>
+      <ToastContainer />
       {/* ))} */}
       <Footer />
     </>

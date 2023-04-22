@@ -10,6 +10,8 @@ const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/authRoute");
 const productHRoute = require("./routes/productHroute");
 const cartRoute = require("./routes/cartRoute");
+const stripeRoute = require("./routes/stripe");
+const orderRoute = require("./routes/orderRoute");
 // const employeeRoute = require("./routes/userRoute");
 
 app.use(cors());
@@ -24,6 +26,8 @@ app.use("/api/customers", customerRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/producth", productHRoute);
 app.use("/api/cart", cartRoute);
+app.use("/api/checkout", stripeRoute);
+app.use("/api/order", orderRoute);
 // app.use("/api/user", employeeRoute);
 
 //connection to db

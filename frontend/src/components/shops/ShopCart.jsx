@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ShopCart = () => {
   // const [count, setCount] = useState(0);
@@ -11,6 +13,43 @@ const ShopCart = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
 
   const [products, setProducts] = useState([]);
+
+  //alert design
+  const cartAddSuccess = () =>
+    toast.success("🛒 Product Added to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const cartAddError = () =>
+    toast.error("🚨 Error adding product to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const pleaseLogin = () =>
+    toast.warn("Please login for add Product to cart", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
   useEffect(() => {
     axios
@@ -56,9 +95,11 @@ const ShopCart = () => {
         price: proPrice,
       });
       // alert("Product added to cart");
+      cartAddSuccess();
     } catch (err) {
       console.error(err);
-      alert("Error adding product to cart");
+      // alert("Error adding product to cart");
+      cartAddError();
     }
   };
 
@@ -89,23 +130,25 @@ const ShopCart = () => {
                 </div>
                 <div className="price">
                   <h4>Rs : {shopItems.price} </h4>
-                  <button>
-                    <i
-                      className="fa fa-plus"
-                      onClick={() =>
-                        handelAddToCart(
-                          customer._id,
-                          shopItems._id,
-                          shopItems.name,
-                          shopItems.cover,
-                          shopItems.price
-                        )
-                      }
-                    ></i>
+                  <button
+                    onClick={() =>
+                      customer
+                        ? handelAddToCart(
+                            customer._id,
+                            shopItems._id,
+                            shopItems.name,
+                            shopItems.cover,
+                            shopItems.price
+                          )
+                        : pleaseLogin()
+                    }
+                  >
+                    <i className="fa fa-plus"></i>
                   </button>
                 </div>
               </div>
             </div>
+            <ToastContainer />
           </div>
         );
       })}

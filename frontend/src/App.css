@@ -260,6 +260,7 @@ button {
 .heading .heading-right {
   text-align: right;
   color: grey;
+  cursor: pointer;
 }
 /*----- heading -------*/
 .grid {
