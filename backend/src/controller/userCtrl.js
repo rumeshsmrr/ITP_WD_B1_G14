@@ -143,8 +143,42 @@ const updatePassword = async (req, res) => {
 };
 
 
+
+//get user info
+const getUserInfo = async (req, res) => {
+  console.log("req.body.id", req.params.id);
+  try {
+    const user = await User.findById(req.params.id);
+
+    res.json(user);
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
+
+const allUsers = async (req, res) => {
+  User.find({ systemAdmin: false }).exec((err, Users) => {
+    if (err) {
+      return res.status(400).json({
+        error: err,
+      });
+    }
+    return res.status(200).json({
+      success: true,
+      existingUser: Users,
+    });
+  });
+};
+
+
+
+
+
+
 module.exports = {
   addUser,
+  getUserInfo,
+  allUsers,
   updateUser,
   updateUserAdmin,
   updatePassword,
