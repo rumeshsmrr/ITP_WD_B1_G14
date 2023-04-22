@@ -7,6 +7,7 @@ router.post("/register", userCtrl.addUser);
 router.put("/updateProfile/:id", userCtrl.updateUser);
 router.put("/updateUser/:id", userCtrl.updateUserAdmin);
 
+router.put("/updatePassword/:id", userCtrl.updatePassword);
 
 module.exports = router;
 
