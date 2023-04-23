@@ -12,7 +12,6 @@ import Search from "../common/header/Search";
 import Navbar from "../common/header/Navbar";
 
 import { useSelector } from "react-redux";
-import NavbarLoged from "../common/header/NavbarLoged";
 
 const Pages = ({
   productItems,
@@ -26,8 +25,7 @@ const Pages = ({
     <>
       {/* <Header CartItem={CartItem} /> */}
       <Search />
-      {customer ? <NavbarLoged /> : <Navbar />}
-
+      <Navbar />
       <Home />
       <Shop />
       <Wrapper />

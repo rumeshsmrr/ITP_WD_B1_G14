@@ -110,14 +110,7 @@
   text-align: center;
   cursor: pointer;
 }
-.cartError {
-  background-color: #f89fa1;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  padding: 20px;
-  color: #d12727;
-}
+
 .cartHeader {
   padding-left: 5%;
   padding-right: 5%;

@@ -9,41 +9,14 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { publicRequest } from "../../requestMethods";
 import { useSelector } from "react-redux";
-import NavbarLoged from "../../common/header/NavbarLoged";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function SingleProduct() {
-  // const [product] = useState([
-  //   {
-  //     id: 1,
-  //     cover: "shops-2.png",
-  //     name: "Test1",
-  //     price: "180",
-  //     description: "The descritpion will be available here ",
-  //     currency: "Rs",
-
-  //     category: "RAM",
-  //   },
-  // ]);
-
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
-
-  // const getreq = publicRequest;
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:8070/api/producth/find/${id}`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       setProduct(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [id]);
 
   const cartAddSuccess = () =>
     toast.success("🛒 Product Added to cart", {
@@ -81,18 +54,6 @@ function SingleProduct() {
     getProduct();
   }, [id]);
 
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     try {
-  //       const res = await axios.get(`http://localhost:8070/api/products/${id}`);
-  //       setProduct(res.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchProduct();
-  // }, [id]);
   const customer = useSelector((state) => state.customer.currentCustomer);
 
   const handleAddToCart = async () => {
@@ -116,7 +77,7 @@ function SingleProduct() {
   return (
     <>
       <Search />
-      {customer ? <NavbarLoged /> : <Navbar />}
+      <Navbar />
 
       {/* {product.map((item) => ( */}
       <div className="card-wrapper">

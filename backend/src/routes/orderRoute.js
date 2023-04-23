@@ -60,6 +60,30 @@ router.get("/find/:customerId", async (req, res) => {
   }
 });
 
+// router.get("/find/:customerId", async (req, res) => {
+//   // const qNew = req.query.new;
+//   const qStatus = req.query.status;
+//   try {
+//     let orders;
+
+//     if (qStatus) {
+//       orders = await Order.find({
+//         status: {
+//           $in: [qStatus],
+//         },
+//       }).populate("customer products.product");
+//     } else {
+//       orders = await Order.find({
+//         customer: req.params.customerId,
+//       }).populate("customer products.product");
+//     }
+
+//     res.status(200).json(orders);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 // //GET ALL
 
 router.get("/", async (req, res) => {
