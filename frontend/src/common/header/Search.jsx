@@ -30,8 +30,6 @@ const Search = () => {
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
-                <span>0</span>
               </Link>
             </div>
           </div>

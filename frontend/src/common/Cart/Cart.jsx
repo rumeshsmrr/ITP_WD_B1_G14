@@ -7,7 +7,7 @@ import Footer from "../footer/Footer";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { publicRequest } from "../../requestMethods";
-import NavbarLoged from "../header/NavbarLoged";
+
 import StripeCheckout from "react-stripe-checkout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -240,8 +240,7 @@ const Cart = () => {
   return (
     <>
       <Search />
-      {/* <Navbar /> */}
-      {customer ? <NavbarLoged /> : <Navbar />}
+      <Navbar />
 
       <section className="cart-items">
         <div className="heading d_flex cartHeader">
