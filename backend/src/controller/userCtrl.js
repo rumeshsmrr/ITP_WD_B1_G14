@@ -209,6 +209,25 @@ const deleteUser = async (req, res) => {
   }
 };
 
+//get user registration monthly report
+const userRegistrationMonthlyReport = async (req, res) => {
+  var yearDate = req.params.yearDate;
+  yearDate = yearDate.toString();
+  console.log("yearDate", yearDate);
+  User.find({ savedDate: { $regex: ".*" + yearDate + ".*" } }).exec(
+    (err, Users) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      }
+      return res.status(200).json({
+        success: true,
+        userRecord: Users,
+      });
+    }
+  );
+};
 
 //create access token
 const createAccessToken = (payload) => {
@@ -230,6 +249,7 @@ module.exports = {
   getUserInfo,
   allUsers,
   deleteUser,
+  userRegistrationMonthlyReport,
   updateUser,
   updateUserAdmin,
   updatePassword,
