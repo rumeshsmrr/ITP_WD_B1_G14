@@ -133,6 +133,37 @@ function App() {
               customer ? <Navigate replace to="/" /> : <CusLogin />
             }
           ></Route>
+          <Route path="/supplier"
+            exact
+            element={<Dashboard />}/>
+
+            <Route path="/AddSupplier" 
+            exact
+            element={<AddSupplier />}/>
+
+            <Route path="/edit/:id" 
+            exact
+            element={<EditSupplier />}/>
+
+            <Route path="/AddSupplieritem" 
+            exact
+            element={<AddSupplierItems />}/>
+
+            <Route path="/edits/:id" 
+            exact
+            element={<EditSupplierItem />}/>
+
+            <Route path="/viewUniqueItem" 
+            exact
+            element={<SupplierUniqueItem />}/>
+
+            <Route path="/Purchasingitems" 
+            exact
+            element={<PurchasingItems />}/>
+
+            <Route path="/Paymentfororder" 
+            exact
+            element={<PaymentForOrder />}/>
         </Routes>
       </BrowserRouter>
     </>

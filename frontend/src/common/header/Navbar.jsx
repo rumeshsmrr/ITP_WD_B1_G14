@@ -33,7 +33,10 @@ const Navbar = () => {
                 <Link to="/customerSignIn">Sign In</Link>
               </li>
               <li>
-                <Link to="/LogIn">Log In</Link>
+                <Link to="/cusLogin">Log In</Link>
+              </li>
+              <li>
+                <Link to="/supplier">sup</Link>
               </li>
             </ul>
 
