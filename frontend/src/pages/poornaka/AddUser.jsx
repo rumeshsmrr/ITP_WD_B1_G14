@@ -82,6 +82,12 @@ export default function AddUser() {
                   <option value="Stock Keeper">Stock Keeper</option>
                   <option value="Cashier">Cashier</option>
                   <option value="Technician">Technician </option>
+                  <option value="Delivery Manager">Delivery Manager </option>
+                  <option value="Supplier Manager">Supplier Manager </option>
+                  <option value="Product Manager">Product Manager </option>
+                  <option value="Order Manager">Order Manager </option>
+                  <option value="Service Manager">Service Manager </option>
+                  
                 </select>
               </div>
 
