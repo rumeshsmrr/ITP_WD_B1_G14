@@ -2,32 +2,33 @@ import React from "react";
 import "./styles/home.css";
 
 
+
 export default function Home() {
   return (
     <div>
       
-      <div className="container-fluid banner">
-        <div className="row">
-          <div className="col-md-8 offset-md-2 info">
-          <img className="home_logo" src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1679505472/logoBrandLarge_ke1csc.png"/>
+      <div className>
+
+          <img style={{width:"500px", height: "170px"}} className="home_logo" src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1679505472/logoBrandLarge_ke1csc.png"/>
+          
 
           <br></br>
           <br></br>
-            <h1 className="text-center">Guident Computers</h1>
             <p className="text-center">
               Welcome to Guident Computers. Please select your login type.
             </p>
-            <div>  
-              <a href="/employee" className="btn btn-md text-center">
+
+            <br/><br/>
+            <div className="info">  
+              <a href="/employee">
                 Employee
               </a>
-              <a href="/admin" className="btn btn-md text-center">
+              <br/><br/>
+              <a href="/admin" className="info-admin">
                 Admin
               </a>
             </div>
-          </div>
         </div>
       </div>
-    </div>
   );
 }

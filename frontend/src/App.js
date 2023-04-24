@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Pages from "./pages/Pages";
 // import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
-
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
 import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import SingleProduct from "./components/singleProduct/SingleProduct";
-import CusLogin from "./pages/CustomerSignIn/CusLogin";
 import { Provider, useSelector } from "react-redux";
 import store from "./redux/store";
 import CartError from "./common/Cart/CartError";
-import Dashboard from "./pages/supplierDashboard/dashboard";
-import AddSupplier from "./pages/supplierDashboard/addSupplier/addsupplier";
-import EditSupplier from "./pages/supplierDashboard/editSupplier/editsupplier";
-import AddSupplierItems from "./pages/supplierDashboard/addSupplierItems/addsupplieritems";
-import EditSupplierItem from "./pages/supplierDashboard/editSupplierItems/editsupplieritems";
-import PurchasingItems from "./pages/supplierDashboard/purchasingItems/addOrderItem";
-import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfororder";
-import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
+import CusLogin from "./pages/CustomerSignIn/CusLogin";
+import SingleProduct from "./components/singleProduct/SingleProduct";
+
+import Home from "./pages/poornaka/Home";
+import AdminDashboard from "./pages/poornaka/AdminDashboard";
+import AdminLogin from "./pages/poornaka/AdminLogin";
+import EmployeeLogin from "./pages/poornaka/EmployeeLogin";
+import EmployeeDashboard from "./pages/poornaka/EmployeeDashboard";
+import AddUser from "./pages/poornaka/AddUser";
+import EditUser from "./pages/poornaka/EditUser";
+import Profile from "./pages/poornaka/Profile";
+import ViewAttendance from "./pages/poornaka/ViewAttendance";
 
 
 function App() {
@@ -97,7 +97,9 @@ function App() {
               />
             }
           ></Route>
-          <Route
+
+          
+           <Route
             path="/cart"
             exact
             element={
@@ -133,37 +135,19 @@ function App() {
               customer ? <Navigate replace to="/" /> : <CusLogin />
             }
           ></Route>
-          <Route path="/supplier"
-            exact
-            element={<Dashboard />}/>
+          {/* </Provider> */}
 
-            <Route path="/AddSupplier" 
-            exact
-            element={<AddSupplier />}/>
 
-            <Route path="/edit/:id" 
-            exact
-            element={<EditSupplier />}/>
-
-            <Route path="/AddSupplieritem" 
-            exact
-            element={<AddSupplierItems />}/>
-
-            <Route path="/edits/:id" 
-            exact
-            element={<EditSupplierItem />}/>
-
-            <Route path="/viewUniqueItem" 
-            exact
-            element={<SupplierUniqueItem />}/>
-
-            <Route path="/Purchasingitems" 
-            exact
-            element={<PurchasingItems />}/>
-
-            <Route path="/Paymentfororder" 
-            exact
-            element={<PaymentForOrder />}/>
+          {/* poornaka */}
+          <Route path="/adminAndEmployee" exact element={<Home />} />
+          <Route path="/admin" exact element={<AdminLogin />} />
+          <Route path="/adminDashboard" exact element={<AdminDashboard />} />
+          <Route path="/employee" exact element={<EmployeeLogin />} />
+          <Route path="/employeeDashboard" exact element={<EmployeeDashboard />} />
+          <Route path="addUser" exact element={<AddUser />} />
+          <Route path="editUser" exact element={<EditUser />} />
+          <Route path="/profile" exact element={<Profile />} />
+          <Route path="/viewAttendance" exact element={<ViewAttendance />} />
         </Routes>
       </BrowserRouter>
     </>

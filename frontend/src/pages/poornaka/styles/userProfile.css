@@ -1,0 +1,23 @@
+.user-profile-container {
+    padding-top: 120px;
+  }
+  
+  .user-profile-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+  }
+  
+  .user-profile-avatar:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 767px) {
+    .user-profile-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
