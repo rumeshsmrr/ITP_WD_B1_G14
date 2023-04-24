@@ -39,10 +39,10 @@ const getProduct = async(req , res) => {
 const createProduct = async(req , res) => {
 
     //add doc to db
-    const {name , price , category} = req.body
+    const {name , price , category , cover , description , discount} = req.body
     
     try{
-        const product = await Product.create({name , price , category})  
+        const product = await Product.create({name , price , category , cover , description , discount})  
         res.status(200).json(product)
 
     }catch(error){
@@ -93,6 +93,17 @@ const updateProduct = async (req , res) =>{
 
 }
 
+const searchProducts = async(req , res) =>{
+    let result = await Product.find({
+        "$or": [
+            {
+                name: {$regex:req.params.key}
+            }
+        ]
+    })
+    res.send(result)
+}
+
 
 module.exports = {
 
@@ -100,6 +111,7 @@ module.exports = {
     getProduct,
     createProduct,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    searchProducts
 
 }

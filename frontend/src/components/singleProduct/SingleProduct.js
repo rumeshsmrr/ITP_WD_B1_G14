@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "./Product.css";
-
+import { useParams } from "react-router-dom";
 import Search from "../../common/header/Search";
 import Navbar from "../../common/header/Navbar";
 import Footer from "../../common/footer/Footer";
@@ -16,7 +16,33 @@ import "react-toastify/dist/ReactToastify.css";
 function SingleProduct() {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
+  
+  
   const [product, setProduct] = useState({});
+
+  const params = useParams() 
+  
+  const [i , seti] = useState('')
+  const [name , setName] = useState('')
+  const [price , setPrice] = useState('')
+  const [category , setCategory] = useState('')
+  const [cover , setCover] = useState('')
+  const [description , setDescription] = useState('')
+ 
+  
+    
+    axios.get(`http://localhost:8070/api/products/${params.id}`).then((res) => {
+        
+        seti(res.data._id) 
+        setName(res.data.name) 
+        setPrice(res.data.price) 
+        setCategory(res.data.category) 
+        setCover(res.data.cover)
+        setDescription(res.data.description) 
+
+        console.log(res.data)
+        
+    })
 
   const cartAddSuccess = () =>
     toast.success("🛒 Product Added to cart", {
@@ -42,17 +68,17 @@ function SingleProduct() {
       theme: "colored",
     });
 
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/producth/find/" + id);
-        setProduct(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getProduct();
-  }, [id]);
+  // useEffect(() => {
+  //   const getProduct = async () => {
+  //     try {
+  //       const res = await publicRequest.get("/producth/find/" + id);
+  //       setProduct(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   getProduct();
+  // }, [id]);
 
   const customer = useSelector((state) => state.customer.currentCustomer);
 
@@ -60,10 +86,10 @@ function SingleProduct() {
     try {
       await axios.post("http://localhost:8070/api/cart/addToCart", {
         customerId: customer._id,
-        productId: product._id,
-        productName: product.name,
-        productCover: product.cover,
-        price: product.price,
+        productId: i,
+        productName: name,
+        productCover: cover,
+        price: price,
       });
       // alert("Product added to cart");
       cartAddSuccess();
@@ -85,13 +111,13 @@ function SingleProduct() {
           <div className="product-imgs">
             <div className="img-display">
               <div className="img-showcase">
-                <img src={`${product.cover}`} alt="" />
+                <img src={`${cover}`} alt="" />
               </div>
             </div>
           </div>
 
           <div className="product-content">
-            <h2 className="product-title">{product.name}</h2>
+            <h2 className="product-title">{name}</h2>
             <div className="product-rating">
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
@@ -104,14 +130,14 @@ function SingleProduct() {
             <div className="product-price">
               <b>
                 <p className="new-price">
-                  Price : <span>Rs.{product.price}.00</span>
+                  Price : <span>Rs.{price}.00</span>
                 </p>
               </b>
             </div>
 
             <div className="product-detail">
               <h2>about this item: </h2>
-              <p>{product.description}</p>
+              <p>{description}</p>
 
               <ul>
                 <li>

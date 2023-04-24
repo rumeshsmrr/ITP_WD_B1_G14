@@ -12,6 +12,8 @@ const productHRoute = require("./routes/productHroute");
 const cartRoute = require("./routes/cartRoute");
 const stripeRoute = require("./routes/stripe");
 const orderRoute = require("./routes/orderRoute");
+const productRoutes = require('./routes/products')
+
 // const employeeRoute = require("./routes/userRoute");
 app.use(cors());
 //environment variable
@@ -26,6 +28,8 @@ app.use("/api/producth", productHRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/checkout", stripeRoute);
 app.use("/api/order", orderRoute);
+app.use('/api/products' , productRoutes)
+
 // app.use("/api/user", employeeRoute);
 
 //routrs (PH)

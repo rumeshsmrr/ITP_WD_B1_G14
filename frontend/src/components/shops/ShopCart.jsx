@@ -14,6 +14,11 @@ const ShopCart = () => {
 
   const [products, setProducts] = useState([]);
 
+  const getProducts = async() => {
+    const {data} = await axios.get("http://localhost:8070/api/products/")
+    setProducts(data)
+  }
+
   //alert design
   const cartAddSuccess = () =>
     toast.success("🛒 Product Added to cart", {
@@ -51,17 +56,23 @@ const ShopCart = () => {
       theme: "colored",
     });
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8070/api/producth")
-      .then((response) => {
-        console.log(response.data.name);
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    console.log(products);
+
+    useEffect(() => {
+        getProducts()
+    } , [])
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8070/api/producth")
+  //     .then((response) => {
+  //       console.log(response.data.name);
+  //       setProducts(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   // useEffect(() => {
   //   const getProducts = async () => {
@@ -137,7 +148,7 @@ const ShopCart = () => {
                             customer._id,
                             shopItems._id,
                             shopItems.name,
-                            shopItems.cover,
+                            shopItems.cover, 
                             shopItems.price
                           )
                         : pleaseLogin()
