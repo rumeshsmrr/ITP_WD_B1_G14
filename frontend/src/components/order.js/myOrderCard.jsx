@@ -7,7 +7,8 @@ const MyOrderCard = ({ order }) => {
         <div className="order main-info d_flex">
           <div className="orderNo">Order No: {order._id}</div>
           <div className="placeData">
-            Placed data: {order.createdAt.substring(0, 10)}
+            Placed At: {order.createdAt.substring(0, 10)} :{" "}
+            {order.createdAt.substring(11, 19)}
           </div>
           <div className="address c_flex">
             <div className="placeData">Address : </div>

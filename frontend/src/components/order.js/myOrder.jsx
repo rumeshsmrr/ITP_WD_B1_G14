@@ -3,9 +3,7 @@ import styled from "styled-components";
 import "./myOrder.css";
 import Search from "../../common/header/Search";
 import Navbar from "../../common/header/Navbar";
-// import { useLocation } from "react-router-dom";
-// import { publicRequest } from "../../requestMethods";
-// import { useSelector } from "react-redux";
+
 import MyOrderCards from "./myOrderCards";
 
 import { useSelector } from "react-redux";
@@ -35,7 +33,7 @@ const Option = styled.option``;
 const MyOrder = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
   const [filters, setFilters] = useState({});
-  const [sort, setSort] = useState("oldest");
+  const [sort, setSort] = useState({});
 
   const handleFilters = (e) => {
     const value = e.target.value;
