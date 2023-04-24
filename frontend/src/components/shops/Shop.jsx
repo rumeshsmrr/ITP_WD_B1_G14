@@ -2,8 +2,9 @@ import React from "react";
 // import Catg from "./Catg"
 import ShopCart from "./ShopCart";
 import "./style.css";
+import { Link } from "react-router-dom";
 
-const Shop = ({ addToCart, shopItems }) => {
+const Shop = () => {
   return (
     <>
       <section className="shop background">
@@ -18,8 +19,9 @@ const Shop = ({ addToCart, shopItems }) => {
                 <i className="fa-solid fa-caret-right"></i>
               </div>
             </div>
+
             <div className="product-content  grid1">
-              <ShopCart addToCart={addToCart} shopItems={shopItems} />
+              <ShopCart />
             </div>
           </div>
         </div>

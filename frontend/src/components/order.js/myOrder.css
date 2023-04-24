@@ -1,22 +1,20 @@
 .smallImg {
-  width: 100px;
+  width: 30px;
 }
 
 .order-box {
   width: 90%;
   background: #fff;
 }
-
-.productName {
-  margin-left: 30px;
+.productImgCover {
+  width: 10%;
 }
-
 .myOrder .contentWidth {
   width: 100%;
 }
 
 .order .productName {
-  font-weight: 800;
+  font-weight: 600;
   color: #2c2c7b;
 }
 .order .order-subtitles {

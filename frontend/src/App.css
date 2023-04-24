@@ -13,7 +13,7 @@ body {
 }
 .background {
   background: #f6f9fc;
-  padding: 50px 0;
+  padding: 0px 0;
 }
 .container {
   max-width: 90%;
@@ -260,6 +260,7 @@ button {
 .heading .heading-right {
   text-align: right;
   color: grey;
+  cursor: pointer;
 }
 /*----- heading -------*/
 .grid {
@@ -281,4 +282,12 @@ button {
   border-radius: 8px;
   box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
   margin: 10px;
+}
+.cartError {
+  background-color: #f89fa1;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  color: #d12727;
 }

@@ -1,33 +1,70 @@
 import React from "react";
 
-const myOrderCard = (props) => {
+const MyOrderCard = ({ order }) => {
   return (
     <>
       <div className="box mtop">
-        <div className="order main-info">
-          <div className="orderNo">Order No: {props.id}</div>
-          <div className="placeData">Placed data: {props.data}</div>
-        </div>
-        <div className="order secondary-info c_flex">
-          <div className="img c_flex">
-            <img className="smallImg" src={props.cover} alt=""></img>
-            <div className="productName">{props.productName}</div>
+        <div className="order main-info d_flex">
+          <div className="orderNo">Order No: {order._id}</div>
+          <div className="placeData">
+            Placed data: {order.createdAt.substring(0, 10)}
           </div>
           <div className="address c_flex">
-            <div className="order-subtitles">Address : </div>
-            <div className="product-address">{props.address}</div>
+            <div className="placeData">Address : </div>
+            <div className="product-address">{order.address}</div>
           </div>
+          <div>Total : {order.total}</div>
+          <div>{order.status.toUpperCase()}</div>
+        </div>
+        <div className="order secondary-info">
+          <table style={{ width: "100%" }}>
+            <thead
+              style={{
+                width: "100%",
 
-          <div className="qty c_flex">
-            <div className="order-subtitles">quantity : </div>
-            <div>{props.quantity}</div>
-          </div>
-
-          <div>{props.status}</div>
+                alignItems: "center",
+                marginTop: "0px",
+                marginBottom: "20px",
+              }}
+            >
+              <tr>
+                <th style={{ width: "10%" }}></th>
+                <th style={{ width: "80%", textAlign: "left" }}>Product</th>
+                <th style={{ width: "10%", margin: "10px" }}>Price </th>
+                <th style={{ width: "10%" }}>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {order.products.map((order) => (
+                <tr key={order._id}>
+                  <th style={{ width: "10%" }}>
+                    <img
+                      className="smallImg"
+                      src={order.product.cover}
+                      alt=""
+                    />
+                  </th>
+                  <td style={{ width: "70%" }}>{order.product.name}</td>
+                  <td
+                    style={{
+                      width: "10%",
+                      margin: "10px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {order.product.price}
+                  </td>
+                  <td style={{ width: "10%", textAlign: "center" }}>
+                    {order.quantity}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>
   );
 };
 
-export default myOrderCard;
+export default MyOrderCard;

@@ -99,3 +99,28 @@
   text-align: center;
   cursor: pointer;
 }
+
+.clearCart {
+  /* background-color: red; */
+  /* margin-left: 20px; */
+  /* width: 70%; */
+  margin-top: 40px;
+  margin-left: 75%;
+  color: #67bae4;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cartHeader {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.payError {
+  background-color: #f89fa1;
+  color: #d12727;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}

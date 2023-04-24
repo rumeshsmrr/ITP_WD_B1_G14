@@ -1,27 +1,34 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const cartSchema = new Schema(
+const cartSchema = new mongoose.Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "customerSchema",
+    customerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "customers",
       required: true,
     },
-    products: [
-      {
-        product: {
-          type: Schema.Types.ObjectId,
-          ref: "productSchema",
-          required: true,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-          default: 1,
-        },
-      },
-    ],
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "producths",
+      required: true,
+    },
+    productName: {
+      type: String,
+      // required: true,
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      default: 1,
+    },
+    productCover: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );

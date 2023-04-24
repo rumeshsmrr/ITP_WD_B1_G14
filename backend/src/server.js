@@ -1,17 +1,19 @@
 const express = require("express");
 const env = require("dotenv");
 const app = express();
-const cors= require ("cors")
+var cors = require("cors");
 // const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 //routes
 const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/authRoute");
+const productHRoute = require("./routes/productHroute");
+const cartRoute = require("./routes/cartRoute");
+const stripeRoute = require("./routes/stripe");
+const orderRoute = require("./routes/orderRoute");
 // const employeeRoute = require("./routes/userRoute");
-
-app.use(cors())
-
+app.use(cors());
 //environment variable
 env.config();
 
@@ -20,6 +22,10 @@ app.use(express.json());
 //Routes
 app.use("/api/customers", customerRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/producth", productHRoute);
+app.use("/api/cart", cartRoute);
+app.use("/api/checkout", stripeRoute);
+app.use("/api/order", orderRoute);
 // app.use("/api/user", employeeRoute);
 
 //routrs (PH)

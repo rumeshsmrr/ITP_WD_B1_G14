@@ -3,16 +3,16 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "customerSchema",
+    customer: {
+      type: mongoose.Types.ObjectId,
+      ref: "Customer",
       required: true,
     },
     products: [
       {
         product: {
-          type: Schema.Types.ObjectId,
-          ref: "productSchema",
+          type: mongoose.Types.ObjectId,
+          ref: "ProductH",
           required: true,
         },
         quantity: {
@@ -27,7 +27,7 @@ const orderSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ["placed", "processed", "shipped", "delivered"],
+      enum: ["placed", "processed", "delivering", "delivered"],
       default: "placed",
       required: true,
     },
