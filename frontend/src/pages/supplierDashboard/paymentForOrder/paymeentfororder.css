@@ -1,0 +1,218 @@
+ .H_A_Topic{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 1000;
+}
+
+.H_P_O_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    background: #f5f2f2;
+}
+
+.H_P_O_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+    
+}
+/*
+.H_P_O_container .H_P_O_box1 .H_P_O_content{
+    position: relative;
+    z-index: 10;
+    padding: 40px 40px;
+    
+}
+
+.H_P_O_form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
+  .H_P_O_title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .H_P_O_subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+
+  .H_P_O_row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .H_P_O_col-sm-12 {
+    width: 100%;
+  }
+  
+  .H_P_O_form-group {
+    width: 80%;
+  }
+  
+  .H_P_O_form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  } 
+  
+   .H_P_O_form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .H_P_O_form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px; 
+  }
+  
+  .H_P_O_form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    font-size: 20px; 
+  }
+  
+  
+  .H_P_O_btn {
+    border-radius: 5px;
+    border: none;
+    color: #921c1c;
+  } */
+
+
+
+  /* .H_P_O_body {
+    background-color: #f5f5f5;
+    padding: 30px;
+  }
+  
+  .H_P_O_container {
+    max-width: 1000px;
+    margin: 0 auto;
+  } */
+  
+  .H_P_O_box1 {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .H_P_O_content {
+    margin-top: 20px;
+  }
+  
+  .H_P_O_form {
+    margin-bottom: 30px;
+  }
+  
+  .H_P_O_title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .H_P_O_subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .H_P_O_row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .H_P_O_col-sm-12 {
+    width: 100%;
+  }
+  
+  .H_P_O_form-group {
+    width: 80%;
+  }
+  
+  .H_P_O_form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  } 
+  
+   .H_P_O_form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .H_P_O_form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px; /* added font-size property */
+  }
+  
+  .H_P_O_form-group input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px; /* changed width to 150px */
+    font-size: 18px; /* added font-size property */
+  }
+  
+  
+  .H_P_O_btn {
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .H_P_O_btn.btn-success {
+    background-color: #28a745;
+  }
+  
+  .H_P_O_btn.btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .H_P_O_btn.mx-1 {
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 767px) {
+    .H_P_O_form-group.col-md-4 {
+      width: 100%;
+    }
+  }
+  
+
+
+   

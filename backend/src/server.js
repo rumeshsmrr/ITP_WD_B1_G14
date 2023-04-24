@@ -13,9 +13,7 @@ const cartRoute = require("./routes/cartRoute");
 const stripeRoute = require("./routes/stripe");
 const orderRoute = require("./routes/orderRoute");
 // const employeeRoute = require("./routes/userRoute");
-
 app.use(cors());
-
 //environment variable
 env.config();
 
@@ -29,6 +27,16 @@ app.use("/api/cart", cartRoute);
 app.use("/api/checkout", stripeRoute);
 app.use("/api/order", orderRoute);
 // app.use("/api/user", employeeRoute);
+
+//routrs (PH)
+const suplierRoutes =require("./routes/supplier");
+app.use("/api/v1", suplierRoutes); //(PH)
+
+const itemPurchaseRoutes = require("./routes/itemPurchasingRoute")
+app.use("/api/itemPur" ,itemPurchaseRoutes )
+
+const paymentForPurchase = require("./routes/supplier")
+app.use("/api/v1/purchase", paymentForPurchase);
 
 //connection to db
 mongoose

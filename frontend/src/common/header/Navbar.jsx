@@ -29,20 +29,15 @@ const Navbar = () => {
               <li>
                 <Link to="/contact">Second Hand Items</Link>
               </li>
-              {customer ? (
-                <li>
-                  <Link to="/cusLogIn">Logout</Link>
-                </li>
-              ) : (
-                <>
-                  <li>
-                    <Link to="/customerSignIn">Sign In</Link>
-                  </li>
-                  <li>
-                    <Link to="/cusLogIn">Log In</Link>
-                  </li>{" "}
-                </>
-              )}
+              <li>
+                <Link to="/customerSignIn">Sign In</Link>
+              </li>
+              <li>
+                <Link to="/cusLogin">Log In</Link>
+              </li>
+              <li>
+                <Link to="/supplier">sup</Link>
+              </li>
             </ul>
 
             <button
