@@ -186,7 +186,7 @@ export default function AdminDashboard() {
                               color:"#0c2a4d",
                               fontWeight: "bold",
                               fontSize: "22px",
-                              width: "150px",
+                              width: "450px",
                             }}
                             scope="col"
                           >
@@ -210,7 +210,7 @@ export default function AdminDashboard() {
                               color:"#0c2a4d",
                               fontWeight: "bold",
                               fontSize: "22px",
-                              width: "250px",
+                              width: "500px",
                             }}
                             scope="col"
                           >
