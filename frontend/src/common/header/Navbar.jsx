@@ -30,14 +30,24 @@ const Navbar = () => {
                 <Link to="/contact">Second Hand Items</Link>
               </li>
               <li>
-                <Link to="/customerSignIn">Sign In</Link>
-              </li>
-              <li>
-                <Link to="/cusLogin">Log In</Link>
-              </li>
-              <li>
                 <Link to="/supplier">sup</Link>
               </li>
+              {customer ? (
+                <>
+                  <li>
+                    <Link to="">LogOut</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/customerSignIn">Sign In</Link>
+                  </li>
+                  <li>
+                    <Link to="/cusLogin">Log In</Link>
+                  </li>
+                </>
+              )}
             </ul>
 
             <button
