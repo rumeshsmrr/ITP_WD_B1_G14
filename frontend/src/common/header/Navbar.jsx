@@ -41,6 +41,11 @@ const Navbar = () => {
               <li>
                 <Link to="/LogIn">Log In</Link>
               </li>
+              
+              {/* (PH) */}
+              <li>
+                <Link to="/Supplier">Supplier</Link>
+              </li>
             </ul>
 
             <button

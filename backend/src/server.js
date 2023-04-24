@@ -1,6 +1,7 @@
 const express = require("express");
 const env = require("dotenv");
 const app = express();
+const cors= require ("cors")
 // const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -8,6 +9,8 @@ const mongoose = require("mongoose");
 const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/authRoute");
 // const employeeRoute = require("./routes/userRoute");
+
+app.use(cors())
 
 //environment variable
 env.config();
@@ -18,6 +21,16 @@ app.use(express.json());
 app.use("/api/customers", customerRoutes);
 app.use("/api/auth", authRoutes);
 // app.use("/api/user", employeeRoute);
+
+//routrs (PH)
+const suplierRoutes =require("./routes/supplier");
+app.use("/api/v1", suplierRoutes); //(PH)
+
+const itemPurchaseRoutes = require("./routes/itemPurchasingRoute")
+app.use("/api/itemPur" ,itemPurchaseRoutes )
+
+const paymentForPurchase = require("./routes/supplier")
+app.use("/api/v1/purchase", paymentForPurchase);
 
 //connection to db
 mongoose

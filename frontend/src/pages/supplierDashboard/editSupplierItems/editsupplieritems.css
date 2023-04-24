@@ -1,0 +1,228 @@
+.H_A_I_E_Topic{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 1000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.H_A_I_E_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    background: #f5f2f2;
+}
+
+.H_A_I_E_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+    
+}
+
+/* .H_A_container .H_A_box2 {
+    position: relative;
+    width: 1700px;
+    height: 600px;
+    color: #000000;
+    background: #dfdada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    transition: 0.5s;
+    border-radius: 5%;
+
+} */
+
+
+
+.H_A_I_E_container .H_A_I_E_box2 h1{
+    position: relative;
+    width: 500px;
+    height: 60px;
+    color: #000000;
+    background: #c0c3c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    transition: 0.5s;
+    border-radius: 10%;
+    
+
+}
+
+.H_A_I_E_container .H_A_I_E_box1 .H_A_I_E_content{
+    position: relative;
+    z-index: 10;
+    padding: 40px 40px;
+    
+}
+
+.H_A_I_E_container .H_A_I_E_box2 h1{
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+}
+
+
+
+/* from */
+
+
+
+/* body {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  } */
+  
+  .H_A_I_E_form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 750px;
+    padding: 20px;
+    width: 520px;
+  }
+  
+  .H_A_I_E_title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .H_A_I_E_subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .H_A_I_E_input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+
+  .ic3 {
+    margin-top: 30px;
+  }
+  .ic4 {
+    margin-top: 30px;
+  }
+  .ic5 {
+    margin-top: 30px;
+  }
+  .ic6 {
+    margin-top: 30px;
+  }
+  
+  .H_A_I_E_input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .H_A_I_E_cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 200px;
+  }
+  
+  .H_A_I_E_cut-short {
+    width: 50px;
+  }
+  
+  .H_A_I_E_input:focus ~ .H_A_I_E_cut,
+  .H_A_I_E_input:not(:placeholder-shown) ~ .H_A_I_E_cut {
+    transform: translateY(8px);
+  }
+  
+  .H_A_I_E_placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .H_A_I_E_input:focus ~ .H_A_I_E_placeholder,
+  .H_A_I_E_input:not(:placeholder-shown) ~ .H_A_I_E_placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .H_A_I_E_input:not(:placeholder-shown) ~ .H_A_I_E_placeholder {
+    color: #808097;
+  }
+  
+  .H_A_I_E_input:focus ~ .H_A_I_E_placeholder {
+    color: #dc2f55;
+  }
+  
+  .H_A_I_E_submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+
+    text-align: center;
+    width: 100%;
+  }
+  
+  .H_A_I_E_submit:active {
+    background-color: #06b;
+  }
+  
+
+/* .btn_btn-info_mt-2{
+    font-size: 32px;
+    color: #333;
+} */

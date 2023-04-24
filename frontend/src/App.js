@@ -8,8 +8,17 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import MyOrder from "./components/order.js/myOrder";
-import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
+// import CustomerSignIn from "./pages/CustomerSignIn/CustomerSignIn";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Dashboard from "./pages/supplierDashboard/dashboard";
+import AddSupplier from "./pages/supplierDashboard/addSupplier/addsupplier";
+import EditSupplier from "./pages/supplierDashboard/editSupplier/editsupplier";
+import AddSupplierItems from "./pages/supplierDashboard/addSupplierItems/addsupplieritems";
+import EditSupplierItem from "./pages/supplierDashboard/editSupplierItems/editsupplieritems";
+import PurchasingItems from "./pages/supplierDashboard/purchasingItems/addOrderItem";
+import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfororder";
+import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
 
 function App() {
   //Step 1 :
@@ -121,6 +130,40 @@ function App() {
               />
             }
           ></Route>
+
+          
+            <Route path="/supplier"
+            exact
+            element={<Dashboard CartItem={CartItem}/>}/>
+
+            <Route path="/AddSupplier" 
+            exact
+            element={<AddSupplier CartItem={CartItem}/>}/>
+
+            <Route path="/edit/:id" 
+            exact
+            element={<EditSupplier CartItem={CartItem}/>}/>
+
+            <Route path="/AddSupplieritem" 
+            exact
+            element={<AddSupplierItems CartItem={CartItem}/>}/>
+
+            <Route path="/edits/:id" 
+            exact
+            element={<EditSupplierItem CartItem={CartItem}/>}/>
+
+            <Route path="/viewUniqueItem" 
+            exact
+            element={<SupplierUniqueItem CartItem={CartItem}/>}/>
+
+            <Route path="/Purchasingitems" 
+            exact
+            element={<PurchasingItems CartItem={CartItem}/>}/>
+
+            <Route path="/Paymentfororder" 
+            exact
+            element={<PaymentForOrder CartItem={CartItem}/>}/>
+
         </Routes>
       </BrowserRouter>
     </>
