@@ -96,7 +96,8 @@ export default function AdminDashboard() {
       });
     }
     return (
-      <div>
+      <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+      backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"700px"}}>
         <div>
           <div>
             <div></div>
