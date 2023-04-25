@@ -4,8 +4,7 @@ import axios from 'axios';
 
 import "./editsupplier.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+import Navbar from '../../poornaka/Navbar'
 
 const EditSupplier = ({CartItem}) => {
     const {id} = useParams();
@@ -30,15 +29,15 @@ const EditSupplier = ({CartItem}) => {
     const handelEditData = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:8070/api/v1/sup/${id}`, input);
-        navigate("/");
+        navigate("/AddSupplier");
     };
 
     return (
         <>
-        <Search CartItem={CartItem}/>
-        <Nav/>
 
-        <div className='H_E_Topic'>EDIT SUPPLIERS REGISTRATION DETAILS</div>
+        <Navbar/>
+
+        <div className='H_E_Topic' style={{marginTop:"100px"}}>EDIT REGISTRATION DETAILS</div>
 
         <div className='H_E_body'>
 
@@ -62,13 +61,14 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="regNumber" class="H_E_placeholder">Supplie Rgistration Number</label>
+                                <label for="regNumber" class="H_E_placeholder">Rgistration Number</label>
                                 
                             </div>
 
                             <div class="H_E_input-container ic2">
                                 <input id="supname" class="H_E_input" type="text" placeholder=" " 
                                     name="supName"
+                                    required
                                     value = {input.supName}
                                     onChange={(e) =>
                                         setInput({...input, [e.target.name] : e.target.value})
@@ -80,50 +80,54 @@ const EditSupplier = ({CartItem}) => {
                             <div class="H_E_input-container ic3">
                                 <input id="contnnum" class="H_E_input" type="text" placeholder=" " 
                                     name="supContNum"
+                                    required
                                     value = {input.supContNum}
                                     onChange={(e) =>
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="contnnum" class="H_E_placeholder">Supplier Contact Number</label>
+                                <label for="contnnum" class="H_E_placeholder">Contact Number</label>
                             </div>
 
                             <div class="H_E_input-container ic4">
                                 <input id="address" class="H_E_input" type="text" placeholder=" " 
                                     name="supAddr"
+                                    required
                                     value = {input.supAddr}
                                     onChange={(e) =>
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="address" class="H_E_placeholder">Supplier Address</label>
+                                <label for="address" class="H_E_placeholder">Address</label>
                             </div>
 
                             <div class="H_E_input-container ic5">
                                 <input id="mail" class="H_E_input" type="text" placeholder=" " 
                                     name="supMail"
+                                    required
                                     value = {input.supMail}
                                     onChange={(e) =>
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="mail" class="H_E_placeholder">Supplier E-mail Address</label>
+                                <label for="mail" class="H_E_placeholder">E-mail Address</label>
                             </div>
 
                             <div class="H_E_input-container ic6">
                                 <input id="description" class="H_E_input" type="text" placeholder=" " 
                                 name="description"
+                                required
                                 value = {input.description}
                                 onChange={(e) =>
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="description" class="H_E_placeholder">Discription</label>
+                                <label for="description" class="H_E_placeholder">Description</label>
                             </div>
 
-                            <button type="submit" class="H_E_submit">SUBMIT</button>
+                            <button type="submit" class="H_E_submit" >SUBMIT</button>
 
-                            <button onClick={()=>navigate("/Supplier")} className="H_E_submit">Go To Supplier Dashboard</button>
+                            {/* <button onClick={()=>navigate("/AddSupplier")} className="H_E_submit">Go To Supplier Dashboard</button> */}
 
                         </form>
                     </div>

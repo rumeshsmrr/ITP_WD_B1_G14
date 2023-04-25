@@ -23,6 +23,15 @@ import EditUser from "./pages/poornaka/EditUser";
 import Profile from "./pages/poornaka/Profile";
 import ViewAttendance from "./pages/poornaka/ViewAttendance";
 
+import Dashboard from "./pages/supplierDashboard/dashboard";
+import AddSupplier from "./pages/supplierDashboard/addSupplier/addsupplier";
+import EditSupplier from "./pages/supplierDashboard/editSupplier/editsupplier";
+import AddSupplierItems from "./pages/supplierDashboard/addSupplierItems/addsupplieritems";
+import EditSupplierItem from "./pages/supplierDashboard/editSupplierItems/editsupplieritems";
+import PurchasingItems from "./pages/supplierDashboard/purchasingItems/addOrderItem";
+import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfororder";
+import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
+
 
 function App() {
   //Step 1 :
@@ -148,6 +157,41 @@ function App() {
           <Route path="editUser" exact element={<EditUser />} />
           <Route path="/profile" exact element={<Profile />} />
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
+          
+
+
+          <Route path="/supplier"
+            exact
+            element={<Dashboard/>}/>
+
+            <Route path="/AddSupplier" 
+            exact
+            element={<AddSupplier/>}/>
+
+            <Route path="/edit/:id" 
+            exact
+            element={<EditSupplier/>}/>
+
+            <Route path="/AddSupplieritem" 
+            exact
+            element={<AddSupplierItems/>}/>
+
+            <Route path="/edits/:id" 
+            exact
+            element={<EditSupplierItem/>}/>
+
+            <Route path="/viewUniqueItem" 
+            exact
+            element={<SupplierUniqueItem/>}/>
+
+            <Route path="/Purchasingitems" 
+            exact
+            element={<PurchasingItems/>}/>
+
+            <Route path="/Paymentfororder" 
+            exact
+            element={<PaymentForOrder/>}/>
+
         </Routes>
       </BrowserRouter>
     </>
