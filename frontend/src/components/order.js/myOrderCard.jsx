@@ -51,9 +51,7 @@ const MyOrderCard = ({ order }) => {
                       margin: "10px",
                       textAlign: "center",
                     }}
-                  >
-                    {order.product.price}
-                  </td>
+                  ></td>
                   <td style={{ width: "10%", textAlign: "center" }}>
                     {order.quantity}
                   </td>
