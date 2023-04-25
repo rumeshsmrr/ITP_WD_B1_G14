@@ -47,7 +47,7 @@ const EditSupplierItem = ({CartItem}) => {
 
                 <div class="H_A_I_E_form">
                     <div class="H_A_I_E_title">Welcome</div>
-                    <div class="H_A_I_E_subtitle">Let's can you edit suppliers supply items !</div>
+                    <div class="H_A_I_E_subtitle"><strong>Let's can you edit suppliers supply items !</strong></div><br/><br/>
 
                     <form onSubmit={handelEditData}>
                         <div class="H_A_I_E_input-container ic1">
@@ -60,9 +60,9 @@ const EditSupplierItem = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_E_cut"></div>
-                            <label for="regNumber" class="H_A_I_E_placeholder">Rgistration Number</label>
+                            <label for="regNumber" class="H_A_I_E_placeholder"><strong>Registration Number</strong></label>
                             
-                        </div>
+                        </div><br/>
 
                         <div class="H_A_I_E_input-container ic2">
                             <input id="supname" class="H_A_I_E_input" type="text" placeholder=" " 
@@ -73,8 +73,8 @@ const EditSupplierItem = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_E_cut"></div>
-                            <label for="supname" class="H_A_I_E_placeholder">Supplier Name</label>
-                        </div>
+                            <label for="supname" class="H_A_I_E_placeholder"><strong>Supplier Name</strong></label>
+                        </div><br/>
 
                         <div class="H_A_I_E_input-container ic3">
                             <input id="itemName" class="H_A_I_E_input" type="text" placeholder=" " 
@@ -85,8 +85,8 @@ const EditSupplierItem = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_E_cut"></div>
-                            <label for="itemName" class="H_A_I_E_placeholder">Item Name</label>
-                        </div>
+                            <label for="itemName" class="H_A_I_E_placeholder"><strong>Item Name</strong></label>
+                        </div><br/>
 
                         {/* <div class="H_A_I_E_input-container ic4">
                             <input id="price" class="H_A_I_E_input" type="text" placeholder=" " 
@@ -108,8 +108,8 @@ const EditSupplierItem = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_E_cut"></div>
-                            <label for="descrip" class="H_A_I_E_placeholder">Item Description</label>
-                        </div>
+                            <label for="descrip" class="H_A_I_E_placeholder"><strong>Item Description</strong></label>
+                        </div><br/>
 
 
                         <button type="submit" class="H_A_I_E_submit">SUBMIT</button>
