@@ -103,7 +103,7 @@ const AddSupplier = ({CartItem}) => {
     function handlePdfGeneration() {
     const doc = new jsPDF();
 
-    const header = [["Supplie Rgistration Number", "Supplier Name", "Supplier Contact Number", "Supplier Address", "Supplier E-mail Address", "Discription"]];
+    const header = [["Registration Number", "Supplier Name", "Contact Number", "Address", "E-mail Address", "Description"]];
 
     const tableRows = [];
 
@@ -180,7 +180,7 @@ const AddSupplier = ({CartItem}) => {
 
                 <div class="H_A_form">
                     <div class="H_A_title">Welcome</div>
-                    <div class="H_A_subtitle">Let's can you add new suppliers to the system!</div>
+                    <div class="H_A_subtitle"><strong>Let's can you add new suppliers to the system!</strong></div><br/><br/>
 
                     <form onSubmit={handelSubmit}>
                         <div class="H_A_input-container ic1">
@@ -193,9 +193,9 @@ const AddSupplier = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="regNumber" class="H_A_placeholder">Rgistration Number</label>
+                            <label for="regNumber" class="H_A_placeholder"><strong>Registration Number</strong></label>
                             
-                        </div>
+                        </div><br/>
 
                         <div class="H_A_input-container ic2">
                             <input id="supname" class="H_A_input" type="text" placeholder=" " 
@@ -206,8 +206,8 @@ const AddSupplier = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="supname" class="H_A_placeholder">Supplier Name</label>
-                        </div>
+                            <label for="supname" class="H_A_placeholder"><strong>Supplier Name</strong></label>
+                        </div><br/>
 
                         <div class="H_A_input-container ic3">
                             <input id="contnnum" class="H_A_input" type="text" pattern='^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}' placeholder=" " 
@@ -218,8 +218,8 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="contnnum" class="H_A_placeholder">Contact Number</label>
-                        </div>
+                            <label for="contnnum" class="H_A_placeholder"><strong>Contact Number</strong></label>
+                        </div><br/>
 
                         <div class="H_A_input-container ic4">
                             <input id="address" class="H_A_input" type="text" placeholder=" " 
@@ -230,8 +230,8 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="address" class="H_A_placeholder">Address</label>
-                        </div>
+                            <label for="address" class="H_A_placeholder"><strong>Address</strong></label>
+                        </div><br/>
 
                         <div class="H_A_input-container ic5">
                             <input id="mail" class="H_A_input" type="email" placeholder=" " 
@@ -242,8 +242,8 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="mail" class="H_A_placeholder">E-mail Address</label>
-                        </div>
+                            <label for="mail" class="H_A_placeholder"><strong>E-mail Address</strong></label>
+                        </div><br/>
 
                         <div class="H_A_input-container ic6">
                             <input id="description" class="H_A_input" type="text" placeholder=" " 
@@ -254,8 +254,8 @@ const AddSupplier = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="description" class="H_A_placeholder">Description</label>
-                        </div>
+                            <label for="description" class="H_A_placeholder"><strong>Description</strong></label>
+                        </div><br/>
                         
                         <button type="submit" class="H_A_submit">SUBMIT</button>
                         
@@ -365,12 +365,12 @@ const AddSupplier = ({CartItem}) => {
                 <div className='H_A_content'>
 
 
-                <div className="col-md-6">
-            <table class="table">
+                <div className="H_A_col-md-6">
+            <table class="H_A_table">
             <thead>
                 <tr>
                     {/* <th scope="col">ID</th> */}
-                    <th scope="col">Rgistration Number</th>
+                    <th scope="col">Registration Number</th>
                     <th scope="col">Supplier Name</th>
                     <th scope="col">Contact Number</th>
                     <th scope="col">Address</th>
@@ -467,11 +467,11 @@ const AddSupplier = ({CartItem}) => {
                                 <td>{supplier.description}</td>
                             <td>
                                     <Link to = {`/edit/${supplier._id}`}>
-                                    <button className="btn btn-primary">Edit</button>
+                                    <button className="H_A_btn_btn-primary">Edit</button>
                                     </Link>
                                     </td>
                                 <td><button onClick={() => handelDelete(supplier._id) }
-                                className="btn btn-danger">Delete</button></td>
+                                className="H_A_btn_btn-danger">Delete</button></td>
                      
                         </tr>
                     ))

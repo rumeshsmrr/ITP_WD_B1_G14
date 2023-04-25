@@ -49,7 +49,7 @@ const EditSupplier = ({CartItem}) => {
 
                     <div class="H_E_form">
                         <div class="H_E_title">Welcome</div>
-                        <div class="H_E_subtitle">Let's can you edit suppliers registration details!</div>
+                        <div class="H_E_subtitle"><strong>Let's can you edit suppliers registration details!</strong></div><br/><br/>
 
                         <form onSubmit={handelEditData}>
                             <div class="H_E_input-container ic1">
@@ -61,9 +61,9 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="regNumber" class="H_E_placeholder">Rgistration Number</label>
+                                <label for="regNumber" class="H_E_placeholder"><strong>Registration Number</strong></label>
                                 
-                            </div>
+                            </div><br/>
 
                             <div class="H_E_input-container ic2">
                                 <input id="supname" class="H_E_input" type="text" placeholder=" " 
@@ -74,8 +74,8 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="supname" class="H_E_placeholder">Supplier Name</label>
-                            </div>
+                                <label for="supname" class="H_E_placeholder"><strong>Supplier Name</strong></label>
+                            </div><br/>
 
                             <div class="H_E_input-container ic3">
                                 <input id="contnnum" class="H_E_input" type="text" placeholder=" " 
@@ -86,8 +86,8 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="contnnum" class="H_E_placeholder">Contact Number</label>
-                            </div>
+                                <label for="contnnum" class="H_E_placeholder"><strong>Contact Number</strong></label>
+                            </div><br/>
 
                             <div class="H_E_input-container ic4">
                                 <input id="address" class="H_E_input" type="text" placeholder=" " 
@@ -98,8 +98,8 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="address" class="H_E_placeholder">Address</label>
-                            </div>
+                                <label for="address" class="H_E_placeholder"><strong>Address</strong></label>
+                            </div><br/>
 
                             <div class="H_E_input-container ic5">
                                 <input id="mail" class="H_E_input" type="text" placeholder=" " 
@@ -110,8 +110,8 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="mail" class="H_E_placeholder">E-mail Address</label>
-                            </div>
+                                <label for="mail" class="H_E_placeholder"><strong>E-mail Address</strong></label>
+                            </div><br/>
 
                             <div class="H_E_input-container ic6">
                                 <input id="description" class="H_E_input" type="text" placeholder=" " 
@@ -122,8 +122,8 @@ const EditSupplier = ({CartItem}) => {
                                         setInput({...input, [e.target.name] : e.target.value})
                                     }/>
                                 <div class="H_E_cut"></div>
-                                <label for="description" class="H_E_placeholder">Description</label>
-                            </div>
+                                <label for="description" class="H_E_placeholder"><strong>Description</strong></label>
+                            </div><br/>
 
                             <button type="submit" class="H_E_submit" >SUBMIT</button>
 
