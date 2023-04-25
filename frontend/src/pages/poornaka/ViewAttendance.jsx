@@ -3,6 +3,8 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./styles/profile.css";
+import Footer from "../../common/footer/Footer";
+import Navbar from "./Navbar";
 
 export default function ViewAttendance() {
   //get state values
@@ -30,10 +32,12 @@ export default function ViewAttendance() {
     }
   };
   return (
-    <div>
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
+      <Navbar/>
       {loading && (
         <div className="container">
-          <div className="addUser-card">
+          <div className="att-card">
             {console.log("att>>>>", attendance)}
             {attendance?.length === 0 ? (
               <h1>No attendance records found</h1>
@@ -60,6 +64,8 @@ export default function ViewAttendance() {
           </div>
         </div>
       )}
+      <br/><br/>
+      <Footer/>
     </div>
   );
 }
