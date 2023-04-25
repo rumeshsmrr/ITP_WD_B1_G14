@@ -9,8 +9,9 @@ import 'jspdf-autotable';
 
 import "./addsupplieritems.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+// import Nav from "../../../common/header/Navbar"
+// import Search from "../../../common/header/Search"
+import Navbar from '../../poornaka/Navbar'
 
 const AddSupplierItems = ({CartItem}) => {
     const [search, setSearch] = useState('')
@@ -57,9 +58,9 @@ const AddSupplierItems = ({CartItem}) => {
     //     navigate("/viewUniqueItem", { state : data})
     // };
 
-    const UniqueSupplierItem = (supplier) => {
-        navigate("/viewUniqueItem", { state : supplier})
-    };
+    // const UniqueSupplierItem = (supplier) => {
+    //     navigate("/viewUniqueItem", { state : supplier})
+    // };
 
     function handlePdfGeneration() {
         const doc = new jsPDF();
@@ -113,10 +114,9 @@ const AddSupplierItems = ({CartItem}) => {
 
     return (
         <>
-        <Search CartItem={CartItem}/>
-        <Nav/>
+        <Navbar/>
 
-        <div className='H_A_I_Topic'>ADD SUPPLIERS SUPPLY ITEMS</div>
+        <div className='H_A_I_Topic' style={{marginTop:"100px"}}>ADD SUPPLIERS SUPPLY ITEMS</div>
 
         <div class="H_A_I_search-container">
             <input className='H_A_I_search' onChange={(e) => setSearch(e.target.value)} placeholder='Search...'></input>
@@ -160,7 +160,7 @@ const AddSupplierItems = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_cut"></div>
-                            <label for="regNumber" class="H_A_I_placeholder">Supplie Rgistration Number</label>
+                            <label for="regNumber" class="H_A_I_placeholder">Rgistration Number</label>
                             
                         </div>
 
@@ -229,9 +229,9 @@ const AddSupplierItems = ({CartItem}) => {
                     <thead>
                         <tr>
                             {/* <th scope="col">ID</th> */}
-                            <th scope="col">Supplie Rgistration Number:</th>
+                            <th scope="col">Rgistration Number:</th>
                             <th scope="col">Supplier Name:</th>
-                            <th scope="col">Supplier Supply Item Name:</th>
+                            <th scope="col">Item Name:</th>
                             {/* <th scope="col">Item Price:</th> */}
                             <th scope="col">Item Description:</th>
                             <th scope="col">Edit</th>
@@ -265,7 +265,7 @@ const AddSupplierItems = ({CartItem}) => {
                                     <td><button onClick={() => handelDelete(supplier._id)}
                                         className="btn btn-danger">Delete</button></td>
                                 
-                                    <td><button className='quniuebtn' onClick={() => UniqueSupplierItem(supplier._id)}> UniqueItem </button></td>
+                                    {/* <td><button className='quniuebtn' onClick={() => UniqueSupplierItem(supplier._id)}> UniqueItem </button></td> */}
 
                                 </tr>
                             ))
@@ -276,11 +276,12 @@ const AddSupplierItems = ({CartItem}) => {
                 </div>
             </div>
 
-            <button type="submit" class="H_A_Genarate" onClick={handlePdfGeneration}>
-                Generate PDF
-            </button>
+            
         </div>
     </div>
+                <button type="submit" class="H_A_Genarate" onClick={handlePdfGeneration}>
+                    Generate PDF
+                </button><br/>
         <Footer/>
         </>
       )

@@ -4,8 +4,7 @@ import axios from 'axios';
 
 import "./editsupplieritems.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+import Navbar from '../../poornaka/Navbar'
 
 const EditSupplierItem = ({CartItem}) => {
     const {id} = useParams();
@@ -28,15 +27,15 @@ const EditSupplierItem = ({CartItem}) => {
     const handelEditData = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:8070/api/v1/supitem/${id}`, input);
-        navigate("/");
+        navigate("/AddSupplieritem");
     }
   return (
     <>
-    <Search CartItem={CartItem}/>
-    <Nav/>
+    
+    <Navbar/>
 
 
-    <div className='H_A_I_E_Topic'>ADD SUPPLIERS SUPPLY ITEMS</div>
+    <div className='H_A_I_E_Topic' style={{marginTop:"100px"}}>EDIT SUPPLIERS SUPPLY ITEMS</div>
         
         <div className='H_A_I_E_body'>
 
@@ -48,25 +47,27 @@ const EditSupplierItem = ({CartItem}) => {
 
                 <div class="H_A_I_E_form">
                     <div class="H_A_I_E_title">Welcome</div>
-                    <div class="H_A_I_E_subtitle">Let's can you add suppliers supply items in to the system!</div>
+                    <div class="H_A_I_E_subtitle">Let's can you edit suppliers supply items !</div>
 
                     <form onSubmit={handelEditData}>
                         <div class="H_A_I_E_input-container ic1">
 
                             <input id="regNumber" class="H_A_I_E_input" type="text" placeholder=" " 
                                 name="supRegNum"
+                                required
                                 value = {input.supRegNum}
                                 onChange={(e) =>
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_E_cut"></div>
-                            <label for="regNumber" class="H_A_I_E_placeholder">Supplie Rgistration Number</label>
+                            <label for="regNumber" class="H_A_I_E_placeholder">Rgistration Number</label>
                             
                         </div>
 
                         <div class="H_A_I_E_input-container ic2">
                             <input id="supname" class="H_A_I_E_input" type="text" placeholder=" " 
                                 name="supName"
+                                required
                                 value = {input.supName}
                                 onChange={(e) =>
                                     setInput({...input, [e.target.name] : e.target.value})
@@ -78,6 +79,7 @@ const EditSupplierItem = ({CartItem}) => {
                         <div class="H_A_I_E_input-container ic3">
                             <input id="itemName" class="H_A_I_E_input" type="text" placeholder=" " 
                                 name="itemName"
+                                required
                                 value = {input.itemName}
                                 onChange={(e) =>
                                      setInput({...input, [e.target.name] : e.target.value})
@@ -100,6 +102,7 @@ const EditSupplierItem = ({CartItem}) => {
                         <div class="H_A_I_E_input-container ic5">
                             <input id="descrip" class="H_A_I_E_input" type="text" placeholder=" " 
                                 name="itemdescription"
+                                required
                                 value = {input.itemdescription}
                                 onChange={(e) =>
                                      setInput({...input, [e.target.name] : e.target.value})
@@ -111,7 +114,7 @@ const EditSupplierItem = ({CartItem}) => {
 
                         <button type="submit" class="H_A_I_E_submit">SUBMIT</button>
 
-                        <button onClick={()=>navigate("/")} className="H_A_I_E_submit">Go To Supplier Dashboard</button>
+                        {/* <button onClick={()=>navigate("/AddSupplieritem")} className="H_A_I_E_submit">Go To Supplier Dashboard</button> */}
 
                     </form>
                 </div>

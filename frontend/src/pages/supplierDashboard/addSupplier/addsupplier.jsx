@@ -15,8 +15,9 @@ import 'jspdf-autotable';
 
 import "./addsupplier.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+// import Nav from "../../../common/header/Navbar"
+// import Search from "../../../common/header/Search"
+import Navbar from '../../poornaka/Navbar'
 
 
 
@@ -139,11 +140,6 @@ const AddSupplier = ({CartItem}) => {
 
 
 
-
-
-
-
-
 //   const inputHandler=(e)=>{
 //     setInput(e.target.value.toLowerCase());
 //   };
@@ -154,10 +150,10 @@ const AddSupplier = ({CartItem}) => {
 
   return (
     <>
-    <Search CartItem={CartItem}/>
-    <Nav/>
 
-    <div className='H_A_Topic'>ADD SUPPLIERS</div>
+    <Navbar/>
+
+    <div className='H_A_Topic' style={{marginTop:"100px"}}>ADD SUPPLIERS</div>
 
     {/* <input className='H_A_search' onChange={(e) => setSearch(e.target.value)} placeholder='Search...'></input> */}
     <div class="H_A_search-container">
@@ -197,7 +193,7 @@ const AddSupplier = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="regNumber" class="H_A_placeholder">Supplie Rgistration Number</label>
+                            <label for="regNumber" class="H_A_placeholder">Rgistration Number</label>
                             
                         </div>
 
@@ -214,7 +210,7 @@ const AddSupplier = ({CartItem}) => {
                         </div>
 
                         <div class="H_A_input-container ic3">
-                            <input id="contnnum" class="H_A_input" type="Number" placeholder=" " 
+                            <input id="contnnum" class="H_A_input" type="text" pattern='^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}' placeholder=" " 
                                 name="supContNum"
                                 required
                                 value = {input.supContNum}
@@ -222,7 +218,7 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="contnnum" class="H_A_placeholder">Supplier Contact Number</label>
+                            <label for="contnnum" class="H_A_placeholder">Contact Number</label>
                         </div>
 
                         <div class="H_A_input-container ic4">
@@ -234,7 +230,7 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="address" class="H_A_placeholder">Supplier Address</label>
+                            <label for="address" class="H_A_placeholder">Address</label>
                         </div>
 
                         <div class="H_A_input-container ic5">
@@ -246,7 +242,7 @@ const AddSupplier = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="mail" class="H_A_placeholder">Supplier E-mail Address</label>
+                            <label for="mail" class="H_A_placeholder">E-mail Address</label>
                         </div>
 
                         <div class="H_A_input-container ic6">
@@ -258,7 +254,7 @@ const AddSupplier = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_cut"></div>
-                            <label for="description" class="H_A_placeholder">Discription</label>
+                            <label for="description" class="H_A_placeholder">Description</label>
                         </div>
                         
                         <button type="submit" class="H_A_submit">SUBMIT</button>
@@ -374,12 +370,12 @@ const AddSupplier = ({CartItem}) => {
             <thead>
                 <tr>
                     {/* <th scope="col">ID</th> */}
-                    <th scope="col">Supplie Rgistration Number</th>
+                    <th scope="col">Rgistration Number</th>
                     <th scope="col">Supplier Name</th>
-                    <th scope="col">Supplier Contact Number</th>
-                    <th scope="col">Supplier Address</th>
-                    <th scope="col">Supplier E-mail Address</th>
-                    <th scope="col">Discription</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">E-mail Address</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -488,16 +484,14 @@ const AddSupplier = ({CartItem}) => {
                 
                 </div>
             </div>
+            <br/>
+        </div>     
 
-            <button type="submit" class="H_A_Genarate" onClick={handlePdfGeneration}>
+        
+            </div>
+                <button type="submit" class="H_A_Genarate" onClick={handlePdfGeneration}>
                 Generate PDF
             </button>
-
-            
-
-        </div>     
-    </div>
-
             
 
 
@@ -648,7 +642,7 @@ const AddSupplier = ({CartItem}) => {
             </div>
          </div>
         </div> */}
-            <br/> <br/>   <br/>
+            <br/> 
             
         <Footer/>
     </>

@@ -353,9 +353,8 @@
 import React, { useState} from "react";
 
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
 import './paymeentfororder.css'
+import Navbar from '../../poornaka/Navbar'
 
 function PaymentForOrder({CartItem}) {
   const [inputList, setInputList] = useState([{ field1:'', field2:'', field3:'', field4:'' }]);
@@ -406,10 +405,9 @@ function PaymentForOrder({CartItem}) {
 
   return (
     <>
-      <Search/>
-      <Nav/>
+      <Navbar/>
 
-      <div className='H_A_Topic'>PAYMENT FOR ORDER</div>
+      <div className='H_A_Topic' style={{marginTop:"100px"}}>PAYMENT FOR ORDER</div>
 
       {/* shadow Boxes */}
       <div className='H_P_O_body'>
@@ -577,7 +575,7 @@ function PaymentForOrder({CartItem}) {
                       {/* </div> */}
 
                       <div className="form-group">
-                        <button type="button"   className="btn btn-primary btn-lg">Submit</button>
+                        <button type="button"   className="btn btn-primary btn-lg">SUMBIT</button>
                       </div>
 
                   

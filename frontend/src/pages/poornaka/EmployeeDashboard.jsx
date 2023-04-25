@@ -37,7 +37,7 @@ export default function EmployeeDashboard() {
         </div>
 
         <div class="gallery">
-            <a href=""><img src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1680859084/icons8-supplier-100_pnhc4w.png"/>Supplier Management</a>
+            <a href="/supplier"><img src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1680859084/icons8-supplier-100_pnhc4w.png"/>Supplier Management</a>
         </div>
         </div>
       </div>
