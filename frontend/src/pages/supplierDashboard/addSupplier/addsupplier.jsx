@@ -76,24 +76,72 @@ const AddSupplier = ({CartItem}) => {
       }
 
 
+//     function handlePdfGeneration() {
+//     const doc = new jsPDF();
+
+//     // // Add PDF logo to document
+//     // doc.addImage('https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png', 'PNG', 50, 50, 50, 50);
+//     var img = new Image();
+//     img.src = "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+//     doc.addImage(img, "jpg", 3, 3, 200, 60);
+    
+
+//     // Set table header
+//     const header = [["Supplie Rgistration Number", "Supplier Name", "Supplier Contact Number", "Supplier Address", "Supplier E-mail Address", "Discription"]];
+
+//     // Add data rows
+//     const data = sup.map(sup => [sup.supRegNum, sup.supName, sup.supContNum, sup.supAddr, sup.supMail, sup.description]);
+
+//     // Add table to document
+//     doc.autoTable({ head: header, body: data });
+
+//     // Download the PDF document
+//     doc.save('PDF.pdf');
+//   };
+
     function handlePdfGeneration() {
     const doc = new jsPDF();
 
-    // // Add PDF logo to document
-    // doc.addImage('https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png', 'PNG', 50, 50, 50, 50);
-
-    // Set table header
     const header = [["Supplie Rgistration Number", "Supplier Name", "Supplier Contact Number", "Supplier Address", "Supplier E-mail Address", "Discription"]];
 
-    // Add data rows
-    const data = sup.map(sup => [sup.supRegNum, sup.supName, sup.supContNum, sup.supAddr, sup.supMail, sup.description]);
+    const tableRows = [];
 
-    // Add table to document
-    doc.autoTable({ head: header, body: data });
+    let no = 0;
 
-    // Download the PDF document
-    doc.save('offers.pdf');
+    sup.forEach((sup) => {
+    no++;
+
+    const data = [sup.supRegNum, sup.supName, sup.supContNum, sup.supAddr, sup.supMail, sup.description];
+
+    // push each tickcet's info into a row
+    console.log("reportData", data);
+
+    tableRows.push(data);
+  });
+
+  var img = new Image();
+  img.src =
+    "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+  doc.addImage(img, "jpg", 30, 3, 150, 30);
+
+  //doc.autoTable(tableColumn, tableRows, { startY: 70 });
+
+  doc.autoTable({
+    head: header,
+    body: tableRows,
+    startY: 70,
+  });
+
+  doc.save('SupplierDetails.pdf');
+
+
   };
+
+
+
+
+
+
 
 
 //   const inputHandler=(e)=>{

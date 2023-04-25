@@ -347,6 +347,7 @@
 //                                 } )}   */}
 
 
+// ===============
 
 
 import React, { useState} from "react";
@@ -405,7 +406,7 @@ function PaymentForOrder({CartItem}) {
 
   return (
     <>
-      <Search CartItem={CartItem}/>
+      <Search/>
       <Nav/>
 
       <div className='H_A_Topic'>PAYMENT FOR ORDER</div>
@@ -598,5 +599,6 @@ function PaymentForOrder({CartItem}) {
 }
 
 export default PaymentForOrder;
+
 
 
