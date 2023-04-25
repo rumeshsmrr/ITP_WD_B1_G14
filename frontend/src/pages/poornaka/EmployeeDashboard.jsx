@@ -14,7 +14,8 @@ export default function EmployeeDashboard() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
       <Navbar />
       <div style={{ height: "100vh" }}></div>
       <div className="container">
