@@ -28,7 +28,8 @@ export default function EmployeeLogin() {
       });
   };
   return (
-    <div>
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
       <div className="container">
         <div className="admin-card">
           <div className="card-title">
