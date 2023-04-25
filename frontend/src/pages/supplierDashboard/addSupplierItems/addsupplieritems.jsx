@@ -75,15 +75,38 @@ const AddSupplierItems = ({CartItem}) => {
 
     // Set table header
     const header = [["Supplie Rgistration Number", "Supplier Name", "Item Name", "Item Description"]];
+    
+    const tableRows =[];
 
+    let no =0;
+
+    supitem.forEach((supitem) => {
     // Add data rows
-    const data = supitem.map(supitem => [supitem.supRegNum, supitem.supName, supitem.itemName, supitem.itemdescription]);
+    const data =[supitem.supRegNum, supitem.supName, supitem.itemName, supitem.itemdescription];
+    
+    // push each tickcet's info into a row
+    console.log("reportData", data);
+
+    tableRows.push(data);
+    });
+
+    var img = new Image();
+  img.src =
+    "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+  doc.addImage(img, "jpg", 30, 3, 150, 30);
+
+  //doc.autoTable(tableColumn, tableRows, { startY: 70 });
+    
 
     // Add table to document
-    doc.autoTable({ head: header, body: data });
+    doc.autoTable({
+        head: header,
+        body: tableRows,
+        startY: 70,
+    });
 
     // Download the PDF document
-    doc.save('offers.pdf');
+    doc.save('SupplierItems.pdf');
   }
 
 
