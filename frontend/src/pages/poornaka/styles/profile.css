@@ -298,8 +298,12 @@
     padding: 5px 5px;
     margin: 1px 0;
     width: 100px;
-    border-radius: 15px;
+    border-radius: 10px;
     border-color: red;
+  }
+
+  .removebtn:hover{
+    color: #000000;
   }
   
   .editbtn {
@@ -308,8 +312,12 @@
     padding: 5px 5px;
     margin: 1px 0;
     width: 100px;
-    border-radius: 15px;
+    border-radius: 10px;
     border-color: 11ee1e;
+  }
+
+  .editbtn:hover{
+    color: #414141;
   }
   .attendbtn {
     background: #000000;
@@ -317,9 +325,14 @@
     padding: 5px 5px;
     margin: 1px 0;
     width: 100px;
-    border-radius: 15px;
+    border-radius: 10px;
     border-color: 11ee1e;
   }
+
+  .attendbtn:hover{
+    color: #00b7ff;
+  }
+  
   .addBtnContainer {
     margin-top: 5px;
     margin-bottom: 12px;
@@ -441,7 +454,20 @@
     border-radius: 10px;
     box-sizing: border-box;
   }
-  
+
+  .att-card{
+    margin-top: 130px;
+    margin-left: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    padding-inline: 9%;
+    height: 60vh;
+    width: 40vw;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
   
   
