@@ -10,6 +10,7 @@ import {
   Row,
 } from "react-bootstrap";
 import Navbar from "./Navbar";
+import Footer from "../../common/footer/Footer";
 import "./styles/userProfile.css";
 
 export default function Profile() {
@@ -59,16 +60,22 @@ export default function Profile() {
   };
 
   return (
-    <div>
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
       <Navbar />
+      
       <Container className="user-profile-container">
+        <div className="profile-card">
+
+        
         <Row>
           <Col md={12} className="text-center">
             <Image
               src="https://res.cloudinary.com/dl99x/image/upload/v1662162175/Sample_User_Icon_urnlt1.png"
               className="user-profile-avatar"
             />
-            <h4>{user?.userName}</h4>
+            <br/>
+            <h4 style={{marginLeft:"-120px"}}>{user?.userName}</h4>
           </Col>
           <Col md={12}>
             <Form>
@@ -103,6 +110,7 @@ export default function Profile() {
               <Form.Group>
                 <Form.Label>Gender</Form.Label>
                 <Form.Control
+                className="gender"
                   as="select"
                   value={user?.sex}
                   onChange={(e) => setUSer({ ...user, sex: e.target.value })}
@@ -113,6 +121,7 @@ export default function Profile() {
                   <option value="other">Other</option>
                 </Form.Control>
               </Form.Group>
+              <ul className="passwordBTN">
               <Button variant="warning" onClick={() => setShowModal(true)}>
                 Change Password
               </Button>
@@ -120,10 +129,13 @@ export default function Profile() {
               <Button variant="primary" onClick={handleSave}>
                 Update Changes
               </Button>
+              </ul>
             </Form>
           </Col>
         </Row>
+        </div>
       </Container>
+      
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
@@ -163,8 +175,11 @@ export default function Profile() {
           <Button variant="primary" onClick={updatePassword}>
             Update Password
           </Button>
+          
+
         </Modal.Footer>
       </Modal>
     </div>
+    
   );
 }
