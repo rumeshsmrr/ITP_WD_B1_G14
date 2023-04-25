@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import Navbar from "./Navbar";
+import Footer from "../../common/footer/Footer";
 import "./styles/styles.css";
 
 export default function EditUser() {
@@ -33,7 +34,9 @@ export default function EditUser() {
   };
 
   return (
-    <div>
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
+      <Navbar/>
       <div className="container">
         <div className="addUser-card">
           <div className="card-title">
@@ -45,6 +48,7 @@ export default function EditUser() {
             <div className="mb-3">
               <label className="form-label">Username</label>
               <input
+              style={{width:"100%"}}
                 type="text"
                 className="form-control"
                 value={state.userName}
@@ -55,6 +59,7 @@ export default function EditUser() {
             <div className="mb-3">
               <label className="form-label">Salary</label>
               <input
+              style={{width:"100%"}}
                 type="currency"
                 className="form-control"
                 value={salary}
@@ -66,7 +71,7 @@ export default function EditUser() {
               <label className="form-label">Role</label>
               <select
                 name="bank"
-                className="form-control thick-border"
+                className="select"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 required
@@ -92,6 +97,7 @@ export default function EditUser() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
