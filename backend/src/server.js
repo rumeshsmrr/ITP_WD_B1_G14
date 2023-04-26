@@ -12,6 +12,24 @@ const productHRoute = require("./routes/productHroute");
 const cartRoute = require("./routes/cartRoute");
 const stripeRoute = require("./routes/stripe");
 const orderRoute = require("./routes/orderRoute");
+const { 
+  addUser,
+  getUser,
+  UpdateUser,
+  removerUser,
+  getSpecUser,
+
+} = require("../controller/UserController");
+
+const { 
+  addInquary,
+  getInquary,
+  UpdateInquary,
+  removerInquary,
+  getSpecInquary,
+
+} = require("../controller/InquaryController");
+
 // const employeeRoute = require("./routes/userRoute");
 app.use(cors());
 //environment variable
@@ -27,6 +45,30 @@ app.use("/api/cart", cartRoute);
 app.use("/api/checkout", stripeRoute);
 app.use("/api/order", orderRoute);
 // app.use("/api/user", employeeRoute);
+
+
+//customer mngmnt routes
+//addResult
+router.post("/",addUser);
+//getResult
+router.get("/all",getUser);
+//UpdateResult
+router.put("/:id",UpdateUser);
+//DeleteResult
+router.delete("/:id",removerUser);
+//getSpec
+router.get("/:id",getSpecUser);
+
+//addResult
+router.post("/inq/",addInquary);
+//getResult
+router.get("/inq/all",getInquary);
+//UpdateResult
+router.put("/inq/:id",UpdateInquary);
+//DeleteResult
+router.delete("/inq/:id",removerInquary);
+//getSpec
+router.get("/inq/:id",getSpecInquary);
 
 //routrs (PH)
 const suplierRoutes =require("./routes/supplier");
