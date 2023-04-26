@@ -72,7 +72,7 @@ export default function Navbar() {
     <header id="main-header">
       <div className="header-container">
         <div className="logo">
-          <a href="/">
+          <a href="/adminAndEmployee">
             <img src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1679505472/logoLarge_n8s9ct.png" />
           </a>
           <h1 className="admin-text">Guident Computers</h1>

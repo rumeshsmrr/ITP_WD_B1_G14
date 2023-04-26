@@ -61,7 +61,7 @@ export default function Profile() {
 
   return (
     <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
-    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "1400px", height:"800px"}}>
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "100%", height:"100%"}}>
       <Navbar />
       
       <Container className="user-profile-container">
@@ -75,7 +75,7 @@ export default function Profile() {
               className="user-profile-avatar"
             />
             <br/>
-            <h4 style={{marginLeft:"-120px"}}>{user?.userName}</h4>
+            <h4 style={{marginLeft:"-150px"}}>{user?.userName}</h4>
           </Col>
           <Col md={12}>
             <Form>
@@ -122,9 +122,9 @@ export default function Profile() {
                 </Form.Control>
               </Form.Group>
               <ul className="passwordBTN">
-              <Button variant="warning" onClick={() => setShowModal(true)}>
+              {/* <Button variant="warning" onClick={() => setShowModal(true)}>
                 Change Password
-              </Button>
+              </Button> */}
 
               <Button variant="primary" onClick={handleSave}>
                 Update Changes
@@ -179,6 +179,8 @@ export default function Profile() {
 
         </Modal.Footer>
       </Modal>
+      <br/>
+      <Footer/>
     </div>
     
   );
