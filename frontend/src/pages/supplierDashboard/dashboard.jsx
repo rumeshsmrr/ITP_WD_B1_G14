@@ -2,18 +2,18 @@ import React from 'react'
 import "./dashboard.css";
 import { Link } from "react-router-dom";
 import Footer from "../../common/footer/Footer"
-import Nav from "../../common/header/Navbar"
-import Search from "../../common/header/Search"
 
-const dashboard = ({CartItem}) => {
+import Navbar from "../poornaka/Navbar";
+
+const dashboard = () => {
     
   return (
     
     <div>
-        <Search CartItem={CartItem}/>
-        <Nav/>
-       
-        <div className='H_Topic'>SUPPLIER MANAGEMENT DASHBOARD</div>
+        {/* <Search/> */}
+        
+       <Navbar/>
+        <div className='H_Topic' style={{marginTop:"100px"}}>SUPPLIER MANAGEMENT DASHBOARD</div>
 
         {/* shadow Boxex 2 */}
 

@@ -9,8 +9,9 @@ import 'jspdf-autotable';
 
 import "./addsupplieritems.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+// import Nav from "../../../common/header/Navbar"
+// import Search from "../../../common/header/Search"
+import Navbar from '../../poornaka/Navbar'
 
 const AddSupplierItems = ({CartItem}) => {
     const [search, setSearch] = useState('')
@@ -57,9 +58,9 @@ const AddSupplierItems = ({CartItem}) => {
     //     navigate("/viewUniqueItem", { state : data})
     // };
 
-    const UniqueSupplierItem = (supplier) => {
-        navigate("/viewUniqueItem", { state : supplier})
-    };
+    // const UniqueSupplierItem = (supplier) => {
+    //     navigate("/viewUniqueItem", { state : supplier})
+    // };
 
     function handlePdfGeneration() {
         const doc = new jsPDF();
@@ -74,26 +75,48 @@ const AddSupplierItems = ({CartItem}) => {
     // doc.addImage('https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png', 'PNG', 50, 50, 50, 50);
 
     // Set table header
-    const header = [["Supplie Rgistration Number", "Supplier Name", "Item Name", "Item Description"]];
+    const header = [["Supplie Registration Number", "Supplier Name", "Item Name", "Item Description"]];
+    
+    const tableRows =[];
 
+    let no =0;
+
+    supitem.forEach((supitem) => {
     // Add data rows
-    const data = supitem.map(supitem => [supitem.supRegNum, supitem.supName, supitem.itemName, supitem.itemdescription]);
+    const data =[supitem.supRegNum, supitem.supName, supitem.itemName, supitem.itemdescription];
+    
+    // push each tickcet's info into a row
+    console.log("reportData", data);
+
+    tableRows.push(data);
+    });
+
+    var img = new Image();
+  img.src =
+    "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+  doc.addImage(img, "jpg", 30, 3, 150, 30);
+
+  //doc.autoTable(tableColumn, tableRows, { startY: 70 });
+    
 
     // Add table to document
-    doc.autoTable({ head: header, body: data });
+    doc.autoTable({
+        head: header,
+        body: tableRows,
+        startY: 70,
+    });
 
     // Download the PDF document
-    doc.save('offers.pdf');
+    doc.save('SupplierItems.pdf');
   }
 
 
 
     return (
         <>
-        <Search CartItem={CartItem}/>
-        <Nav/>
+        <Navbar/>
 
-        <div className='H_A_I_Topic'>ADD SUPPLIERS SUPPLY ITEMS</div>
+        <div className='H_A_I_Topic' style={{marginTop:"100px"}}>ADD SUPPLIERS SUPPLY ITEMS</div>
 
         <div class="H_A_I_search-container">
             <input className='H_A_I_search' onChange={(e) => setSearch(e.target.value)} placeholder='Search...'></input>
@@ -110,7 +133,7 @@ const AddSupplierItems = ({CartItem}) => {
 
                 <div class="H_A_I_form">
                     <div class="H_A_I_title">Welcome</div>
-                    <div class="H_A_I_subtitle">Let's can you add suppliers supply items in to the system!</div>
+                    <div class="H_A_I_subtitle"><strong>Let's can you add suppliers supply items!</strong></div><br/><br/>
 
                     <form onSubmit={handelSubmit}>
 
@@ -137,9 +160,9 @@ const AddSupplierItems = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_cut"></div>
-                            <label for="regNumber" class="H_A_I_placeholder">Supplie Rgistration Number</label>
+                            <label for="regNumber" class="H_A_I_placeholder"><strong>Registration Number</strong></label>
                             
-                        </div>
+                        </div><br/>
 
                         <div class="H_A_I_input-container ic2">
                             <input id="supname" class="H_A_I_input" type="text" placeholder=" " 
@@ -150,8 +173,8 @@ const AddSupplierItems = ({CartItem}) => {
                                     setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_cut"></div>
-                            <label for="supname" class="H_A_I_placeholder">Supplier Name</label>
-                        </div>
+                            <label for="supname" class="H_A_I_placeholder"><strong>Supplier Name</strong></label>
+                        </div><br/>
 
                         <div class="H_A_I_input-container ic3">
                             <input id="itemName" class="H_A_I_input" type="text" placeholder=" " 
@@ -162,8 +185,8 @@ const AddSupplierItems = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_cut"></div>
-                            <label for="itemName" class="H_A_I_placeholder">Item Name</label>
-                        </div>
+                            <label for="itemName" class="H_A_I_placeholder"><strong>Item Name</strong></label>
+                        </div><br/>
 
                         {/* <div class="H_A_I_input-container ic4">
                             <input id="price" class="H_A_I_input" type="text" placeholder=" " 
@@ -185,8 +208,8 @@ const AddSupplierItems = ({CartItem}) => {
                                      setInput({...input, [e.target.name] : e.target.value})
                                 }/>
                             <div class="H_A_I_cut"></div>
-                            <label for="descrip" class="H_A_I_placeholder">Item Description</label>
-                        </div>
+                            <label for="descrip" class="H_A_I_placeholder"><strong>Item Description</strong></label>
+                        </div><br/>
 
 
                         <button type="submit" class="H_A_I_submit">SUBMIT</button>
@@ -201,14 +224,14 @@ const AddSupplierItems = ({CartItem}) => {
                 <div className='H_A_I_content'></div>
 
                 
-                <div className="col-md-6">
-                    <table class="table">
+                <div className="H_A_I_col-md-6">
+                    <table class="H_A_I_table">
                     <thead>
                         <tr>
                             {/* <th scope="col">ID</th> */}
-                            <th scope="col">Supplie Rgistration Number:</th>
+                            <th scope="col">Rgistration Number:</th>
                             <th scope="col">Supplier Name:</th>
-                            <th scope="col">Supplier Supply Item Name:</th>
+                            <th scope="col">Item Name:</th>
                             {/* <th scope="col">Item Price:</th> */}
                             <th scope="col">Item Description:</th>
                             <th scope="col">Edit</th>
@@ -235,14 +258,14 @@ const AddSupplierItems = ({CartItem}) => {
 
                                     <td>
                                         <Link to = {`/edits/${supplier._id}`}>
-                                        <button className="btn btn-primary">Edit</button>
+                                        <button className="H_A_I_btn_btn-primary">Edit</button>
                                         </Link>
                                     </td>
                                 
                                     <td><button onClick={() => handelDelete(supplier._id)}
-                                        className="btn btn-danger">Delete</button></td>
+                                        className="H_A_I_btn_btn-danger">Delete</button></td>
                                 
-                                    <td><button className='quniuebtn' onClick={() => UniqueSupplierItem(supplier._id)}> UniqueItem </button></td>
+                                    {/* <td><button className='quniuebtn' onClick={() => UniqueSupplierItem(supplier._id)}> UniqueItem </button></td> */}
 
                                 </tr>
                             ))
@@ -253,11 +276,12 @@ const AddSupplierItems = ({CartItem}) => {
                 </div>
             </div>
 
-            <button type="submit" class="H_A_Genarate" onClick={handlePdfGeneration}>
-                Generate PDF
-            </button>
+            
         </div>
     </div>
+                <button type="submit" class="H_A_I_Genarate" onClick={handlePdfGeneration}>
+                    Generate PDF
+                </button><br/>
         <Footer/>
         </>
       )

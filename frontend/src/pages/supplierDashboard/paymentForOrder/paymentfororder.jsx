@@ -347,14 +347,14 @@
 //                                 } )}   */}
 
 
+// ===============
 
 
 import React, { useState} from "react";
 
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
 import './paymeentfororder.css'
+import Navbar from '../../poornaka/Navbar'
 
 function PaymentForOrder({CartItem}) {
   const [inputList, setInputList] = useState([{ field1:'', field2:'', field3:'', field4:'' }]);
@@ -405,10 +405,9 @@ function PaymentForOrder({CartItem}) {
 
   return (
     <>
-      <Search CartItem={CartItem}/>
-      <Nav/>
+      <Navbar/>
 
-      <div className='H_A_Topic'>PAYMENT FOR ORDER</div>
+      <div className='H_P_O_Topic' style={{marginTop:"100px"}}>PAYMENT FOR ORDER</div>
 
       {/* shadow Boxes */}
       <div className='H_P_O_body'>
@@ -421,36 +420,36 @@ function PaymentForOrder({CartItem}) {
                 <div className="H_P_O_subtitle">Let's can you create payment for order</div>
 
 
-                    <form> 
+                    <form className="H_Pay_css"> 
                       {/* <div className="H_P_O_content"> */}
                         <div className="H_P_O_row">
                           <div className="H_P_O_col-sm-12">
 
-                          <div class="H_A_input-container ic1">
+                          <div class="H_P_O_input-container ic1">
                                   <div class="H_P_O_form-group col-md-4">
                                     <label >Supplier Registration Number</label>
-                                      <input type="text"  name="regNumber" class="form-control"  placeholder="Enter Supplier Registration Number" />
+                                      <input type="text"  name="regNumber" class="H_P_O_form-control"  placeholder="Enter Supplier Registration Number" />
                                   </div>
                           </div>
 
-                          <div class="H_A_input-container ic1">
+                          <div class="H_P_O_input-container ic1">
                                   <div class="H_P_O_form-group col-md-4">
                                     <label >Supplier Name</label>
-                                      <input type="text"  name="supName" class="form-control"  placeholder="Enter Supplier Name" />
+                                      <input type="text"  name="supName" class="H_P_O_form-control"  placeholder="Enter Supplier Name" />
                                   </div>
                           </div>
 
-                          <div class="H_A_input-container ic1">
+                          <div class="H_P_O_input-container ic1">
                                   <div class="H_P_O_form-group col-md-4">
                                     <label >Date of Order</label>
-                                      <input type="date"  name="orderDate" class="form-control" />
+                                      <input type="date"  name="orderDate" class="H_P_O_form-control" />
                                   </div>
                           </div>
 
-                          <div class="H_A_input-container ic1">
+                          <div class="H_P_O_input-container ic1">
                                   <div class="H_P_O_form-group col-md-4">
                                     <label >Order Recived Date</label>
-                                      <input type="date"  name="recivedDate" class="form-control" />
+                                      <input type="date"  name="recivedDate" class="H_P_O_form-control" />
                                   </div>
                           </div>
 
@@ -471,7 +470,7 @@ function PaymentForOrder({CartItem}) {
                                   <input
                                     type="text"
                                     name="field1"
-                                    className="form-control"
+                                    className="H_P_O_form-control"
                                     placeholder="Enter Item Name"
                                     onChange={(e) => handleinputchange(e, i)}
                                   />
@@ -481,7 +480,7 @@ function PaymentForOrder({CartItem}) {
                                   <input
                                     type="text"
                                     name="field2"
-                                    className="form-control"
+                                    className="H_P_O_form-control"
                                     placeholder="Enter Unit Price"
                                     onChange={(e) => handleinputchange(e, i)}
                                   />
@@ -491,7 +490,7 @@ function PaymentForOrder({CartItem}) {
                                   <input
                                     type="text"
                                     name="field3"
-                                    className="form-control"
+                                    className="H_P_O_form-control"
                                     placeholder="Enter Quantity"
                                     onChange={(e) => handleinputchange(e, i)}
                                   />
@@ -501,7 +500,7 @@ function PaymentForOrder({CartItem}) {
                                   <input
                                     type="text"
                                     name="field4"
-                                    className="form-control"
+                                    className="H_P_O_form-control"
                                     placeholder="Enter Full amount"
                                     value={x.field4}
                                     onChange={(e) => handleinputchange(e, i)}
@@ -537,11 +536,11 @@ function PaymentForOrder({CartItem}) {
 
 
                                 <br/><br/>
-                                  <div class="H_A_input-container ic1">
+                                  <div class="H_P_O_input-container ic1">
                                     <div class="H_P_O_form-group col-md-4">
                                     <label >All Amount</label>
                                       <input type="text"  
-                                      name="number" class="form-control"  
+                                      name="number" class="H_P_O_form-control"  
                                       placeholder="Enter Final Amount" 
                                       value={inputList.reduce((total, item) => total + parseFloat(item.field4 || 0), 0).toFixed(2)} 
                                       required/>
@@ -549,24 +548,24 @@ function PaymentForOrder({CartItem}) {
                                   </div>
 
 
-                                  <div class="H_A_input-container ic1">
+                                  <div class="H_P_O_input-container ic1">
                                       <div class="H_P_O_form-group col-md-4">
                                         <label>Number Of Delay</label>
-                                        <input type="Number" name="delayDate" class="form-control" onChange={handleDelayChange} />
+                                        <input type="Number" name="delayDate" class="H_P_O_form-control" onChange={handleDelayChange} />
                                       </div>
                                     </div>
 
-                                    <div class="H_A_input-container ic1">
+                                    <div class="H_P_O_input-container ic1">
                                       <div class="H_P_O_form-group col-md-4">
                                         <label>Reduction Percentage</label>
-                                        <input type="text" name="reduction" class="form-control" value={reduction + '%'} disabled />
+                                        <input type="text" name="reduction" class="H_P_O_form-control" value={reduction + '%'} disabled />
                                       </div>
                                     </div>
 
-                                    <div class="H_A_input-container ic1">
+                                    <div class="H_P_O_input-container ic1">
                                       <div class="H_P_O_form-group col-md-4">
                                         <label>Final Amount</label>
-                                        <input type="text" name="finalAmount" class="form-control" value={'RS :' + finalAmount} disabled />
+                                        <input type="text" name="finalAmount" class="H_P_O_form-control" value={'RS :' + finalAmount} disabled />
                                       </div>
                                     </div>
 
@@ -575,11 +574,9 @@ function PaymentForOrder({CartItem}) {
                         </div><br/><br/><br/>
                       {/* </div> */}
 
-                      <div className="form-group">
-                        <button type="button"   className="btn btn-primary btn-lg">Submit</button>
+                      <div className="H_P_O_form-group">
+                        <button type="button"   className="H_P_O_btn_btn-primary_btn-lg">SUMBIT</button>
                       </div>
-
-                  
 
                     </form>
                 </div>
@@ -598,5 +595,6 @@ function PaymentForOrder({CartItem}) {
 }
 
 export default PaymentForOrder;
+
 
 

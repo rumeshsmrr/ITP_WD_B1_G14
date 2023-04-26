@@ -29,9 +29,7 @@ const Navbar = () => {
               <li>
                 <Link to="/contact">Second Hand Items</Link>
               </li>
-              <li>
-                <Link to="/supplier">sup</Link>
-              </li>
+
               {customer ? (
                 <>
                   <li>

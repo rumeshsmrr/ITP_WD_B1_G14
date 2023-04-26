@@ -1,11 +1,12 @@
 import React from "react";
 
-const MyOrderCard = ({ order }) => {
+const AllOrderCard = ({ order }) => {
   return (
     <>
       <div className="box mtop">
         <div className="order main-info d_flex">
           <div className="orderNo">Order No: {order._id}</div>
+          <div className="orderNo">Customer: {order.customer.email}</div>
           <div className="placeData">
             Placed At: {order.createdAt.substring(0, 10)}
           </div>
@@ -13,7 +14,7 @@ const MyOrderCard = ({ order }) => {
             <div className="placeData">Address : </div>
             <div className="product-address">{order.address}</div>
           </div>
-          <div>Total : Rs: {order.total}/=</div>
+          <div>Total : {order.total}</div>
           <div>{order.status.toUpperCase()}</div>
         </div>
         <div className="order secondary-info">
@@ -30,7 +31,8 @@ const MyOrderCard = ({ order }) => {
               <tr>
                 <th style={{ width: "10%" }}></th>
                 <th style={{ width: "80%", textAlign: "left" }}>Product</th>
-                <th style={{ width: "20%" }}>Quantity</th>
+                <th style={{ width: "10%", margin: "10px" }}>Price </th>
+                <th style={{ width: "10%" }}>Quantity</th>
               </tr>
             </thead>
             <tbody>
@@ -46,12 +48,12 @@ const MyOrderCard = ({ order }) => {
                   <td style={{ width: "70%" }}>{order.product.name}</td>
                   <td
                     style={{
-                      width: "20%",
+                      width: "10%",
                       margin: "10px",
                       textAlign: "center",
                     }}
                   ></td>
-                  <td style={{ width: "20%", textAlign: "center" }}>
+                  <td style={{ width: "10%", textAlign: "center" }}>
                     {order.quantity}
                   </td>
                 </tr>
@@ -64,4 +66,4 @@ const MyOrderCard = ({ order }) => {
   );
 };
 
-export default MyOrderCard;
+export default AllOrderCard;

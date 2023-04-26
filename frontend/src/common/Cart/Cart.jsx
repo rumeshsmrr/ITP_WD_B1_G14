@@ -339,7 +339,20 @@ const Cart = () => {
                   Sorry Payment gateway doesn't accept more than 10k{" "}
                 </h4>
               ) : (
-                <div className="pay btn">Processed payment</div>
+                <div
+                  className="pay_btn"
+                  style={{
+                    backgroundColor: "#67bae4",
+                    padding: "10px",
+                    textAlign: "center",
+                    marginTop: "10px",
+                    borderRadius: "5px",
+                    color: "#ffffff",
+                    cursor: "pointer",
+                  }}
+                >
+                  Processed payment
+                </div>
               )}
             </StripeCheckout>
           </div>

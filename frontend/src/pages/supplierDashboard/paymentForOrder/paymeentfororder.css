@@ -1,7 +1,235 @@
- .H_A_Topic{
+.H_P_O_Topic{
+  text-align: center;
+  font-size: 80px;
+  font-weight: 400;
+}
+
+.H_P_O_body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  background: #f5f2f2;
+}
+
+.H_P_O_container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  flex-wrap: wrap;
+  
+}
+/*
+.H_P_O_container .H_P_O_box1 .H_P_O_content{
+  position: relative;
+  z-index: 10;
+  padding: 40px 40px;
+  
+}
+
+.H_P_O_form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.H_P_O_title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.H_P_O_subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+
+.H_P_O_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.H_P_O_col-sm-12 {
+  width: 100%;
+}
+
+.H_P_O_form-group {
+  width: 80%;
+}
+
+.H_P_O_form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
+
+ .H_P_O_form-group input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+
+.H_P_O_form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 20px; 
+}
+
+.H_P_O_form-group input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  font-size: 20px; 
+}
+
+
+.H_P_O_btn {
+  border-radius: 5px;
+  border: none;
+  color: #921c1c;
+} */
+
+
+
+/* .H_P_O_body {
+  background-color: #f5f5f5;
+  padding: 30px;
+}
+
+.H_P_O_container {
+  max-width: 1000px;
+  margin: 0 auto;
+} */
+
+.H_P_O_box1 {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.H_P_O_content {
+  margin-top: 20px;
+}
+
+.H_P_O_form {
+  margin-bottom: 30px;
+}
+
+.H_P_O_title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.H_P_O_subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.H_P_O_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.H_P_O_col-sm-12 {
+  width: 100%;
+}
+
+.H_P_O_form-group {
+  width: 80%;
+}
+
+.H_P_O_form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
+
+ .H_P_O_form-group input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+
+.H_P_O_form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px; /* added font-size property */
+}
+
+.H_P_O_form-group input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px; /* changed width to 150px */
+  font-size: 18px; /* added font-size property */
+}
+
+
+.H_P_O_btn {
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.H_P_O_btn.btn-success {
+  background-color: #28a745;
+}
+
+.H_P_O_btn.btn-danger {
+  background-color: #dc3545;
+}
+
+.H_P_O_btn.mx-1 {
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .H_P_O_form-group.col-md-4 {
+    width: 100%;
+  }
+}
+
+.H_P_O_btn_btn-primary_btn-lg{
+  background-color: rgb(4, 96, 153);
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+/*
+ ========================
+
+  .H_P_O_Topic{
     text-align: center;
     font-size: 80px;
-    font-weight: 1000;
+    font-weight: 400;
 }
 
 .H_P_O_body{
@@ -21,6 +249,10 @@
     flex-wrap: wrap;
     
 }
+
+
+/* ================ */
+
 /*
 .H_P_O_container .H_P_O_box1 .H_P_O_content{
     position: relative;
@@ -116,7 +348,13 @@
     max-width: 1000px;
     margin: 0 auto;
   } */
-  
+
+
+
+  /* ======= */
+
+
+/*   
   .H_P_O_box1 {
     background-color: #fff;
     border-radius: 5px;
@@ -168,21 +406,21 @@
     border: 1px solid #ccc;
     padding: 10px;
     width: 100%;
-  }
+  } */
 
-  .H_P_O_form-group label {
+  /* .H_P_O_form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    font-size: 18px; /* added font-size property */
+    font-size: 18px; 
   }
   
   .H_P_O_form-group input {
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px; /* changed width to 150px */
-    font-size: 18px; /* added font-size property */
+    width: 300px; 
+    font-size: 18px;
   }
   
   
@@ -213,6 +451,150 @@
     }
   }
   
+  .H_Pay_css {
+  
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 1500px;
+    padding: 20px;
+    width: 1400px;
+  }
 
 
-   
+  .H_P_O_btn_btn-primary_btn-lg {
+    background-color: rgb(4, 96, 153);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .H_P_O_btn_btn-primary_btn-lg:hover {
+    background-color: blue;
+  }
+  
+    */
+
+
+ 
+/* ==== new Chat gpt css  */
+
+/* .H_P_O_body {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.H_P_O_container {
+  margin: auto;
+  width: 80%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.H_P_O_box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.H_P_O_content {
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.H_P_O_title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.H_P_O_subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.H_P_O_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.H_P_O_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.H_P_O_form-group {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.H_P_O_input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ic1 {
+  margin-bottom: 10px;
+}
+
+.H_P_O_form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.H_P_O_btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.H_P_O_col-sm-12 {
+  flex-basis: 100%;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .H_P_O_container {
+    width: 100%;
+  }
+}
+
+
+
+  */

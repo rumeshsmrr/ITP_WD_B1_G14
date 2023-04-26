@@ -124,4 +124,55 @@ router.get("/income", async (req, res) => {
   }
 });
 
+// Get order income for the last month and last year
+router.get("/incomes", async (req, res) => {
+  const currentDate = new Date();
+  const lastMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() - 1,
+    1
+  );
+  const lastYear = new Date(currentDate.getFullYear() - 1, 0, 1);
+
+  try {
+    const lastMonthIncome = await Order.aggregate([
+      {
+        $match: {
+          createdAt: { $gte: lastMonth },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: "$total" },
+        },
+      },
+    ]);
+
+    const lastYearIncome = await Order.aggregate([
+      {
+        $match: {
+          createdAt: { $gte: lastYear },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: "$total" },
+        },
+      },
+    ]);
+
+    const income = {
+      lastMonth: lastMonthIncome[0] ? lastMonthIncome[0].total : 0,
+      lastYear: lastYearIncome[0] ? lastYearIncome[0].total : 0,
+    };
+
+    res.status(200).json(income);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
 module.exports = router;

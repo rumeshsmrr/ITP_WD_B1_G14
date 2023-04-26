@@ -3,11 +3,12 @@ footer {
   padding: 100px 0;
   color: #fff;
 }
-footer h1 {
+.shop-name {
   margin-bottom: 30px;
   color: #67bae4;
   font-weight: 800;
   font-style: italic;
+  font-size:35px ;
 }
 footer .img {
   background-color: #0c2a4d;
@@ -33,4 +34,8 @@ footer h2 {
 footer li {
   margin-bottom: 10px;
   opacity: 0.5;
+}
+
+footer a{
+  color: #fff;
 }

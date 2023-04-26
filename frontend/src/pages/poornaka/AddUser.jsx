@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "../../common/footer/Footer";
+
 
 import "./styles/styles.css";
 
@@ -33,9 +36,10 @@ export default function AddUser() {
   };
 
   return (
+    <div style={{backgroundImage:"url(https://res.cloudinary.com/dwcxwpn7q/image/upload/v1682448274/Untitled-2_kws0wf.png)",
+    backgroundSize:"Cover", backgroundRepeat: "no-repeat", position:"absolute", width: "100%", height:"100%"}}>
     <div>
-
-        <div className="container">
+        <Navbar/>
           <div className="addUser-card">
             <div className="card-title">
               <center>
@@ -46,6 +50,7 @@ export default function AddUser() {
               <div className="mb-3">
                 <label className="form-label">Username</label>
                 <input
+                style={{width:"100%"}}
                   type="text"
                   className="form-control"
                   onChange={(e) => setUserName(e.target.value)}
@@ -55,6 +60,7 @@ export default function AddUser() {
               <div className="mb-3">
                 <label className="form-label">Password</label>
                 <input
+                style={{width:"100%"}}
                   type="password"
                   className="form-control"
                   onChange={(e) => setPassword(e.target.value)}
@@ -64,6 +70,7 @@ export default function AddUser() {
               <div className="mb-3">
                 <label className="form-label">Salary</label>
                 <input
+                style={{width:"100%"}}
                   type="currency"
                   className="form-control"
                   onChange={(e) => setSalary(e.target.value)}
@@ -73,8 +80,9 @@ export default function AddUser() {
               <div className="mb-3">
                 <label className="form-label">Role</label>
                 <select
+                
                   name="bank"
-                  className="form-control thick-border"
+                  className="select"
                   onChange={(e) => setRole(e.target.value)}
                   required
                 >
@@ -98,8 +106,9 @@ export default function AddUser() {
               </center>
             </form>
           </div>
-        </div>
-      
+        <br/><br/><br/>
+      <Footer/>
+    </div>
     </div>
   );
 }

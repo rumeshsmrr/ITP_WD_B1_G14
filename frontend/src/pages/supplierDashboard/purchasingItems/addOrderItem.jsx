@@ -1,30 +1,30 @@
 import React, {useState, useEffect} from 'react'
-import axios from "axios";
-import { Link } from 'react-router-dom';
+// import axios from "axios";
+// import { Link } from 'react-router-dom';
 
 import "./addOrderItem.css"
 import Footer from "../../../common/footer/Footer"
-import Nav from "../../../common/header/Navbar"
-import Search from "../../../common/header/Search"
+// import Nav from "../../../common/header/Navbar"
+import Navbar from "../../poornaka/Navbar";
 
 const PurchasingItems = ({CartItem}) => {
-    const [supitem, setSupitem] = useState([]);
-    const [render, setRender] = useState(false)
-    const [input,setInput] = useState({
-        supRegNum: "",
-        supName: "",
-        itemName: "",
-        itemPrice: "",
-        itemdescription: "",
-    });
+    // const [supitem, setSupitem] = useState([]);
+    // const [render, setRender] = useState(false)
+    // const [input,setInput] = useState({
+    //     supRegNum: "",
+    //     supName: "",
+    //     itemName: "",
+    //     itemPrice: "",
+    //     itemdescription: "",
+    // });
    
-    useEffect(()=>{
-        const getAllData = async () => {
-            const res = await axios.get("http://localhost:8070/api/v1/supitem");
-            setSupitem(res.data);
-        };
-        getAllData();
-    },[render]);
+    // useEffect(()=>{
+    //     const getAllData = async () => {
+    //         const res = await axios.get("http://localhost:8070/api/v1/supitem");
+    //         setSupitem(res.data);
+    //     };
+    //     getAllData();
+    // },[render]);
 
     // const handelSubmit = async (e) => {
     //     e.preventDefault();
@@ -49,18 +49,18 @@ const PurchasingItems = ({CartItem}) => {
 
     return (
         <>
-        <Search CartItem={CartItem}/>
-        <Nav/>
 
-        <div className='H_A_I_Topic'>CREATE ORDER REPORT</div>
+        <Navbar/>
+
+        <div className='H_A_I_Topic' style={{marginTop:"100px"}}>CREATE ORDER REPORT</div>
         
-        <div className='H_A_I_body'>
+        {/* <div className='H_A_I_body'>
 
         <div className='H_A_I_container'>
 
             <div className='H_A_I_box1'>
                 <span></span>
-                <div className='H_A_I_content'>
+                <div className='H_A_I_content'> */}
 
                 {/* <div class="H_A_I_form">
                     <div class="H_A_I_title">Welcome</div>
@@ -129,10 +129,10 @@ const PurchasingItems = ({CartItem}) => {
 
                     </form>
                 </div> */}
-            </div>
-            </div>
+            {/* </div>
+            </div> */}
 
-            <div className='H_A_I_box2'>
+            {/* <div className='H_A_I_box2'>
                 <span></span>
                 <div className='H_A_I_content'></div>
 
@@ -142,17 +142,17 @@ const PurchasingItems = ({CartItem}) => {
                     <thead>
                         <tr>
                             {/* <th scope="col">ID</th> */}
-                            <th scope="col">Supplie Rgistration Number</th>
+                            {/* <th scope="col">Supplie Rgistration Number</th>
                             <th scope="col">Supplier Name</th>
                             <th scope="col">Supplier Supply Item Name</th>
                             <th scope="col">Item Price</th>
-                            <th scope="col">Item Description</th>
+                            <th scope="col">Item Description</th> */}
                             {/* <th scope="col"></th>
                             <th scope="col">Delete</th> */}
-                        </tr>
+                        {/* </tr>
                     </thead>
-                    <tbody>
-                        {supitem && supitem.map((supplier) => {
+                    <tbody> */}
+                        {/* {supitem && supitem.map((supplier) => {
                             return(
                         <tr key={supplier._id}>
                             <td>{supplier.supRegNum}</td>
@@ -160,23 +160,16 @@ const PurchasingItems = ({CartItem}) => {
                             <td>{supplier.itemName}</td>
                             <td>{supplier.itemPrice}</td>
                             <td>{supplier.itemdescription}</td>
-                            {/* <td>
-                                <Link to = {`/edits/${supplier._id}`}>
-                                <button className="btn btn-primary">Edit</button>
-                                </Link>
-                                </td> */}
-                            {/* <td><button onClick={() => handelDelete(supplier._id)}
-                            className="btn btn-danger">Delete</button></td> */}
                             
-                        </tr>
-                            );
+                        </tr> */}
+                            {/* );
                         })}
                     </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> */}
+        {/* </div> */}
+    {/* // </div> */} */
     <Footer/>
     </>
     )

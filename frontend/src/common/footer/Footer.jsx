@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,7 +8,8 @@ const Footer = () => {
       <footer>
         <div className="container grid2">
           <div className="box">
-            <h1>Guident Computers</h1>
+            <a href="/" className="shop-name">Guident Computers</a>
+            
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
               libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat
@@ -40,7 +42,9 @@ const Footer = () => {
             <ul>
               <li>Help Center </li>
               <li>How to Buy </li>
-              <li><a href="/adminAndEmployee"> Admin and employee login </a></li>
+              <li>
+                <Link to="/adminAndEmployee"> Admin and employee login </Link>
+              </li>
             </ul>
           </div>
           <div className="box">
