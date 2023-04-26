@@ -31,8 +31,8 @@ const MyOrderCard = ({ order }) => {
               <tr>
                 <th style={{ width: "10%" }}></th>
                 <th style={{ width: "80%", textAlign: "left" }}>Product</th>
-                <th style={{ width: "10%", margin: "10px" }}>Price </th>
-                <th style={{ width: "10%" }}>Quantity</th>
+                {/* <th style={{ width: "10%", margin: "10px" }}>Price </th> */}
+                <th style={{ width: "20%" }}>Quantity</th>
               </tr>
             </thead>
             <tbody>
@@ -48,12 +48,12 @@ const MyOrderCard = ({ order }) => {
                   <td style={{ width: "70%" }}>{order.product.name}</td>
                   <td
                     style={{
-                      width: "10%",
+                      width: "20%",
                       margin: "10px",
                       textAlign: "center",
                     }}
                   >
-                    {order.product.price}
+                    {/* {order.product.price} */}
                   </td>
                   <td style={{ width: "10%", textAlign: "center" }}>
                     {order.quantity}
