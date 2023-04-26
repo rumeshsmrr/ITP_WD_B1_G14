@@ -121,9 +121,12 @@ const Cart = () => {
         const createOrder = async () => {
           try {
             const res = await publicRequest.post("/order/", {
-              customer: cuId,
+              customerID: customer._id,
+              customerName: customer.username,
+              customerEmail: customer.email,
               products: cartItems.map((item) => ({
-                product: item.productId,
+                productName: item.productName,
+                cover: item.productCover,
                 quantity: item.quantity,
               })),
               total: totalPrice,

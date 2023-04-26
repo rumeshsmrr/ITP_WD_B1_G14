@@ -52,8 +52,8 @@ router.delete("/:id", async (req, res) => {
 router.get("/find/:customerId", async (req, res) => {
   try {
     const orders = await Order.find({
-      customer: req.params.customerId,
-    }).populate("customer products.product");
+      customerID: req.params.customerId,
+    });
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
@@ -88,7 +88,7 @@ router.get("/find/:customerId", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const orders = await Order.find().populate("customer products.product");
+    const orders = await Order.find();
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
