@@ -3,16 +3,26 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema(
   {
-    customer: {
+    customerID: {
       type: mongoose.Types.ObjectId,
-      ref: "Customer",
+      required: true,
+    },
+    customerName: {
+      type: String,
+      required: true,
+    },
+    customerEmail: {
+      type: String,
       required: true,
     },
     products: [
       {
-        product: {
-          type: mongoose.Types.ObjectId,
-          ref: "Product",
+        productName: {
+          type: String,
+          required: true,
+        },
+        cover: {
+          type: String,
           required: true,
         },
         quantity: {

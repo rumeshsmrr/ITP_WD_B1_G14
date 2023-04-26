@@ -40,11 +40,11 @@ const MyOrderCard = ({ order }) => {
                   <th style={{ width: "10%" }}>
                     <img
                       className="smallImg"
-                      src={order.product.cover}
+                      src={`/uploads/${order.over}`}
                       alt=""
                     />
                   </th>
-                  <td style={{ width: "70%" }}>{order.product.name}</td>
+                  <td style={{ width: "70%" }}>{order.productName}</td>
                   <td
                     style={{
                       width: "10%",

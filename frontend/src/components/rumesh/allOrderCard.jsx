@@ -6,7 +6,7 @@ const AllOrderCard = ({ order }) => {
       <div className="box mtop">
         <div className="order main-info d_flex">
           <div className="orderNo">Order No: {order._id}</div>
-          <div className="orderNo">Customer: {order.customer.email}</div>
+          <div className="orderNo">Customer: {order.customerEmail}</div>
           <div className="placeData">
             Placed At: {order.createdAt.substring(0, 10)}
           </div>
@@ -39,13 +39,9 @@ const AllOrderCard = ({ order }) => {
               {order.products.map((order) => (
                 <tr key={order._id}>
                   <th style={{ width: "10%" }}>
-                    <img
-                      className="smallImg"
-                      src={order.product.cover}
-                      alt=""
-                    />
+                    <img className="smallImg" src={order.cover} alt="" />
                   </th>
-                  <td style={{ width: "70%" }}>{order.product.name}</td>
+                  <td style={{ width: "70%" }}>{order.productName}</td>
                   <td
                     style={{
                       width: "10%",
