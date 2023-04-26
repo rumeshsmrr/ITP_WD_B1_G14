@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,7 +41,9 @@ const Footer = () => {
             <ul>
               <li>Help Center </li>
               <li>How to Buy </li>
-              <li><a href="/adminAndEmployee"> Admin and employee login </a></li>
+              <li>
+                <Link to="/adminAndEmployee"> Admin and employee login </Link>
+              </li>
             </ul>
           </div>
           <div className="box">
