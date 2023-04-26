@@ -17,7 +17,7 @@ function SingleProduct() {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   
-  
+
   const [product, setProduct] = useState({});
 
   const params = useParams() 
@@ -26,9 +26,11 @@ function SingleProduct() {
   const [name , setName] = useState('')
   const [price , setPrice] = useState('')
   const [category , setCategory] = useState('')
-  const [cover , setCover] = useState('')
+  const [fileName , setFileName] = useState('')
   const [description , setDescription] = useState('')
  
+  useEffect(() => {
+
   
     
     axios.get(`http://localhost:8070/api/products/${params.id}`).then((res) => {
@@ -37,12 +39,13 @@ function SingleProduct() {
         setName(res.data.name) 
         setPrice(res.data.price) 
         setCategory(res.data.category) 
-        setCover(res.data.cover)
+        setFileName(res.data.cover)
         setDescription(res.data.description) 
 
         console.log(res.data)
         
     })
+  })
 
   const cartAddSuccess = () =>
     toast.success("🛒 Product Added to cart", {
@@ -88,7 +91,7 @@ function SingleProduct() {
         customerId: customer._id,
         productId: i,
         productName: name,
-        productCover: cover,
+        productCover: fileName,
         price: price,
       });
       // alert("Product added to cart");
@@ -111,7 +114,7 @@ function SingleProduct() {
           <div className="product-imgs">
             <div className="img-display">
               <div className="img-showcase">
-                <img src={`${cover}`} alt="" />
+                <img src={`/uploads/${fileName}`} alt="" />
               </div>
             </div>
           </div>
