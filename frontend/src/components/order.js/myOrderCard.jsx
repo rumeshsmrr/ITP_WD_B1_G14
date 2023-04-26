@@ -39,7 +39,7 @@ const MyOrderCard = ({ order }) => {
                   <th style={{ width: "10%" }}>
                     <img
                       className="smallImg"
-                      src={`/uploads/${order.over}`}
+                      src={`/uploads/${order.cover}`}
                       alt=""
                     />
                   </th>

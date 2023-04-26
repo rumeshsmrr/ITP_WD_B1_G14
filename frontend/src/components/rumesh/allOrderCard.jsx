@@ -39,7 +39,11 @@ const AllOrderCard = ({ order }) => {
               {order.products.map((order) => (
                 <tr key={order._id}>
                   <th style={{ width: "10%" }}>
-                    <img className="smallImg" src={order.cover} alt="" />
+                    <img
+                      className="smallImg"
+                      src={`/uploads/${order.cover}`}
+                      alt=""
+                    />
                   </th>
                   <td style={{ width: "70%" }}>{order.productName}</td>
                   <td
