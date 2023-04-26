@@ -67,7 +67,7 @@ export default function Profile() {
       <Container className="user-profile-container">
         <div className="profile-card">
 
-        
+
         <Row>
           <Col md={12} className="text-center">
             <Image
