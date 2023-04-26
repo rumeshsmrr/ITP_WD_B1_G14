@@ -31,98 +31,22 @@ import EditSupplierItem from "./pages/supplierDashboard/editSupplierItems/editsu
 import PurchasingItems from "./pages/supplierDashboard/purchasingItems/addOrderItem";
 import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfororder";
 import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
-
+import AllOrder from "./components/rumesh/allOrder";
 
 function App() {
-  //Step 1 :
-  // const { productItems } = Data;
-  // const { shopItems } = Sdata;
-
-  // //Step 2 :
-  // const [CartItem, setCartItem] = useState([]);
-
-  // //Step 4 :
-  // const addToCart = (product) => {
-  //   const productExit = CartItem.find((item) => item.id === product.id);
-
-  //   if (productExit) {
-  //     setCartItem(
-  //       CartItem.map((item) =>
-  //         item.id === product.id
-  //           ? { ...productExit, qty: productExit.qty + 1 }
-  //           : item
-  //       )
-  //     );
-  //   } else {
-  //     setCartItem([...CartItem, { ...product, qty: 1 }]);
-  //   }
-  // };
-
-  // // Stpe: 6
-  // const decreaseQty = (product) => {
-  //   const productExit = CartItem.find((item) => item.id === product.id);
-
-  //   if (productExit.qty === 1) {
-  //     setCartItem(CartItem.filter((item) => item.id !== product.id));
-  //   } else {
-  //     setCartItem(
-  //       CartItem.map((item) =>
-  //         item.id === product.id
-  //           ? { ...productExit, qty: productExit.qty - 1 }
-  //           : item
-  //       )
-  //     );
-  //   }
-  // };
-
-  // //remove cart item
-  // const removeCart = (product) => {
-  //   setCartItem(CartItem.filter((item) => item.id !== product.id));
-  // };
-
   const customer = useSelector((state) => state.customer.currentCustomer);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/myorder"
-            exact
-            element={
-              <MyOrder
-              // CartItem={CartItem}
-              />
-            }
-          ></Route>
-          <Route
-            path="/"
-            exact
-            element={
-              <Pages
-              // shopItems={shopItems}
-              // CartItem={CartItem}
-              // addToCart={addToCart}
-              />
-            }
-          ></Route>
+          <Route path="/myorder" exact element={<MyOrder />}></Route>
+          <Route path="/" exact element={<Pages />}></Route>
 
-          
-           <Route
+          <Route
             path="/cart"
             exact
-            element={
-              // <Cart
-              // // shopItems={shopItems}
-              // // CartItem={CartItem}
-              // // decreaseQty={decreaseQty}
-              // // removeCart={removeCart}
-              // // addToCart={addToCart}
-              // // setCartItem={setCartItem}
-              // />
-
-              customer ? <Cart /> : <CartError />
-            }
+            element={customer ? <Cart /> : <CartError />}
           ></Route>
           <Route
             path="/singleProduct/:id"
@@ -134,64 +58,48 @@ function App() {
             exact
             element={<CustomerSignIn />}
           ></Route>
-          {/* <Provider> */}
 
           <Route
             path="/cusLogin"
             exact
-            element={
-              // <Provider store={store}>
-              customer ? <Navigate replace to="/" /> : <CusLogin />
-            }
+            element={customer ? <Navigate replace to="/" /> : <CusLogin />}
           ></Route>
-          {/* </Provider> */}
-
+          <Route path="/allOrder" exact element={<AllOrder />}></Route>
 
           {/* poornaka */}
           <Route path="/adminAndEmployee" exact element={<Home />} />
           <Route path="/admin" exact element={<AdminLogin />} />
           <Route path="/adminDashboard" exact element={<AdminDashboard />} />
           <Route path="/employee" exact element={<EmployeeLogin />} />
-          <Route path="/employeeDashboard" exact element={<EmployeeDashboard />} />
+          <Route
+            path="/employeeDashboard"
+            exact
+            element={<EmployeeDashboard />}
+          />
           <Route path="addUser" exact element={<AddUser />} />
           <Route path="editUser" exact element={<EditUser />} />
           <Route path="/profile" exact element={<Profile />} />
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
-          
 
+          <Route path="/supplier" exact element={<Dashboard />} />
 
-          <Route path="/supplier"
+          <Route path="/AddSupplier" exact element={<AddSupplier />} />
+
+          <Route path="/edit/:id" exact element={<EditSupplier />} />
+
+          <Route path="/AddSupplieritem" exact element={<AddSupplierItems />} />
+
+          <Route path="/edits/:id" exact element={<EditSupplierItem />} />
+
+          <Route
+            path="/viewUniqueItem"
             exact
-            element={<Dashboard/>}/>
+            element={<SupplierUniqueItem />}
+          />
 
-            <Route path="/AddSupplier" 
-            exact
-            element={<AddSupplier/>}/>
+          <Route path="/Purchasingitems" exact element={<PurchasingItems />} />
 
-            <Route path="/edit/:id" 
-            exact
-            element={<EditSupplier/>}/>
-
-            <Route path="/AddSupplieritem" 
-            exact
-            element={<AddSupplierItems/>}/>
-
-            <Route path="/edits/:id" 
-            exact
-            element={<EditSupplierItem/>}/>
-
-            <Route path="/viewUniqueItem" 
-            exact
-            element={<SupplierUniqueItem/>}/>
-
-            <Route path="/Purchasingitems" 
-            exact
-            element={<PurchasingItems/>}/>
-
-            <Route path="/Paymentfororder" 
-            exact
-            element={<PaymentForOrder/>}/>
-
+          <Route path="/Paymentfororder" exact element={<PaymentForOrder />} />
         </Routes>
       </BrowserRouter>
     </>
