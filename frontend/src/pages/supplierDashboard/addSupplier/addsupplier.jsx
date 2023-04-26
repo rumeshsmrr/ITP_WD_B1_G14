@@ -97,15 +97,14 @@ const AddSupplier = ({ CartItem }) => {
 
     const header = [
       [
-        "Supplie Rgistration Number",
+        "Registration Number",
         "Supplier Name",
-        "Supplier Contact Number",
-        "Supplier Address",
-        "Supplier E-mail Address",
-        "Discription",
+        "Contact Number",
+        "Address",
+        "E-mail Address",
+        "Description",
       ],
     ];
-
     const tableRows = [];
 
     let no = 0;
