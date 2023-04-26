@@ -8,7 +8,8 @@ const Footer = () => {
       <footer>
         <div className="container grid2">
           <div className="box">
-            <h1>Guident Computers</h1>
+            <a href="/" className="shop-name">Guident Computers</a>
+            
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
               libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat
