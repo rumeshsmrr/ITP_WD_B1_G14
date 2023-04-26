@@ -149,9 +149,7 @@ function SingleProduct() {
                     <b>IN STOCK</b>
                   </span>
                 </li>
-                <li>
-                  <b>Category:</b> <span></span>
-                </li>
+                
               </ul>
             </div>
 

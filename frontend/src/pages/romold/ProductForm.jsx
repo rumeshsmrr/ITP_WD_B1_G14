@@ -53,8 +53,8 @@ const ProductForm = () =>  {
   return (
     <div>
 
-        <div className="container">
-          <div className="addUser-card">
+        <div className="container" style={{height:"1300px"}}>
+          <div className="addUser1-card">
             <div className="card-title">
               <center>
                 <text>Add Product</text>
