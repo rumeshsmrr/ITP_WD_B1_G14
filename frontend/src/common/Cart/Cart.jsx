@@ -260,11 +260,12 @@ const Cart = () => {
 
             {cartItems.map((item) => {
               const productQty = item.price * item.quantity;
+              {console.log(item)}
 
               return (
                 <div className="cart-list product d_flex" key={item.productId}>
                   <div className="img">
-                    <img src={item.productCover} alt="" />
+                    <img src={`/uploads/${item.productCover}`} alt="" />
                   </div>
                   <div className="cart-details">
                     <h3>{item.productName}</h3>

@@ -22,6 +22,7 @@ import AddUser from "./pages/poornaka/AddUser";
 import EditUser from "./pages/poornaka/EditUser";
 import Profile from "./pages/poornaka/Profile";
 import ViewAttendance from "./pages/poornaka/ViewAttendance";
+import ProductForm from "./pages/romold/ProductForm";
 
 import Dashboard from "./pages/supplierDashboard/dashboard";
 import AddSupplier from "./pages/supplierDashboard/addSupplier/addsupplier";
@@ -80,6 +81,9 @@ function App() {
           <Route path="editUser" exact element={<EditUser />} />
           <Route path="/profile" exact element={<Profile />} />
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
+
+          {/* romold */}
+          <Route path ="/createProduct" exact element={<ProductForm />}/>
 
           <Route path="/supplier" exact element={<Dashboard />} />
 

@@ -123,7 +123,7 @@ const ShopCart = () => {
               <div className="img shopImg">
                 <span className="discount">{shopItems.discount}% Off</span>
                 <Link to={`/singleProduct/${shopItems._id}`}>
-                  <img src={`${shopItems.cover}`} alt="" />
+                  <img src={`/uploads/${shopItems.cover}`} alt="" />
                   {/* <div className="product-like"> */}
                   {/* <label>{count}</label> <br /> */}
                   {/* <i className="fa-regular fa-heart" onClick={increment}></i> */}

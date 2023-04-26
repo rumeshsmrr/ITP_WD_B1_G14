@@ -36,21 +36,21 @@ const getProduct = async(req , res) => {
 
 
 //CREATE a new product 
-const createProduct = async(req , res) => {
+// const createProduct = async(req , res) => {
 
-    //add doc to db
-    const {name , price , category , cover , description , discount} = req.body
+//     //add doc to db
+//     const {name , price , category , cover , description , discount} = req.body
     
-    try{
-        const product = await Product.create({name , price , category , cover , description , discount})  
-        res.status(200).json(product)
+//     try{
+//         const product = await Product.create({name , price , category , cover , description , discount})  
+//         res.status(200).json(product)
 
-    }catch(error){
+//     }catch(error){
 
-        res.status(400).json({error : error.message})
+//         res.status(400).json({error : error.message})
 
-    }
-}
+//     }
+// }
 
 //DELETE a product 
 const deleteProduct = async(req , res) => {
@@ -109,7 +109,6 @@ module.exports = {
 
     getProducts,
     getProduct,
-    createProduct,
     deleteProduct,
     updateProduct,
     searchProducts
