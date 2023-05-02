@@ -170,6 +170,8 @@ const PurchasingItems = ({CartItem}) => {
             </div> */}
         {/* </div> */}
     {/* // </div> */} */
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <Footer/>
     </>
     )
