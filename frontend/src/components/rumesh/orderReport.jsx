@@ -158,7 +158,7 @@ const OrderReport = () => {
           <div className="contentWidth">
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
-                <h2>Order Reports</h2>
+                <h2>Monthly Order Reports Generator</h2>
               </div>
             </div>
 

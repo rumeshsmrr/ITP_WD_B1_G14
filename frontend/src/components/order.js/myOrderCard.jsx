@@ -13,7 +13,7 @@ const MyOrderCard = ({ order }) => {
             <div className="placeData">Address : </div>
             <div className="product-address">{order.address}</div>
           </div>
-          <div>Total : Rs: {order.total}/=</div>
+          <div>Total : Rs: {order.total.toFixed(2)}/=</div>
           <div>{order.status.toUpperCase()}</div>
         </div>
         <div className="order secondary-info">
