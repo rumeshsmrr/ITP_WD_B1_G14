@@ -117,7 +117,9 @@ const OrderReport = () => {
 
     // doc.setFontSize(15);
     // const empty = "";
-    const title = "Order Report";
+    const selMonth = selectedDate.getMonth() + 1;
+    const selYear = selectedDate.getFullYear();
+    const title = `Order Report of ${selMonth}/${selYear}`;
     const date = `Generated Date : ${new Date().toLocaleDateString()}`;
     const headers = [
       ["Customer Email", "Order Date", "Address", "Order Total", "Status"],
@@ -132,20 +134,20 @@ const OrderReport = () => {
     ]);
 
     let content = {
-      startY: 120, // move down to avoid overlapping with the image
+      startY: 130, // move down to avoid overlapping with the image
       head: headers,
       body: data,
     };
 
     // doc.text(empty, marginLeft, 70);
-    doc.setFontSize(20);
+    doc.setFontSize(16);
     const titleWidth = doc.getTextWidth(title);
     const x = (doc.internal.pageSize.width - titleWidth) / 2;
     doc.text(title, x, 100); // Update the coordinates and add the 'align' property
     doc.setFontSize(11);
-    doc.text(date, marginLeft, 110);
+    doc.text(date, marginLeft, 120);
     doc.autoTable(content);
-    doc.save(`orderReport-${new Date().toLocaleDateString()}.pdf`);
+    doc.save(`orderReport-${selMonth}/${selYear}.pdf`);
   };
 
   return (

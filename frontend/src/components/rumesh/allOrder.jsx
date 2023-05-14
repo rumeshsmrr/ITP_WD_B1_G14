@@ -38,6 +38,30 @@ const StyledButton = styled.button`
   border-radius: 5px;
   width: 200px;
 `;
+const CardContainer = styled.div`
+  display: flex;
+  // justify-content: space-between;
+`;
+
+const IncomeBox = styled.div`
+  width: 200px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: #c9edff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0f3460;
+`;
+
+const LastMonthIncome = styled(IncomeBox)`
+  margin-right: 10px;
+`;
+
+const LastYearIncome = styled(IncomeBox)`
+  margin-left: 10px;
+`;
 
 const AllOrder = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -81,11 +105,23 @@ const AllOrder = () => {
                 <h2>Order Management</h2>
               </div>
             </div>
-            <div>Last Month Income : Rs: {income.lastMonth}</div>
-            <div>Last Year Income : Rs: {income.lastYear} </div>
-            <Link to={"/orderReport"}>
-              <StyledButton>GET REPORT</StyledButton>
-            </Link>
+            <br></br>
+
+            <CardContainer>
+              <LastMonthIncome>
+                <div style={{ fontWeight: "600" }}>Last Month Income</div>
+                <div>Rs: {income.lastMonth}</div>
+              </LastMonthIncome>
+              <LastYearIncome>
+                <div style={{ fontWeight: "600" }}>Last Year Income</div>
+                <div>Rs: {income.lastYear}</div>
+              </LastYearIncome>
+              <div style={{ marginLeft: "20px" }}>
+                <Link to={"/orderReport"}>
+                  <StyledButton>GET REPORT</StyledButton>
+                </Link>
+              </div>
+            </CardContainer>
 
             <div style={{ marginTop: "50px" }}>
               <FilterContainer>
