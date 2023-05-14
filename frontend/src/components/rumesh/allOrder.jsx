@@ -6,6 +6,7 @@ import Footer from "../../common/footer/Footer";
 import AllOrderCards from "./allOrderCards";
 import Navbar from "../../pages/poornaka/Navbar";
 import { publicRequest } from "../../requestMethods";
+import { Link } from "react-router-dom";
 
 const FilterContainer = styled.div`
   display: flex;
@@ -72,6 +73,11 @@ const AllOrder = () => {
             </div>
             <div>Last Month Income : Rs: {income.lastMonth}</div>
             <div>Last Year Income : Rs: {income.lastYear} </div>
+            <Link to={"/orderReport"}>
+              <div>
+                <button>Reports</button>{" "}
+              </div>
+            </Link>
 
             <div style={{ marginTop: "50px" }}>
               <div
