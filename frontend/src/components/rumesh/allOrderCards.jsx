@@ -70,11 +70,15 @@ const AllOrderCards = ({ filters, sort }) => {
   return (
     <>
       <div>
+        {/* <label style={{ width: "50%", marginLeft: "20px" }}>
+          Search Order by product name or Customer email :{" "}
+        </label> */}
         <input
           type="text"
           placeholder="Search by product name or customer email"
           value={searchTerm}
           onChange={handleSearch}
+          style={{ width: "50%", marginLeft: "10px" }}
         />
       </div>
       {filteredProducts.map((order) => (

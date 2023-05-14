@@ -29,6 +29,16 @@ const Select = styled.select`
 `;
 const Option = styled.option``;
 
+const StyledButton = styled.button`
+  background-color: #67bae4;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  width: 200px;
+`;
+
 const AllOrder = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
   const [filters, setFilters] = useState({});
@@ -74,22 +84,10 @@ const AllOrder = () => {
             <div>Last Month Income : Rs: {income.lastMonth}</div>
             <div>Last Year Income : Rs: {income.lastYear} </div>
             <Link to={"/orderReport"}>
-              <div>
-                <button>Reports</button>{" "}
-              </div>
+              <StyledButton>GET REPORT</StyledButton>
             </Link>
 
             <div style={{ marginTop: "50px" }}>
-              <div
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "600",
-                  textAlign: "center",
-                }}
-              >
-                {" "}
-                Order Details
-              </div>
               <FilterContainer>
                 <Filter>
                   <FilterText>Filter Orders:</FilterText>
@@ -102,7 +100,16 @@ const AllOrder = () => {
                     <Option>delivered</Option>
                   </Select>
                 </Filter>
-
+                <div
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "600",
+                    textAlign: "center",
+                  }}
+                >
+                  {" "}
+                  Order Details
+                </div>
                 <Filter>
                   <FilterText>Sort Orders:</FilterText>
                   <Select onChange={(e) => setSort(e.target.value)}>

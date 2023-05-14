@@ -5,21 +5,23 @@ import styled from "styled-components";
 import { publicRequest } from "../../requestMethods";
 import Navbar from "../../pages/poornaka/Navbar";
 import Footer from "../../common/footer/Footer";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-const StyledDatePicker = styled(DatePicker)`
-  width: 300px;
-`;
+// const StyledDatePicker = styled(DatePicker)`
+//   width: 300px;
+// `;
 
-const Title = styled.h1`
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
-`;
+// const Title = styled.h1`
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin-bottom: 16px;
+// `;
 
 const TableContainer = styled.div`
   margin-top: 32px;
@@ -51,9 +53,41 @@ const TableCell = styled.td`
   border-bottom: 1px solid #ddd;
 `;
 
+const FiltersContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+`;
+
+const StyledDatePicker = styled(DatePicker)`
+  width: 300px;
+  margin-right: 16px;
+`;
+
+const StyledButton = styled.button`
+  background-color: #67bae4;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  width: 200px;
+`;
+
+const MessageContainer = styled.div`
+  background-color: #fcffb2;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  color: #c07f00;
+  padding: 10px;
+`;
 const OrderReport = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [orders, setOrders] = useState([]);
+  const [monthSelected, setMonthSelected] = useState(false);
 
   const fetchOrdersByMonth = async (year, month) => {
     const res = await publicRequest.get(`/order/orders/${year}/${month}`);
@@ -66,41 +100,54 @@ const OrderReport = () => {
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     fetchOrdersByMonth(year, month);
+    setMonthSelected(true);
   };
 
-  //   return (
-  //     <Container>
-  //       <Title>Orders By Month</Title>
-  //       <DatePicker
-  //         selected={selectedDate}
-  //         onChange={handleDateChange}
-  //         dateFormat="MMMM yyyy"
-  //         showMonthYearPicker
-  //       />
-  //       <TableContainer>
-  //         <Table>
-  //           <TableHead>
-  //             <TableRow>
-  //               <TableHeaderCell>Order ID</TableHeaderCell>
-  //               <TableHeaderCell>Customer Name</TableHeaderCell>
-  //               <TableHeaderCell>Order Date</TableHeaderCell>
-  //               <TableHeaderCell>Order Total</TableHeaderCell>
-  //             </TableRow>
-  //           </TableHead>
-  //           <TableBody>
-  //             {orders.map((order) => (
-  //               <TableRow key={order._id}>
-  //                 <TableCell>{order.orderId}</TableCell>
-  //                 <TableCell>{order.customerName}</TableCell>
-  //                 <TableCell>{order.createdAt}</TableCell>
-  //                 <TableCell>${order.total.toFixed(2)}</TableCell>
-  //               </TableRow>
-  //             ))}
-  //           </TableBody>
-  //         </Table>
-  //       </TableContainer>
-  //     </Container>
-  //     );
+  const generatePDF = () => {
+    const unit = "pt";
+    const size = "A4";
+    const orientation = "portrait";
+
+    const marginLeft = 40;
+    const doc = new jsPDF(orientation, unit, size);
+
+    const logoUrl =
+      "https://res.cloudinary.com/daee4aeur/image/upload/v1684050441/Untitled-1_i5zhda.png";
+    doc.addImage(logoUrl, "PNG", marginLeft, 10, 500, 60, null, null, 0, 10); // add image
+
+    // doc.setFontSize(15);
+    // const empty = "";
+    const title = "Order Report";
+    const date = `Generated Date : ${new Date().toLocaleDateString()}`;
+    const headers = [
+      ["Customer Email", "Order Date", "Address", "Order Total", "Status"],
+    ];
+
+    const data = orders.map((order) => [
+      order.customerEmail,
+      order.createdAt.substring(0, 10),
+      order.address,
+      `Rs:${order.total.toFixed(2)}`,
+      order.status,
+    ]);
+
+    let content = {
+      startY: 120, // move down to avoid overlapping with the image
+      head: headers,
+      body: data,
+    };
+
+    // doc.text(empty, marginLeft, 70);
+    doc.setFontSize(20);
+    const titleWidth = doc.getTextWidth(title);
+    const x = (doc.internal.pageSize.width - titleWidth) / 2;
+    doc.text(title, x, 100); // Update the coordinates and add the 'align' property
+    doc.setFontSize(11);
+    doc.text(date, marginLeft, 110);
+    doc.autoTable(content);
+    doc.save(`orderReport-${new Date().toLocaleDateString()}.pdf`);
+  };
+
   return (
     <>
       <Navbar />
@@ -112,30 +159,49 @@ const OrderReport = () => {
                 <h2>Order Reports</h2>
               </div>
             </div>
+
             <Container>
-              <StyledDatePicker
-                selected={selectedDate}
-                onChange={handleDateChange}
-                dateFormat="MMMM yyyy"
-                showMonthYearPicker
-              />
+              <FiltersContainer>
+                <div>
+                  <StyledDatePicker
+                    selected={selectedDate}
+                    onChange={handleDateChange}
+                    dateFormat="MMMM yyyy"
+                    showMonthYearPicker
+                  />
+                </div>
+                <div>
+                  <StyledButton onClick={generatePDF}>
+                    Download PDF
+                  </StyledButton>
+                </div>
+              </FiltersContainer>
+              {!monthSelected && (
+                <MessageContainer>Please select a month.</MessageContainer>
+              )}
               <TableContainer>
                 <Table>
                   <TableHead>
                     <TableRow>
-                      <TableHeaderCell>Order ID</TableHeaderCell>
                       <TableHeaderCell>Customer Name</TableHeaderCell>
+                      <TableHeaderCell>Customer Email</TableHeaderCell>
                       <TableHeaderCell>Order Date</TableHeaderCell>
+                      <TableHeaderCell>Address</TableHeaderCell>
                       <TableHeaderCell>Order Total</TableHeaderCell>
+                      <TableHeaderCell>Status</TableHeaderCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {orders.map((order) => (
                       <TableRow key={order._id}>
-                        <TableCell>{order.orderId}</TableCell>
                         <TableCell>{order.customerName}</TableCell>
-                        <TableCell>{order.createdAt}</TableCell>
-                        <TableCell>${order.total.toFixed(2)}</TableCell>
+                        <TableCell>{order.customerEmail}</TableCell>
+                        <TableCell>
+                          {order.createdAt.substring(0, 10)}
+                        </TableCell>
+                        <TableCell>{order.address}</TableCell>
+                        <TableCell>Rs:{order.total.toFixed(2)}</TableCell>
+                        <TableCell>{order.status.toUpperCase()}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
