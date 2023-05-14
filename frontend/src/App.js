@@ -34,6 +34,7 @@ import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfo
 import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
 import AllOrder from "./components/rumesh/allOrder";
 import ProductEditDelete from "./pages/romold/ProductEditDelete";
+import OrderReport from "./components/rumesh/orderReport";
 
 function App() {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -67,6 +68,7 @@ function App() {
             element={customer ? <Navigate replace to="/" /> : <CusLogin />}
           ></Route>
           <Route path="/allOrder" exact element={<AllOrder />}></Route>
+          <Route path="/orderReport" exact element={<OrderReport />}></Route>
 
           {/* poornaka */}
           <Route path="/adminAndEmployee" exact element={<Home />} />
@@ -84,7 +86,7 @@ function App() {
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
 
           {/* romold */}
-          <Route path ="/createProduct" exact element={<ProductForm />}/>
+          <Route path="/createProduct" exact element={<ProductForm />} />
 
           <Route path="/supplier" exact element={<Dashboard />} />
 
@@ -95,7 +97,7 @@ function App() {
           <Route path="/AddSupplieritem" exact element={<AddSupplierItems />} />
 
           <Route path="/edits/:id" exact element={<EditSupplierItem />} />
-          <Route path="/productEdit" exact element={<ProductEditDelete/>} />
+          <Route path="/productEdit" exact element={<ProductEditDelete />} />
 
           <Route
             path="/viewUniqueItem"
@@ -106,7 +108,6 @@ function App() {
           <Route path="/Purchasingitems" exact element={<PurchasingItems />} />
 
           <Route path="/Paymentfororder" exact element={<PaymentForOrder />} />
-
         </Routes>
       </BrowserRouter>
     </>
