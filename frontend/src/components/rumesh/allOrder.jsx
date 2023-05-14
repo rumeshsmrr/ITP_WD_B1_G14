@@ -37,10 +37,22 @@ const StyledButton = styled.button`
   align-content: center;
   border-radius: 5px;
   width: 200px;
+  transition: background 0.3s ease-in-out;
+  background-image: linear-gradient(to bottom, #67bae4, #4f9fcc);
+
+  &:hover {
+    background-position: 0 100%;
+    background-image: linear-gradient(to bottom, #67bae4, white);
+    color: green;
+  }
 `;
+
 const CardContainer = styled.div`
   display: flex;
   // justify-content: space-between;
+  background-color: #11498c;
+  padding: 20px;
+  border-radius: 5px;
 `;
 
 const IncomeBox = styled.div`
