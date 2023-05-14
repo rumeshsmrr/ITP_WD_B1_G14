@@ -5,7 +5,6 @@ const AllOrderCard = ({ order }) => {
     <>
       <div className="box mtop">
         <div className="order main-info d_flex">
-          <div className="orderNo">Order No: {order._id}</div>
           <div className="orderNo">Customer: {order.customerEmail}</div>
           <div className="placeData">
             Placed At: {order.createdAt.substring(0, 10)}
