@@ -43,9 +43,6 @@ const suplierRoutes =require("./routes/supplier");
 app.use("/api/v1", suplierRoutes); //(PH)
 
 
-
-
-
 //connection to db
 mongoose
   .connect(process.env.DATABASE)

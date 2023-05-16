@@ -34,6 +34,7 @@ import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfo
 import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
 import AllOrder from "./components/rumesh/allOrder";
 import ProductEditDelete from "./pages/romold/ProductEditDelete";
+import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 
 function App() {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -84,7 +85,7 @@ function App() {
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
 
           {/* romold */}
-          <Route path ="/createProduct" exact element={<ProductForm />}/>
+          <Route path="/createProduct" exact element={<ProductForm />} />
 
           <Route path="/supplier" exact element={<Dashboard />} />
 
@@ -95,7 +96,7 @@ function App() {
           <Route path="/AddSupplieritem" exact element={<AddSupplierItems />} />
 
           <Route path="/edits/:id" exact element={<EditSupplierItem />} />
-          <Route path="/productEdit" exact element={<ProductEditDelete/>} />
+          <Route path="/productEdit" exact element={<ProductEditDelete />} />
 
           <Route
             path="/viewUniqueItem"
@@ -106,7 +107,7 @@ function App() {
           <Route path="/Purchasingitems" exact element={<PurchasingItems />} />
 
           <Route path="/Paymentfororder" exact element={<PaymentForOrder />} />
-
+          <Route path="/purchaseSheet" exact element={<PurchaseSheet />} />
         </Routes>
       </BrowserRouter>
     </>
