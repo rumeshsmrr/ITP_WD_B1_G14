@@ -132,6 +132,12 @@ const AddSupplier = ({ CartItem }) => {
       "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
     doc.addImage(img, "jpg", 30, 3, 150, 30);
 
+    doc.setFontSize(20);
+    const title = "Suppliers";
+    const titleWidth = doc.getTextWidth(title);
+    const x = (doc.internal.pageSize.width - titleWidth) / 2; // center the title
+    doc.text(title, x, 50);
+
     //doc.autoTable(tableColumn, tableRows, { startY: 70 });
 
     doc.autoTable({
@@ -184,8 +190,12 @@ const AddSupplier = ({ CartItem }) => {
               <div class="H_A_form">
                 <div class="H_A_title">Welcome</div>
                 <div class="H_A_subtitle">
-                  Let's can you add new suppliers to the system!
+                  <strong>
+                    Let's can you add new suppliers to the system!
+                  </strong>
                 </div>
+                <br />
+                <br />
 
                 <form onSubmit={handelSubmit}>
                   <div class="H_A_input-container ic1">
@@ -203,9 +213,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="regNumber" class="H_A_placeholder">
-                      Rgistration Number
+                      <strong>Registration Number</strong>
                     </label>
                   </div>
+                  <br />
 
                   <div class="H_A_input-container ic2">
                     <input
@@ -222,9 +233,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="supname" class="H_A_placeholder">
-                      Supplier Name
+                      <strong>Supplier Name</strong>
                     </label>
                   </div>
+                  <br />
 
                   <div class="H_A_input-container ic3">
                     <input
@@ -242,9 +254,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="contnnum" class="H_A_placeholder">
-                      Contact Number
+                      <strong>Contact Number</strong>
                     </label>
                   </div>
+                  <br />
 
                   <div class="H_A_input-container ic4">
                     <input
@@ -261,9 +274,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="address" class="H_A_placeholder">
-                      Address
+                      <strong>Address</strong>
                     </label>
                   </div>
+                  <br />
 
                   <div class="H_A_input-container ic5">
                     <input
@@ -280,9 +294,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="mail" class="H_A_placeholder">
-                      E-mail Address
+                      <strong>E-mail Address</strong>
                     </label>
                   </div>
+                  <br />
 
                   <div class="H_A_input-container ic6">
                     <input
@@ -299,9 +314,10 @@ const AddSupplier = ({ CartItem }) => {
                     />
                     <div class="H_A_cut"></div>
                     <label for="description" class="H_A_placeholder">
-                      Description
+                      <strong>Description</strong>
                     </label>
                   </div>
+                  <br />
 
                   <button type="submit" class="H_A_submit">
                     SUBMIT
@@ -405,8 +421,8 @@ const AddSupplier = ({ CartItem }) => {
           <div className="H_A_box2">
             <span></span>
             <div className="H_A_content">
-              <div className="col-md-6">
-                <table class="table">
+              <div className="H_A_col-md-6">
+                <table class="H_A_table">
                   <thead>
                     <tr>
                       {/* <th scope="col">ID</th> */}
@@ -505,13 +521,15 @@ const AddSupplier = ({ CartItem }) => {
                           <td>{supplier.description}</td>
                           <td>
                             <Link to={`/edit/${supplier._id}`}>
-                              <button className="btn btn-primary">Edit</button>
+                              <button className="H_A_btn_btn-primary">
+                                Edit
+                              </button>
                             </Link>
                           </td>
                           <td>
                             <button
                               onClick={() => handelDelete(supplier._id)}
-                              className="btn btn-danger"
+                              className="H_A_btn_btn-danger"
                             >
                               Delete
                             </button>
