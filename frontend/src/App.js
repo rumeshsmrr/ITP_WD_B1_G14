@@ -35,6 +35,7 @@ import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/suppl
 import AllOrder from "./components/rumesh/allOrder";
 import ProductEditDelete from "./pages/romold/ProductEditDelete";
 import OrderReport from "./components/rumesh/orderReport";
+import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 
 function App() {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -108,6 +109,7 @@ function App() {
           <Route path="/Purchasingitems" exact element={<PurchasingItems />} />
 
           <Route path="/Paymentfororder" exact element={<PaymentForOrder />} />
+          <Route path="/purchaseSheet" exact element={<PurchaseSheet />} />
         </Routes>
       </BrowserRouter>
     </>
