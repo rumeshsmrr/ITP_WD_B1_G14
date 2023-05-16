@@ -34,6 +34,7 @@ import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfo
 import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
 import AllOrder from "./components/rumesh/allOrder";
 import ProductEditDelete from "./pages/romold/ProductEditDelete";
+import OrderReport from "./components/rumesh/orderReport";
 import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             element={customer ? <Navigate replace to="/" /> : <CusLogin />}
           ></Route>
           <Route path="/allOrder" exact element={<AllOrder />}></Route>
+          <Route path="/orderReport" exact element={<OrderReport />}></Route>
 
           {/* poornaka */}
           <Route path="/adminAndEmployee" exact element={<Home />} />

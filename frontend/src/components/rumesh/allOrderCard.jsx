@@ -5,7 +5,6 @@ const AllOrderCard = ({ order }) => {
     <>
       <div className="box mtop">
         <div className="order main-info d_flex">
-          <div className="orderNo">Order No: {order._id}</div>
           <div className="orderNo">Customer: {order.customerEmail}</div>
           <div className="placeData">
             Placed At: {order.createdAt.substring(0, 10)}
@@ -14,7 +13,7 @@ const AllOrderCard = ({ order }) => {
             <div className="placeData">Address : </div>
             <div className="product-address">{order.address}</div>
           </div>
-          <div>Total : {order.total}</div>
+          <div>Total : {order.total.toFixed(2)}</div>
           <div>{order.status.toUpperCase()}</div>
         </div>
         <div className="order secondary-info">
@@ -31,7 +30,7 @@ const AllOrderCard = ({ order }) => {
               <tr>
                 <th style={{ width: "10%" }}></th>
                 <th style={{ width: "80%", textAlign: "left" }}>Product</th>
-                <th style={{ width: "10%", margin: "10px" }}>Price </th>
+                <th style={{ width: "10%", margin: "10px" }}> </th>
                 <th style={{ width: "10%" }}>Quantity</th>
               </tr>
             </thead>

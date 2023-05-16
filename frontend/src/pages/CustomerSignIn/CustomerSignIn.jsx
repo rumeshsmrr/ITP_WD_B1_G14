@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./signinStyle.css";
 
 const CustomerSignIn = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8070/api/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
+      console.log(response.data);
+      alert("Registration Success");
+    } catch (err) {
+      console.error(err);
+      alert("Registration Not Success");
+    }
+  };
+
   return (
     <>
       <div className="login">
@@ -14,40 +39,36 @@ const CustomerSignIn = () => {
               omnis voluptatum? Suscipit ea magnam illum laudantium asperiores
               repellendus explicabo voluptatum in id velit.
             </p>
-            {/* <h4 className="login-p1-subtopic">login with social media</h4>
-            <div className="btn-box">
-              <button className="btn f-btn">
-                <img src="./images/icon/facebook-app-symbol.png" alt="" />{" "}
-              </button>
-              <button className="btn s-btn">
-                <img src="./images/icon/twitter.png" alt=""/>
-                <p> login with twitter</p>
-              </button>
-            </div> */}
           </div>
 
           <div className="login-p2">
             <h3>Registration</h3>
             <p></p>
 
-            <form action="#">
+            <form onSubmit={handleSubmit}>
               <input
                 className="inputbox"
                 type="text"
                 placeholder="username"
                 id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
               <input
                 className="inputbox"
                 type="email"
                 placeholder="Email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 className="inputbox"
                 type="text"
                 placeholder="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="form-box2">
                 <div>
@@ -67,4 +88,5 @@ const CustomerSignIn = () => {
     </>
   );
 };
+
 export default CustomerSignIn;

@@ -6,6 +6,7 @@ import Footer from "../../common/footer/Footer";
 import AllOrderCards from "./allOrderCards";
 import Navbar from "../../pages/poornaka/Navbar";
 import { publicRequest } from "../../requestMethods";
+import { Link } from "react-router-dom";
 
 const FilterContainer = styled.div`
   display: flex;
@@ -27,6 +28,52 @@ const Select = styled.select`
   margin-right: 20px;
 `;
 const Option = styled.option``;
+
+const StyledButton = styled.button`
+  background-color: #67bae4;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  width: 200px;
+  transition: background 0.3s ease-in-out;
+  background-image: linear-gradient(to bottom, #67bae4, #4f9fcc);
+
+  &:hover {
+    background-position: 0 100%;
+    background-image: linear-gradient(to bottom, #67bae4, white);
+    color: green;
+  }
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  // justify-content: space-between;
+  background-color: #11498c;
+  padding: 20px;
+  border-radius: 5px;
+`;
+
+const IncomeBox = styled.div`
+  width: 200px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: #c9edff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0f3460;
+`;
+
+const LastMonthIncome = styled(IncomeBox)`
+  margin-right: 10px;
+`;
+
+const LastYearIncome = styled(IncomeBox)`
+  margin-left: 10px;
+`;
 
 const AllOrder = () => {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -70,20 +117,25 @@ const AllOrder = () => {
                 <h2>Order Management</h2>
               </div>
             </div>
-            <div>Last Month Income : Rs: {income.lastMonth}</div>
-            <div>Last Year Income : Rs: {income.lastYear} </div>
+            <br></br>
+
+            <CardContainer>
+              <LastMonthIncome>
+                <div style={{ fontWeight: "600" }}>Last Month Income</div>
+                <div>Rs: {income.lastMonth}</div>
+              </LastMonthIncome>
+              <LastYearIncome>
+                <div style={{ fontWeight: "600" }}>Last Year Income</div>
+                <div>Rs: {income.lastYear}</div>
+              </LastYearIncome>
+              <div style={{ marginLeft: "20px" }}>
+                <Link to={"/orderReport"}>
+                  <StyledButton>GET REPORT</StyledButton>
+                </Link>
+              </div>
+            </CardContainer>
 
             <div style={{ marginTop: "50px" }}>
-              <div
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "600",
-                  textAlign: "center",
-                }}
-              >
-                {" "}
-                Order Details
-              </div>
               <FilterContainer>
                 <Filter>
                   <FilterText>Filter Orders:</FilterText>
@@ -96,7 +148,16 @@ const AllOrder = () => {
                     <Option>delivered</Option>
                   </Select>
                 </Filter>
-
+                <div
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "600",
+                    textAlign: "center",
+                  }}
+                >
+                  {" "}
+                  Order Details
+                </div>
                 <Filter>
                   <FilterText>Sort Orders:</FilterText>
                   <Select onChange={(e) => setSort(e.target.value)}>
