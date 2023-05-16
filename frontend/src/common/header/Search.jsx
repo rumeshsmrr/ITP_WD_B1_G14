@@ -28,6 +28,7 @@ const Search = () => {
                 fontSize: "18px",
                 color: "#67bae4",
                 letterSpacing: "5px",
+                fontWeight: "800",
               }}
             >
               {" "}
