@@ -113,7 +113,7 @@ const OrderReport = () => {
 
     const logoUrl =
       "https://res.cloudinary.com/daee4aeur/image/upload/v1684050441/Untitled-1_i5zhda.png";
-    doc.addImage(logoUrl, "PNG", marginLeft, 10, 500, 60, null, null, 0, 10); // add image
+    doc.addImage(logoUrl, "PNG", 70, 10, 450, 70, null, null, 0, 10); // add image
 
     // doc.setFontSize(15);
     // const empty = "";
