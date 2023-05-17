@@ -5,8 +5,7 @@ const AllOrderCard = ({ order }) => {
     <>
       <div className="box mtop">
         <div className="order main-info d_flex">
-          <div className="orderNo">Order No: {order._id}</div>
-          <div className="orderNo">Customer: {order.customer.email}</div>
+          <div className="orderNo">Customer: {order.customerEmail}</div>
           <div className="placeData">
             Placed At: {order.createdAt.substring(0, 10)}
           </div>
@@ -14,7 +13,7 @@ const AllOrderCard = ({ order }) => {
             <div className="placeData">Address : </div>
             <div className="product-address">{order.address}</div>
           </div>
-          <div>Total : {order.total}</div>
+          <div>Total : {order.total.toFixed(2)}</div>
           <div>{order.status.toUpperCase()}</div>
         </div>
         <div className="order secondary-info">
@@ -31,7 +30,7 @@ const AllOrderCard = ({ order }) => {
               <tr>
                 <th style={{ width: "10%" }}></th>
                 <th style={{ width: "80%", textAlign: "left" }}>Product</th>
-                <th style={{ width: "10%", margin: "10px" }}>Price </th>
+                <th style={{ width: "10%", margin: "10px" }}> </th>
                 <th style={{ width: "10%" }}>Quantity</th>
               </tr>
             </thead>
@@ -41,11 +40,11 @@ const AllOrderCard = ({ order }) => {
                   <th style={{ width: "10%" }}>
                     <img
                       className="smallImg"
-                      src={order.product.cover}
+                      src={`/uploads/${order.cover}`}
                       alt=""
                     />
                   </th>
-                  <td style={{ width: "70%" }}>{order.product.name}</td>
+                  <td style={{ width: "70%" }}>{order.productName}</td>
                   <td
                     style={{
                       width: "10%",

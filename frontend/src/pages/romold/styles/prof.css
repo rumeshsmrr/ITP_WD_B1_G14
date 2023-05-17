@@ -292,11 +292,11 @@
     border-color: #423e3b;
   }
   
-  .r-removebtn {
+  .removebtn {
     background: red;
     color: rgb(255, 255, 255);
-    /* padding-left: 10px; */
-    margin-left: 50px;
+    padding: 5px 5px;
+    margin: 1px 0;
     width: 100px;
     border-radius: 10px;
     border-color: red;
@@ -306,12 +306,12 @@
     color: #000000;
   }
   
-  .r-editbtn {
+  .editbtn {
     background: #00b7ff;
     color: rgb(255, 255, 255);
-    /* padding: 5px 5px; 
-    margin-right: 30px; */
-    width: 100px; 
+    padding: 5px 5px;
+    margin: 1px 0;
+    width: 100px;
     border-radius: 10px;
     border-color: 11ee1e;
   }
@@ -469,62 +469,5 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .r-table{
-
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: auto;
-
-  }
-
-  .exp-btn{
-    margin-top: 130px;
-    display: flexbox;
-    margin-left: 1425px;
-    background: #00b7ff;
-    color: rgb(255, 255, 255);
-    
-    font-size: large;
-    width: 100px;
-    height: 43px;
-    border-radius: 15px;
-    font-weight: bold;
-    border-color: #00b7ff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-    
-  }
-
-  .exp-btn:hover{
-
-    color: #414141;
-
-  }
-
-  .add-btn{
-    
-    
-    display: inline-flexbox;
-    margin-top: 10px;
-    display: flex;
-    margin-left: 1425px;
-    background: #00b7ff;
-    color: rgb(255, 255, 255);
-    padding-left: 30px;
-    padding-top: 10px;
-    
-    font-size: large;
-    width: 100px;
-    height: 43px;
-    border-radius: 15px;
-    font-weight: bold;
-    border-color: #00b7ff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  .add-btn:hover{
-
-    color: #414141;
-
-  }
+  
+  

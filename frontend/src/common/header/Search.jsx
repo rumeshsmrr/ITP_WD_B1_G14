@@ -47,10 +47,21 @@ const Search = () => {
             </Link>
           </div>
 
-          <div className="search-box f_flex">
-            <i className="fa fa-search"></i>
+          <div>
+            {/* <i className="fa fa-search"></i>
             <input type="text" placeholder="Search and hit enter..." />
-            <span>All Category</span>
+            <span>All Category</span> */}
+            <h1
+              style={{
+                fontSize: "18px",
+                color: "#67bae4",
+                letterSpacing: "5px",
+                fontWeight: "800",
+              }}
+            >
+              {" "}
+              WELCOME TO GUIDENT COMPUTERS
+            </h1>
           </div>
 
           <div className="icon f_flex width">

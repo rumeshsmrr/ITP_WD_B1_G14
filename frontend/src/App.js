@@ -41,6 +41,9 @@ import ProductManager from "./pages/romold/ProductManager";
 import ProductComparison from "./pages/romold/ProductComparison";
 import ProductManager2 from "./pages/romold/ProductManager2";
 import ProductManager3 from "./pages/romold/ProductManager3";
+import ProductEditDelete from "./pages/romold/ProductEditDelete";
+import OrderReport from "./components/rumesh/orderReport";
+import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 
 function App() {
   const customer = useSelector((state) => state.customer.currentCustomer);
@@ -74,6 +77,7 @@ function App() {
             element={customer ? <Navigate replace to="/" /> : <CusLogin />}
           ></Route>
           <Route path="/allOrder" exact element={<AllOrder />}></Route>
+          <Route path="/orderReport" exact element={<OrderReport />}></Route>
 
           {/* poornaka */}
           <Route path="/adminAndEmployee" exact element={<Home />} />
@@ -91,6 +95,7 @@ function App() {
           <Route path="/viewAttendance" exact element={<ViewAttendance />} />
 
           {/* romold */}
+          <Route path="/createProduct" exact element={<ProductForm />} />
           <Route path ="/createProduct" exact element={<ProductForm />}/>
           
           <Route path ="/createProduct" exact element={<ProductForm />}/>
@@ -105,6 +110,7 @@ function App() {
           <Route path="/AddSupplieritem" exact element={<AddSupplierItems />} />
 
           <Route path="/edits/:id" exact element={<EditSupplierItem />} />
+          <Route path="/productEdit" exact element={<ProductEditDelete />} />
           
           <Route path="/productEdit" exact element={<ProductEditDelete/>} />
           <Route path="/productManager" exact element = {<ProductManager/>}></Route>
@@ -121,6 +127,7 @@ function App() {
           <Route path="/Purchasingitems" exact element={<PurchasingItems />} />
 
           <Route path="/Paymentfororder" exact element={<PaymentForOrder />} />
+          <Route path="/purchaseSheet" exact element={<PurchaseSheet />} />
         </Routes>
       </BrowserRouter>
     </>

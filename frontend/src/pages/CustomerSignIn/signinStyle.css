@@ -44,11 +44,11 @@ body {
   width: 60%;
   top: 20%;
   left: 20%;
-  background-color: aquamarine;
+  background-color: rgb(127, 148, 255);
   border-radius: 5px;
   /* padding: 20px; */
   align-items: center;
-  background-color: aquamarine;
+  background-color: rgb(127, 191, 255);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: 20%;
@@ -141,7 +141,7 @@ body {
 
 .submit-btn {
   position: relative;
-  background-color: #00ffab;
+  background-color: #008cff;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
@@ -154,7 +154,7 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: #14c38e;
+  background-color: #1417c3;
   color: white;
 }
 

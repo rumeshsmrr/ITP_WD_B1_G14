@@ -33,7 +33,8 @@ const Navbar = () => {
               {customer ? (
                 <>
                   <li>
-                    <Link to="">LogOut</Link>
+                    {/* <Link to="">LogOut</Link> */}
+                    <a href="/">LogOut</a>
                   </li>
                 </>
               ) : (

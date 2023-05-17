@@ -52,8 +52,8 @@ router.delete("/:id", async (req, res) => {
 router.get("/find/:customerId", async (req, res) => {
   try {
     const orders = await Order.find({
-      customer: req.params.customerId,
-    }).populate("customer products.product");
+      customerID: req.params.customerId,
+    });
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
@@ -88,7 +88,7 @@ router.get("/find/:customerId", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const orders = await Order.find().populate("customer products.product");
+    const orders = await Order.find();
     res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
@@ -172,6 +172,27 @@ router.get("/incomes", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// GET ORDERS FOR A SPECIFIC MONTH
+router.get("/orders/:year/:month", async (req, res) => {
+  const { year, month } = req.params;
+  const startDate = new Date(year, month - 1, 1);
+  const endDate = new Date(year, month, 0);
+
+  try {
+    const orders = await Order.find({
+      createdAt: {
+        $gte: startDate,
+        $lte: endDate,
+      },
+    });
+
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Something went wrong" });
   }
 });
 
