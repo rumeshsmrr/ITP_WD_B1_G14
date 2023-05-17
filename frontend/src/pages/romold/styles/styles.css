@@ -28,7 +28,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .addUser1-card {
+  /* .addUser1-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +40,7 @@
     border-radius: 10px;
     background-color: #f5f5f5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+  } */
   .card {
     
     display: flex;
@@ -106,5 +106,10 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
+  }
+
+  .error-label{
+    color: red;
+    align-content: center;
   }
   
