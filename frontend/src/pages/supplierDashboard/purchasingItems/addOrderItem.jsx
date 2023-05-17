@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from 'react-router-dom';
 
 import "./addOrderItem.css";
 import Footer from "../../../common/footer/Footer";
@@ -73,7 +72,7 @@ const PurchasingItems = ({ CartItem }) => {
       <Navbar />
 
       <div className="H_A_I_Topic" style={{ marginTop: "100px" }}>
-        CREATE PURCHASING ITEMS
+        CREATE PURCHASING LIST
       </div>
 
       <div class="H_A_I_search-container">

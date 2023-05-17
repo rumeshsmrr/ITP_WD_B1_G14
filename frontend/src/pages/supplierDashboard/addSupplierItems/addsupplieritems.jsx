@@ -9,8 +9,6 @@ import "jspdf-autotable";
 
 import "./addsupplieritems.css";
 import Footer from "../../../common/footer/Footer";
-// import Nav from "../../../common/header/Navbar"
-// import Search from "../../../common/header/Search"
 import Navbar from "../../poornaka/Navbar";
 
 const AddSupplierItems = ({ CartItem }) => {
@@ -104,9 +102,13 @@ const AddSupplierItems = ({ CartItem }) => {
     });
 
     var img = new Image();
+    // img.src =
+    //   "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+    // doc.addImage(img, "jpg", 30, 3, 150, 30);
+
     img.src =
-      "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
-    doc.addImage(img, "jpg", 30, 3, 150, 30);
+      "https://res.cloudinary.com/daee4aeur/image/upload/v1684050441/Untitled-1_i5zhda.png";
+    doc.addImage(img, "PNG", 30, 3, 150, 30);
 
     doc.setFontSize(20);
     const title = "Suppliers Supply Items Report";
@@ -157,19 +159,6 @@ const AddSupplierItems = ({ CartItem }) => {
                 <br />
 
                 <form onSubmit={handelSubmit}>
-                  {/* <div class="H_A_I_input-container ic1">
-
-                            <input id="userID" class="H_A_I_input" type="text" placeholder=" " 
-                                name="userID"
-                                value = {input.userID}
-                                onChange={(e) =>
-                                    setInput({...input, [e.target.name] : e.target.value})
-                                }/>
-                            <div class="H_A_I_cut"></div>
-                            <label for="useridd" class="H_A_I_placeholder">User Id</label>
-
-                        </div> */}
-
                   <div class="H_A_I_input-container ic1">
                     <input
                       id="regNumber"
@@ -229,17 +218,6 @@ const AddSupplierItems = ({ CartItem }) => {
                     </label>
                   </div>
                   <br />
-
-                  {/* <div class="H_A_I_input-container ic4">
-                            <input id="price" class="H_A_I_input" type="text" placeholder=" " 
-                                name="itemPrice"
-                                value = {input.itemPrice}
-                                onChange={(e) =>
-                                     setInput({...input, [e.target.name] : e.target.value})
-                                }/>
-                            <div class="H_A_I_cut"></div>
-                            <label for="price" class="H_A_I_placeholder">Item Price</label>
-                        </div> */}
 
                   <div class="H_A_I_input-container ic5">
                     <input

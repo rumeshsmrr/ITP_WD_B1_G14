@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import  Form  from 'react-bootstrap/Form';
-// import InputGroup from 'react-bootstrap/InputGroup';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import jsPDF from "jspdf";
 
 import "jspdf-autotable";
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
 import "./addsupplier.css";
 import Footer from "../../../common/footer/Footer";
-// import Nav from "../../../common/header/Navbar"
-// import Search from "../../../common/header/Search"
 import Navbar from "../../poornaka/Navbar";
 
 const AddSupplier = ({ CartItem }) => {
@@ -70,28 +62,6 @@ const AddSupplier = ({ CartItem }) => {
     doc.save("example.pdf");
   }
 
-  //     function handlePdfGeneration() {
-  //     const doc = new jsPDF();
-
-  //     // // Add PDF logo to document
-  //     // doc.addImage('https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png', 'PNG', 50, 50, 50, 50);
-  //     var img = new Image();
-  //     img.src = "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
-  //     doc.addImage(img, "jpg", 3, 3, 200, 60);
-
-  //     // Set table header
-  //     const header = [["Supplie Rgistration Number", "Supplier Name", "Supplier Contact Number", "Supplier Address", "Supplier E-mail Address", "Discription"]];
-
-  //     // Add data rows
-  //     const data = sup.map(sup => [sup.supRegNum, sup.supName, sup.supContNum, sup.supAddr, sup.supMail, sup.description]);
-
-  //     // Add table to document
-  //     doc.autoTable({ head: header, body: data });
-
-  //     // Download the PDF document
-  //     doc.save('PDF.pdf');
-  //   };
-
   function handlePdfGeneration() {
     const doc = new jsPDF();
 
@@ -126,11 +96,14 @@ const AddSupplier = ({ CartItem }) => {
 
       tableRows.push(data);
     });
-
+    // const marginLeft = 40;
     var img = new Image();
+    // img.src =
+    //   "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+    // doc.addImage(img, "jpg", 30, 3, 150, 30);
     img.src =
-      "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
-    doc.addImage(img, "jpg", 30, 3, 150, 30);
+      "https://res.cloudinary.com/daee4aeur/image/upload/v1684050441/Untitled-1_i5zhda.png";
+    doc.addImage(img, "PNG", 30, 3, 150, 30);
 
     doc.setFontSize(20);
     const title = "Suppliers";
@@ -148,10 +121,6 @@ const AddSupplier = ({ CartItem }) => {
 
     doc.save("SupplierDetails.pdf");
   }
-
-  //   const inputHandler=(e)=>{
-  //     setInput(e.target.value.toLowerCase());
-  //   };
 
   console.log(search);
 
@@ -171,16 +140,6 @@ const AddSupplier = ({ CartItem }) => {
           placeholder="Search..."
         ></input>
       </div>
-
-      {/* <Form>
-        <InputGroup className='H_A_search'>
-            <Form.Control 
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder='Search...'/>
-        </InputGroup>
-    </Form> */}
-
-      {/* shadow Boxes */}
 
       <div className="H_A_body">
         <div className="H_A_container">
@@ -324,97 +283,6 @@ const AddSupplier = ({ CartItem }) => {
                   </button>
                 </form>
               </div>
-
-              {/* <div className="col-md-6">
-                            <form onSubmit={handelSubmit}>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">
-                                        Supplie Rgistration Number
-                                        </label>
-                                    <input 
-                                    name="supRegNum"
-                                    value = {input.supRegNum}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                        }
-                                    type="supRegNum"
-                                    class="form-control" />
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">
-                                        Supplier Name
-                                        </label>
-                                    <input 
-                                    name="supName"
-                                    value = {input.supName}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                    }
-                                    type="name" 
-                                    class="form-control" />
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">
-                                        Supplier Contact Number
-                                        </label>
-                                    <input 
-                                    name="supContNum"
-                                    value = {input.supContNum}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                        }
-                                    type="number" 
-                                    class="form-control" />
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">
-                                        Supplier Address
-                                        </label>
-                                    <input
-                                    name="supAddr"
-                                    value = {input.supAddr}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                        }
-                                    type="address" 
-                                    class="form-control"/>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">
-                                        Supplier E-mail Address 
-                                        </label>
-                                    <input
-                                    name="supMail"
-                                    value = {input.supMail}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                        }
-                                    type="mail" 
-                                    class="form-control" />
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">
-                                    Discription
-                                        </label>
-                                    <input
-                                    name="description"
-                                    value = {input.description}
-                                    onChange={(e) =>
-                                        setInput({...input, [e.target.name] : e.target.value})
-                                        }
-                                    type="description" 
-                                    class="form-control" />
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-                            </form>
-                        </div> */}
             </div>
           </div>
 
@@ -436,72 +304,6 @@ const AddSupplier = ({ CartItem }) => {
                       <th scope="col">Delete</th>
                     </tr>
                   </thead>
-
-                  {/* {sup.filter((el) => {
-                if (el === "") {
-                return el;
-            } else {
-                return el.supRegNum.toLowerCase().includes(input) ||
-                el.supName.toLowerCase().includes(input);
-            }
-            })} */}
-
-                  {/* <tbody>
-                {sup && sup.map((supplier) => {
-                    return(
-                <tr key={supplier._id}>
-                    <td>{supplier.supRegNum}</td>
-                    <td>{supplier.supName}</td>
-                    <td>{supplier.supContNum}</td>
-                    <td>{supplier.supAddr}</td>
-                    <td>{supplier.supMail}</td>
-                    <td>{supplier.description}</td>
-                    <td>
-                        <Link to = {`/edit/${supplier._id}`}>
-                        <button className="btn btn-primary">Edit</button>
-                        </Link>
-                        </td>
-                    <td><button onClick={() => handelDelete(supplier._id) }
-                     className="btn btn-danger">Delete</button></td>
-                     
-                </tr>
-                    );
-                })}
-            
-            </tbody> */}
-
-                  {/* 
-            {sup.filter((el) => {
-                if (el === "") {
-                return el;
-            } else {
-                return el.supRegNum.toLowerCase().includes(input) ||
-                el.supName.toLowerCase().includes(input);
-            }
-            })
-                .map((supplier) => {
-                    return(
-                        <tbody>
-                <tr key={supplier._id}>
-                    <td>{supplier.supRegNum}</td>
-                    <td>{supplier.supName}</td>
-                    <td>{supplier.supContNum}</td>
-                    <td>{supplier.supAddr}</td>
-                    <td>{supplier.supMail}</td>
-                    <td>{supplier.description}</td>
-                    <td>
-                        <Link to = {`/edit/${supplier._id}`}>
-                        <button className="btn btn-primary">Edit</button>
-                        </Link>
-                        </td>
-                    <td><button onClick={() => handelDelete(supplier._id) }
-                     className="btn btn-danger">Delete</button></td>
-                     
-                </tr>
-                </tbody>
-                    );
-                })}
-             */}
 
                   <tbody>
                     {sup
@@ -548,152 +350,6 @@ const AddSupplier = ({ CartItem }) => {
         Generate PDF
       </button>
 
-      {/* <div className="container">
-        <div className="row">
-
-            <div className="col-md-13 mt-2">
-            <div style={{backgroundColor: "purple"}}>
-                <h1 className="text-white text-center">ADD SUPPLIERS</h1>
-            </div>
-            </div>
-            <div className="col-md-6">
-            <form onSubmit={handelSubmit}>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">
-                    Supplie Rgistration Number
-                    </label>
-                <input 
-                name="supRegNum"
-                value = {input.supRegNum}
-                onChange={(e) =>
-                     setInput({...input, [e.target.name] : e.target.value})
-                    }
-                type="supRegNum"
-                class="form-control" 
-                id="exampleInputEmail1" 
-                aria-describedby="emailHelp"/>
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                    Supplier Name
-                    </label>
-                <input 
-                name="supName"
-               value = {input.supName}
-               onChange={(e) =>
-                    setInput({...input, [e.target.name] : e.target.value})
-                   }
-                type="name" 
-                class="form-control" 
-                id="exampleInputPassword1"/>
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                    Supplier Contact Number
-                    </label>
-                <input 
-                name="supContNum"
-                value = {input.supContNum}
-                onChange={(e) =>
-                     setInput({...input, [e.target.name] : e.target.value})
-                    }
-                type="number" 
-                class="form-control" 
-                id="exampleInputPassword1"/>
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                    Supplier Address
-                    </label>
-                <input
-                name="supAddr"
-                value = {input.supAddr}
-                onChange={(e) =>
-                     setInput({...input, [e.target.name] : e.target.value})
-                    }
-                type="address" 
-                class="form-control" 
-                id="exampleInputPassword1"/>
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                    Supplier E-mail Address 
-                    </label>
-                <input
-                name="supMail"
-                value = {input.supMail}
-                onChange={(e) =>
-                     setInput({...input, [e.target.name] : e.target.value})
-                    }
-                type="mail" 
-                class="form-control" 
-                id="exampleInputPassword1"/>
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
-                Discription
-                    </label>
-                <input
-                name="description"
-                value = {input.description}
-                onChange={(e) =>
-                     setInput({...input, [e.target.name] : e.target.value})
-                    }
-                type="description" 
-                class="form-control" 
-                id="exampleInputPassword1"/>
-            </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-            </div>
-            <div className="col-md-6">
-            <table class="table">
-            <thead> */}
-      {/* <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Supplie Rgistration Number:</th>
-                    <th scope="col">Supplier Name:</th>
-                    <th scope="col">Supplier Contact Number:</th>
-                    <th scope="col">Supplier Address:</th>
-                    <th scope="col">Supplier E-mail Address:</th>
-                    <th scope="col">Discription:</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {sup && sup.map((supplier) => {
-                    return(
-                <tr key={supplier._id}>
-                    <td>{supplier.supRegNum}</td>
-                    <td>{supplier.supName}</td>
-                    <td>{supplier.supContNum}</td>
-                    <td>{supplier.supAddr}</td>
-                    <td>{supplier.supMail}</td>
-                    <td>{supplier.description}</td>
-                    <td>
-                        <Link to = {`/edit/${supplier._id}`}>
-                        <button className="btn btn-primary">Edit</button>
-                        </Link>
-                        </td>
-                    <td><button onClick={() => handelDelete(supplier._id)}
-                     className="btn btn-danger">Delete</button></td>
-                     
-                </tr>
-                    );
-                })}
-            </tbody>
-            </table>
-            </div>
-         </div>
-        </div> */}
       <br />
 
       <Footer />
