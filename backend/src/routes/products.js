@@ -19,11 +19,15 @@ const {
 const Product = require('../models/productModel')
 const router = express.Router()
 
+
+
 //GET all the products
 router.get('/' , getProducts)
 
 //GET a single product
 router.get('/:id' , getProduct)
+
+
 //Search
 router.get('/search/:key' , searchProducts)
 

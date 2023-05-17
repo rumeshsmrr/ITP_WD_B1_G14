@@ -18,20 +18,33 @@ const getProducts = async (req , res) => {
 //GET a single product 
 
 const getProduct = async(req , res) => {
-    const {id} = req.params 
 
-    if(!mongoose.Types.ObjectId.isValid(id)){ // to check if the product is available in the database 
-        return res.status(404).json({error : 'Product not found'})
+    let result = await Product.findOne({_id : req.params.id})
+
+    if(result){
+
+        res.send(result)
+
+    }else{
+
+        res.send({"result" : "No record found"})
+
     }
 
-    const product = await Product.findById(id)
+    // const {id} = req.params 
 
-    if(!product){
-        return res.status(404).json({error : 'No such workout'}) //we dont want to continue that's why we return 
+    // if(!mongoose.Types.ObjectId.isValid(id)){ // to check if the product is available in the database 
+    //     return res.status(404).json({error : 'Product not found'})
+    // }
 
-    }
+    // const product = await Product.findById(id)
 
-    res.status(200).json(product)
+    // if(!product){
+    //     return res.status(404).json({error : 'No such workout'}) //we dont want to continue that's why we return 
+
+    // }
+
+    // res.status(200).json(product)
 }
 
 
@@ -73,6 +86,8 @@ const deleteProduct = async(req , res) => {
 //UPDATE a product 
 
 const updateProduct = async (req , res) =>{
+
+
     
     const{id} = req.params
 

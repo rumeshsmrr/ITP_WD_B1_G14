@@ -15,11 +15,11 @@
   .text-center{
     font-size: 1.5em;
     color: #464646;
-    margin-left: 360px ;
+    /* margin-left: 10px ; */
 
   }
  .info a {
-    margin-left: 500px;
+    margin-left: 550px;
     color: #ffffff;
     background: #00b7ff;
     padding: 10px 20px;
@@ -43,7 +43,7 @@
 
   .info .info-admin{
     position: absolute;
-    margin-left: 520px;
+    margin-left: 569px;
     margin-top: 5px;
   }
 
