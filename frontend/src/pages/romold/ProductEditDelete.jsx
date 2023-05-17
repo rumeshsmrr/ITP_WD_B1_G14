@@ -35,19 +35,14 @@ const ProductEditDelete  = () => {
 
     const exportPDF = async () => {
 
-
       const doc = new jsPDF({orientation : 'landscape'})
       doc.autoTable({
 
         html : '#edit-table'
 
-
       })
       
       doc.save("data.pdf")
-
-
-
     }
 
   console.log(products);

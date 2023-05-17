@@ -75,7 +75,7 @@ export default function Profile() {
               className="user-profile-avatar"
             />
             <br/>
-            <h4 style={{marginLeft:"-150px"}}>{user?.userName}</h4>
+            <h4 style={{marginLeft:"210px"}}>{user?.userName}</h4>
           </Col>
           <Col md={12}>
             <Form>
@@ -87,6 +87,16 @@ export default function Profile() {
                   onChange={(e) => setUSer({ ...user, name: e.target.value })}
                 />
               </Form.Group>
+
+              <Form.Group>
+                <Form.Label>NIC Number</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={user?.nic}
+                  onChange={(e) => setUSer({ ...user, nic: e.target.value })}
+                />
+              </Form.Group>
+
               <Form.Group>
                 <Form.Label>address</Form.Label>
                 <Form.Control
@@ -104,6 +114,15 @@ export default function Profile() {
                   type="text"
                   value={user?.age}
                   onChange={(e) => setUSer({ ...user, age: e.target.value })}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>Phone number</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={user?.pNumber}
+                  onChange={(e) => setUSer({ ...user, pNumber: e.target.value })}
                 />
               </Form.Group>
 

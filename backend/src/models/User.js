@@ -29,6 +29,16 @@ const UserSchema = new Schema(
     sex: {
       type: String,
     },
+
+    nic : {
+      type: String ,
+    },
+
+    pNumber : {
+      type : Number ,
+    },
+    
+
     systemAdmin: {
       type: Boolean,
       default: false,

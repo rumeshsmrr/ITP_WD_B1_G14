@@ -124,7 +124,7 @@ export default function AdminDashboard() {
                 onDownload(startDate);
               }}
             >
-              Genarate Document
+              Genarate Report
             </button>
             <div style={{ display: "flex" }}>
               <div className="admin">
@@ -162,8 +162,8 @@ export default function AdminDashboard() {
                   <div className="">
                     <table
                       className="table"
-                      style={{ backgroundColor: "rgb(247, 247, 247)", borderRadius: "10px",
-                      border:"10px black"
+                      style={{ backgroundColor: "rgb(247, 247, 247)", borderRadius: "10px", width:"120%",textAlign:"center",
+                      border:"10px black",justifyContent: "center", marginLeft:"-10%"
                     }}
                       // style={{ backgroundColor: "rgb(247, 247, 247)" }}
                     >
@@ -199,7 +199,7 @@ export default function AdminDashboard() {
                               color:"#0c2a4d",
                               fontWeight: "bold",
                               fontSize: "22px",
-                              width: "150px",
+                              width: "350px",
                             }}
                             scope="col"
                           >
@@ -211,7 +211,19 @@ export default function AdminDashboard() {
                               color:"#0c2a4d",
                               fontWeight: "bold",
                               fontSize: "22px",
-                              width: "500px",
+                              width: "400px",
+                            }}
+                            scope="col"
+                          >
+                            Phone Number
+                          </th>
+                          <th
+                            className="tColumn"
+                            style={{
+                              color:"#0c2a4d",
+                              fontWeight: "bold",
+                              fontSize: "22px",
+                              width: "350px",
                             }}
                             scope="col"
                           >
@@ -221,7 +233,7 @@ export default function AdminDashboard() {
                       </thead>
                       <tbody className="table-row" >
                         {request.map((data, index) => (
-                          <tr key={index} style={{lineHeight:"50px"}}>
+                          <tr key={index} style={{lineHeight:"20px"}}>
                             <td >
                               <b> {data.userName} </b> <hr/>
                             </td>
@@ -229,7 +241,10 @@ export default function AdminDashboard() {
                               <b> {data.role} </b><hr/>
                             </td>
                             <td>
-                              <b> {data.salary} </b><hr/>
+                              <b>Rs.{data.salary}.00 </b><hr/>
+                            </td>
+                            <td>
+                              <b> {data.pNumber} </b><hr/>
                             </td>
                             <td>
                               <b>{data?.savedDate}</b><hr/>
@@ -277,4 +292,3 @@ export default function AdminDashboard() {
       </div>
     );
   }
-  

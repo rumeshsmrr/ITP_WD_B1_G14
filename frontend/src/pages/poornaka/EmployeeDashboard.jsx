@@ -36,10 +36,10 @@ export default function EmployeeDashboard() {
             </div>
 
             <div class="gallery">
-              <a href="">
+              <Link to ="/productEdit">
                 <img src="https://res.cloudinary.com/dwcxwpn7q/image/upload/v1680858091/icons8-new-product-100_b22fsc.png" />
                 Product Management
-              </a>
+                </Link>
             </div>
 
             <div class="gallery">

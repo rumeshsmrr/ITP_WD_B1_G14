@@ -8,7 +8,7 @@ const generatePDF = (report) => {
 
   // define the columns we want and their titles
 
-  const tableColumn = ["No", "User Name", "Role", "Salary (Rs.)"];
+  const tableColumn = ["No", "User Name","NIC Number", "Role", "Salary (Rs.)", "Phone Number", "Sex", "Äge"];
 
   // define an empty array of rows
 
@@ -21,7 +21,7 @@ const generatePDF = (report) => {
   report.forEach((report) => {
     no++;
 
-    const reportData = [no, report.userName, report.role, report.salary];
+    const reportData = [no, report.userName, report.nic ,report.role, report.salary, report.pNumber, report.sex, report.age ];
 
     // push each tickcet's info into a row
     console.log("reportData", reportData);
