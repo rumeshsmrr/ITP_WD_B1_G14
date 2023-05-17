@@ -52,10 +52,6 @@ const PurchasOrderList = () => {
   //decrease quantity
   const descriceQty = async (productId, qty) => {
     if (qty === 1) {
-      // const id = proId;
-      // alert(
-      //   "Item Should not be minus, If you doesn't need item you can Remove"
-      // );
       oneItemAlert();
     } else {
       try {
@@ -63,8 +59,6 @@ const PurchasOrderList = () => {
           productId: productId,
         });
         const res = await publicRequest.get("/purchasing/");
-        // alert("increaced item");
-        // console.log(response.data.cartItems);
         setPurchaseItem(res.data);
 
         // alert("Product quantity decreased successfully!");
@@ -80,8 +74,6 @@ const PurchasOrderList = () => {
     try {
       await axios.delete("http://localhost:8070/api/purchasing/clear");
       const res = await publicRequest.get("/purchasing/");
-      // alert("increaced item");
-      // console.log(response.data.cartItems);
       setPurchaseItem(res.data);
     } catch (err) {
       console.error(err);
@@ -102,50 +94,6 @@ const PurchasOrderList = () => {
       progress: undefined,
       theme: "colored",
     });
-
-  // //PDF Generate
-  // function handlePdfGeneration() {
-  //   const doc = new jsPDF();
-  //   doc.autoTable({ html: "#my-table" });
-  //   doc.save("example.pdf");
-  // }
-
-  // function handlePdfGeneration() {
-  //   const doc = new jsPDF();
-
-  //   const header = [["Supplier Name", "Item Name", "Quantity"]];
-
-  //   const tableRows = [];
-
-  //   let no = 0;
-
-  //   purchaseItem.forEach((sup) => {
-  //     no++;
-
-  //     const data = [sup.supName, sup.itemName, sup.quantity];
-
-  //     // push each tickcet's info into a row
-  //     console.log("reportData", data);
-
-  //     tableRows.push(data);
-  //   });
-
-  //   var img = new Image();
-  //   img.src =
-  //     "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
-  //   doc.addImage(img, "jpg", 30, 3, 150, 30);
-
-  //   //doc.autoTable(tableColumn, tableRows, { startY: 70 });
-
-  //   doc.autoTable({
-  //     head: header,
-  //     body: tableRows,
-  //     startY: 70,
-  //   });
-
-  //   doc.save("SupplierDetails.pdf");
-  //   clearAll();
-  // }
 
   function handlePdfGeneration() {
     const doc = new jsPDF();
@@ -170,9 +118,12 @@ const PurchasOrderList = () => {
     });
 
     var img = new Image();
+    // img.src =
+    //   "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+    // doc.addImage(img, "jpg", 30, 3, 150, 30);
     img.src =
-      "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
-    doc.addImage(img, "jpg", 30, 3, 150, 30);
+      "https://res.cloudinary.com/daee4aeur/image/upload/v1684050441/Untitled-1_i5zhda.png";
+    doc.addImage(img, "PNG", 30, 3, 150, 30);
 
     doc.setFontSize(20);
     const title = "Purchase Order Report";
@@ -281,11 +232,21 @@ const PurchasOrderList = () => {
       </div>
       {/* <button
         className="H_A_I_btn_btn-primary"
-        style={{ alignItems: "center", textAlign: "center" }}
+        style={{ alignItems: "right", textAlign: "right" }}
         onClick={() => clearAll()}
       >
         Clear all
       </button> */}
+
+      {/* clear all button */}
+      {/* <button
+        className="H_A_Genarate"
+        style={{ display: "block", margin: "0 auto" }}
+        onClick={() => clearAll()}
+      >
+        Clear all
+      </button>
+      <br /> */}
 
       {/* <button
         className="H_A_I_btn_btn-primary"
