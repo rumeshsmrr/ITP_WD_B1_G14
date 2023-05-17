@@ -68,7 +68,7 @@ const CusLogin = () => {
                   id="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <div className="form-box2">
+                {/* <div className="form-box2">
                   <div className="box remember">
                     <input type="checkbox" id="remember" />
                     <lable className="lbl-rem">Remember Me</lable>
@@ -76,10 +76,14 @@ const CusLogin = () => {
                   <div className="small-letters">
                     <Link to="#">forgot password?</Link>
                   </div>
-                </div>
+                </div> */}
                 <button
                   className="submit-btn"
                   type="submit"
+                  style={{
+                    height: "50px",
+                    textAlign: "center",
+                  }}
                   onClick={handleLogin}
                   // disabled={isFetching}
                 >
