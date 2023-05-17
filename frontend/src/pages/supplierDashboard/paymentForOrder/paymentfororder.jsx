@@ -145,7 +145,10 @@ function PaymentForOrder({ CartItem }) {
 
                       {inputList.map((x, i) => (
                         <div className="H_P_O_row mb-3" key={i}>
-                          <div className="H_P_O_form-group col-md-4">
+                          <div
+                            className="H_P_O_form-group col-md-4"
+                            style={{ maxWidth: "320px" }}
+                          >
                             <label>Item Name</label>
                             <input
                               type="text"
@@ -155,7 +158,10 @@ function PaymentForOrder({ CartItem }) {
                               onChange={(e) => handleinputchange(e, i)}
                             />
                           </div>
-                          <div className="H_P_O_form-group col-md-4">
+                          <div
+                            className="H_P_O_form-group col-md-4"
+                            style={{ maxWidth: "320px" }}
+                          >
                             <label>Unit Price</label>
                             <input
                               type="text"
@@ -165,7 +171,10 @@ function PaymentForOrder({ CartItem }) {
                               onChange={(e) => handleinputchange(e, i)}
                             />
                           </div>
-                          <div className="H_P_O_form-group col-md-4">
+                          <div
+                            className="H_P_O_form-group col-md-4"
+                            style={{ maxWidth: "320px" }}
+                          >
                             <label>Quantity</label>
                             <input
                               type="text"
@@ -175,7 +184,10 @@ function PaymentForOrder({ CartItem }) {
                               onChange={(e) => handleinputchange(e, i)}
                             />
                           </div>
-                          <div className="H_P_O_form-group col-md-4">
+                          <div
+                            className="H_P_O_form-group col-md-4"
+                            style={{ maxWidth: "320px" }}
+                          >
                             <label>Amount</label>
                             <input
                               type="text"
@@ -186,7 +198,10 @@ function PaymentForOrder({ CartItem }) {
                               onChange={(e) => handleinputchange(e, i)}
                             />
                           </div>
-                          <div className="H_P_O_form-group col-md-2 mt-4">
+                          <div
+                            className="H_P_O_form-group col-md-2 mt-4"
+                            style={{ maxWidth: "320px" }}
+                          >
                             {inputList.length !== 1 && (
                               <button
                                 className="H_P_O_btn btn-danger mx-1"
