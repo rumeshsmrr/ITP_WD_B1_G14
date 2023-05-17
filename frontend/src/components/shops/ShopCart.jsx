@@ -119,7 +119,7 @@ const ShopCart = () => {
 
     let key = event.target.value
     if(key){
-        let result = await fetch(`/api/products/search/${key}`)
+        let result = await fetch(`http://localhost:8070/api/products/search/${key}`)
         result = await result.json()
         if(result){
             setProducts(result)
