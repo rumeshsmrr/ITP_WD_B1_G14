@@ -55,6 +55,8 @@ const updateUser = async (req, res) => {
   const address = req.body.address;
   const age = req.body.age;
   const sex = req.body.sex;
+  const pNumber = req.body.pNumber 
+  const nic = req.body.nic 
 
   //convert id to object id
   const O_id = mongoose.Types.ObjectId(id);
@@ -66,6 +68,9 @@ const updateUser = async (req, res) => {
       address,
       age,
       sex,
+      pNumber,
+      nic,
+      
     });
 
     //update the user
