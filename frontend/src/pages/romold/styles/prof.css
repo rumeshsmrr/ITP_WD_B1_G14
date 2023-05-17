@@ -469,5 +469,63 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  
+  .exp-btn{
+    margin-top: 130px;
+    display: flexbox;
+    margin-left: 1425px;
+    background: #00b7ff;
+    color: rgb(255, 255, 255);
+    
+    font-size: large;
+    width: 100px;
+    height: 43px;
+    border-radius: 15px;
+    font-weight: bold;
+    border-color: #00b7ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    
+  }
+
+  .exp-btn:hover{
+
+    color: #414141;
+
+  }
+
+  .add-btn{
+    
+    
+    display: inline-flexbox;
+    margin-top: 10px;
+    display: flex;
+    margin-left: 1425px;
+    background: #00b7ff;
+    color: rgb(255, 255, 255);
+    padding-left: 30px;
+    padding-top: 10px;
+    
+    font-size: large;
+    width: 100px;
+    height: 43px;
+    border-radius: 15px;
+    font-weight: bold;
+    border-color: #00b7ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .add-btn:hover{
+
+    color: #414141;
+
+  }
+
+  .r-table{
+
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+
+  }
   

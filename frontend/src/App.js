@@ -41,7 +41,7 @@ import ProductManager from "./pages/romold/ProductManager";
 import ProductComparison from "./pages/romold/ProductComparison";
 import ProductManager2 from "./pages/romold/ProductManager2";
 import ProductManager3 from "./pages/romold/ProductManager3";
-import ProductEditDelete from "./pages/romold/ProductEditDelete";
+
 import OrderReport from "./components/rumesh/orderReport";
 import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 

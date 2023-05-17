@@ -76,8 +76,8 @@ const ProductForm = () =>  {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              {/* {errors && !name &&
-              <label className="error-label">This field can't be empty!!</label> } */}
+              {errors && !name &&
+              <label className="error-label">This field can't be empty!!</label> }
               </div>
               <div className="mb-3">
                 <label className="form-label">Product Price</label>
@@ -86,8 +86,8 @@ const ProductForm = () =>  {
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
                 />
-                {/* {errors && !price &&
-              <label className="error-label">This field can't be empty!!</label> } */}
+                {errors && !price &&
+              <label className="error-label">This field can't be empty!!</label> }
               </div>
               <div className="mb-3">
                 <label className="form-label">Product Discount</label>
@@ -96,8 +96,8 @@ const ProductForm = () =>  {
                 onChange={(e) => setDiscount(e.target.value)}
                 value={discount}
                 />
-                {/* {errors && !discount &&
-                  <label className="error-label">This field can't be empty!!</label> } */}
+                {errors && !discount &&
+                  <label className="error-label">This field can't be empty!!</label> }
               </div>
               <div className="mb-3">
                 <label className="form-label">Product Category</label>
@@ -106,8 +106,8 @@ const ProductForm = () =>  {
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}
                 /> 
-                {/* {errors && !category &&
-              <label className="error-label">This field can't be empty!!</label> } */}
+                {errors && !category &&
+              <label className="error-label">This field can't be empty!!</label> }
               </div>
               <div className="mb-3">
                 <label className="form-label">Product Description</label>
@@ -116,8 +116,8 @@ const ProductForm = () =>  {
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
                 />
-                {/* {errors && !description &&
-              <label className="error-label">This field can't be empty!!</label> } */}
+                {errors && !description &&
+              <label className="error-label">This field can't be empty!!</label> }
                 <br></br>
                 <label htmlFor="file">Choosse Image</label>
                 <input 
@@ -126,8 +126,8 @@ const ProductForm = () =>  {
                     onChange={onChangeFile}
                     
                 /> 
-                
-              {/* <label className="error-label">This field can't be empty!!</label>  */}
+              {errors && !fileName && 
+              <label className="error-label">This field can't be empty!!</label> } 
                 
               </div>
 
