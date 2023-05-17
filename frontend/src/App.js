@@ -34,6 +34,14 @@ import PaymentForOrder from "./pages/supplierDashboard/paymentForOrder/paymentfo
 import SupplierUniqueItem from "./pages/supplierDashboard/addSupplierItems/supplierQuniqueItem";
 import AllOrder from "./components/rumesh/allOrder";
 import ProductEditDelete from "./pages/romold/ProductEditDelete";
+// import OrderReport from "./components/rumesh/orderReport";
+// import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
+import ProductEdit from "./pages/romold/ProductEdit";
+import ProductManager from "./pages/romold/ProductManager";
+import ProductComparison from "./pages/romold/ProductComparison";
+import ProductManager2 from "./pages/romold/ProductManager2";
+import ProductManager3 from "./pages/romold/ProductManager3";
+import ProductEditDelete from "./pages/romold/ProductEditDelete";
 import OrderReport from "./components/rumesh/orderReport";
 import PurchaseSheet from "./pages/supplierDashboard/purchesOrderList/purchasOrdelist";
 
@@ -88,6 +96,10 @@ function App() {
 
           {/* romold */}
           <Route path="/createProduct" exact element={<ProductForm />} />
+          <Route path ="/createProduct" exact element={<ProductForm />}/>
+          
+          <Route path ="/createProduct" exact element={<ProductForm />}/>
+          <Route path="/editProduct/:id" exact element={<ProductEdit/>} />
 
           <Route path="/supplier" exact element={<Dashboard />} />
 
@@ -99,6 +111,12 @@ function App() {
 
           <Route path="/edits/:id" exact element={<EditSupplierItem />} />
           <Route path="/productEdit" exact element={<ProductEditDelete />} />
+          
+          <Route path="/productEdit" exact element={<ProductEditDelete/>} />
+          <Route path="/productManager" exact element = {<ProductManager/>}></Route>
+          <Route path="/productComparison" exact element = {< ProductComparison />} />
+          <Route path="/productManager2" exact element = {<ProductManager2 />} />
+          <Route path="/productManager3" exact element = {<ProductManager3/>} /> 
 
           <Route
             path="/viewUniqueItem"

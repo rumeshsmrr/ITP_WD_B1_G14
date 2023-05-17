@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './Search.css'
 
 const ShopCart = () => {
   // const [count, setCount] = useState(0);
@@ -114,11 +115,42 @@ const ShopCart = () => {
     }
   };
 
+  const searchHandle = async (event) => {
+
+    let key = event.target.value
+    if(key){
+        let result = await fetch(`http://localhost:8070/api/products/search/${key}`)
+        result = await result.json()
+        if(result){
+            setProducts(result)
+        }
+
+    }else{
+        getProducts()
+    }
+
+    
+
+}
+
   return (
+    
+    
     <>
+    <form onChange={searchHandle} className="search-bar">
+            <input type="search" name="search" pattern=".*\S.*" required />
+            <button className="search-btn" type="submit"></button>
+            
+          </form>
+    
       {products.map((shopItems) => {
+
         return (
+          <>
+          
+          
           <div className="box  ">
+          
             <div className="product  shopItem mtop">
               <div className="img shopImg">
                 <span className="discount">{shopItems.discount}% Off</span>
@@ -161,9 +193,12 @@ const ShopCart = () => {
             </div>
             <ToastContainer />
           </div>
+          </>
         );
-      })}
+      }
+      )}
     </>
+    
   );
 };
 

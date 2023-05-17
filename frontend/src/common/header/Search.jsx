@@ -1,8 +1,36 @@
 import React from "react";
 import logo from "../../components/assets/images/logoAndBrand.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 const Search = () => {
+
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async() => {
+    const {data} = await axios.get("http://localhost:8070/api/products/")
+    setProducts(data)
+  }
+
+  const searchHandle = async (event) => {
+
+    let key = event.target.value
+    if(key){
+        let result = await fetch(`/api/products/search/${key}`)
+        result = await result.json()
+        if(result){
+            setProducts(result)
+        }
+
+    }else{
+        getProducts()
+    }
+
+    
+
+}
+
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");

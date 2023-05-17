@@ -3,8 +3,14 @@ import React from "react";
 import ShopCart from "./ShopCart";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import Search from "./Search";
 
 const Shop = () => {
+
+  
+
   return (
     <>
       <section className="shop background">
@@ -13,14 +19,18 @@ const Shop = () => {
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
                 <h2>All Products</h2>
+                
+
               </div>
-              <div className="heading-right row ">
+              
+              {/* <div className="heading-right row ">
                 <span>View all</span>
                 <i className="fa-solid fa-caret-right"></i>
-              </div>
+              </div> */}
             </div>
 
             <div className="product-content  grid1">
+              
               <ShopCart />
             </div>
           </div>

@@ -25,9 +25,10 @@ env.config();
 app.use(express.json());
 
 //Routes
+app.use('/api/products' , productRoutes)
 app.use("/api/customers", customerRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/producth", productHRoute);
+// app.use("/api/producth", productHRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/checkout", stripeRoute);
 app.use("/api/order", orderRoute);
