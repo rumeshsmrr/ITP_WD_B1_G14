@@ -1,5 +1,6 @@
 import './Search.css'
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductComparison = () => {
@@ -19,8 +20,10 @@ const ProductComparison = () => {
     } , [])
 
     return(
-    <div>    
+    <div>
+    <Link to="/">  
     <h1 class="display-5 my-5 text-center">Product Comparison</h1>
+    </Link>  
     <div class="container">
         <div class="col-md-9 mx-auto">
             <table class="table">
