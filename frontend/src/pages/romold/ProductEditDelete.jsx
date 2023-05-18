@@ -35,14 +35,64 @@ const ProductEditDelete  = () => {
 
     const exportPDF = async () => {
 
-      const doc = new jsPDF({orientation : 'landscape'})
-      doc.autoTable({
+      const doc = new jsPDF({orientation : 'landscape'});
 
-        html : '#edit-table'
+      const header = [
+        [
+          "Product Name",
+          "Product Category",
+          "Product Price",
+        ],
+      ];
+      const tableRows = [];
 
-      })
+      let no = 0;
+
+      products.forEach((product) => {
+        no++;
+
+        const data = [
+          product.name,
+          product.category,
+          product.price,
+          
+        ];
+
+        
+        
+
+        tableRows.push(data);
+      });
+
+      var img = new Image();
+      img.src =
+        "https://res.cloudinary.com/dkf222zei/image/upload/v1682132775/logoBrandLarge_qpfl2q.png";
+      doc.addImage(img, "jpg", 74, 3, 150, 30);
+
+      doc.setFontSize(20);
+      const title = "Products";
+      const titleWidth = doc.getTextWidth(title);
+      const x = (doc.internal.pageSize.width - titleWidth) / 2; 
+      doc.text(title, x, 50);
+
       
-      doc.save("data.pdf")
+
+      doc.autoTable({
+        head: header,
+        body: tableRows,
+        startY: 70,
+      });
+
+      doc.save("Producr-Details.pdf");
+
+      // const doc = new jsPDF({orientation : 'landscape'})
+      // doc.autoTable({
+
+      //   html : '#edit-table'
+
+      // })
+      
+      // doc.save("data.pdf")
     }
 
   console.log(products);
